@@ -1,0 +1,19 @@
+{
+	"pluginId": "vs.language.pascal",
+	"activationEvents": ["textModel:pascal"],
+	"mainModule": "./out/pascalMain",
+	"contributes": {
+		"language": [{
+			"id": "pascal",
+			"extensions": [ ".pas", ".dfm", ".dpr", ".dpk" ],
+			"aliases": [ "Pascal", "pascal" ],
+			"mimetypes": ["text/x-pascal-source", "text/x-pascal"]
+		}]
+	},
+	"scripts": {
+		"compile": "node ../../node_modules/gulp/bin/gulp.js --gulpfile ../../gulpfile.plugins.js compile-plugin:vs.language.pascal"
+	},
+	"_bundling": [
+		{ "name": "./out/pascalMain" }
+	]
+}

@@ -1,0 +1,13 @@
+{
+  "Constructor with ": {
+  "prefix": "ctr",
+  "body": [
+    "constructor $1.Create;",
+    "begin",
+    "  inherited",
+    "  $2",
+    "end;"
+  ],
+  "description": "Constructor method"
+  }
+}
