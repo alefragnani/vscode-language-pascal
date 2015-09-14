@@ -30,7 +30,26 @@ Simply download this repo and copy the **vs.language.pascal** folder inside your
 	
 #### Compilation
 
-When you try to **Build** a Delphi Project _(Task: Run Task Build)_ it will offer you to configure a task runner. Accept it and use the `\task\task.json` code as your task, updating the references (compiler location and project name).
+When you try to **Build** a Delphi Project _(Task: Run Task Build)_ it will offer you to configure a task runner. Accept it and use the snippet below, updating the references (compiler location and project name).
+
+    {
+		"version": "0.1.0",
+		"windows": {
+			"command": "DCC32.EXE_PATH"
+		},
+		"isShellCommand": true,
+		"showOutput": "always",
+		"args": ["YOUR_DELPHI_PROJECT.DPR"],
+		"problemMatcher": {
+			"owner": "external",
+			"pattern": {
+				"regexp": "^([\\w]+\\.(pas|dpr|dpk))\\((\\d+)\\)\\s(Fatal|Error|Warning|Hint):(.*)",
+				"file": 1,
+				"line": 3,
+				"message": 5
+			}
+		}
+    } 
 
 ### Know Issues
 
