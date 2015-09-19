@@ -26,8 +26,16 @@ _This is a unofficial plugin, since the plugin support is not available in VSCod
 
 #### Syntax Highlighting
 
-Simply download this repo and copy the **vs.language.pascal** folder inside your VSCode installation: `$ProgramFiles$\Microsoft VS Code\resources\app\plugins\`
-	
+Simply download this repo and copy the **vs.language.pascal** folder inside your VSCode installation:
+
+##### Windows
+
+`$ProgramFiles$\Microsoft VS Code\resources\app\plugins\`
+
+##### Mac
+
+`/Applications/Visual Studio Code.app/Contents/Resources/app/plugins`
+
 #### Compilation
 
 When you try to **Build** a Delphi Project _(Task: Run Task Build)_ it will offer you to configure a task runner. Accept it and use the snippet below, updating the references (compiler location and project name).
@@ -49,11 +57,11 @@ When you try to **Build** a Delphi Project _(Task: Run Task Build)_ it will offe
 				"message": 5
 			}
 		}
-    } 
+    }
 
 ### Know Issues
 
-* No syntax Highlighting for comments with `{` `}`
+* No Syntax Highlighting for comments with `{` `}`, yet
 
 ### TODO
 
