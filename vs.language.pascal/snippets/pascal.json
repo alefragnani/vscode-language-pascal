@@ -1,11 +1,412 @@
 {
+  "Begin end": {
+  "prefix": "begin",
+  "body": [
+    "begin",
+    "\t$1",
+    "end;"
+  ],
+  "description": "Begin end"
+  },
+  
+  "case end": {
+  "prefix": "case",
+  "body": [
+    "case $1 of",
+    "\t$2",
+    "end;"
+  ],
+  "description": "case end"
+  },
+  
+  "class (no parts)": {
+  "prefix": "classd",
+  "body": [
+    "T$1 = class(${2:ancestor})",
+    "\t$3",
+    "end;"
+  ],
+  "description": "class (no parts)"
+  },
+  
+  "class (with Create/Destroy)": {
+  "prefix": "classc",
+  "body": [
+    "T${1:ClassName} = class(T${2:ancestor})",
+    "private",
+    "\t$0",
+    "protected",
+    "\t",
+    "public",
+    "\tconstructor Create; override;",
+    "\tdestructor Destroy; override;",
+    "published",
+    "\t",
+    "end;"
+  ],
+  "description": "class (with Create/Destroy)"
+  },
+  
+
+  "class full (commented)": {
+  "prefix": "classfc",
+  "body": [
+    "T${1:ClassName} = class(T${2:ancestor})",
+    "private",
+    "\t{ private declarations }",
+    "\t$0",
+    "protected",
+    "\t{ protected declarations }",
+    "\t",
+    "public",
+    "\t{ public declarations }",
+    "\t",
+    "published",
+    "\t{ published declarations }",
+    "\t",
+    "end;"
+  ],
+  "description": "class full (commented)"
+  }, 
+  
+  "class full (uncommented)": {
+  "prefix": "classfu",
+  "body": [
+    "body': 'T${1:ClassName} = class(T${2:ancestor})",
+    "private",
+    "\t$0",
+    "protected",
+    "\t",
+    "public",
+    "\t",
+    "published",
+    "\t",
+    "end;"
+  ],
+  "description": "class full (uncommented)"
+  },
+  
+  "constructor descendant": {
+  "prefix": "CreateC",
+  "body": [
+    "constructor Create(AOwner: TComponent); override;"
+  ],
+  "description": "constructor descendant"
+  },
+  
+  "constructor": {
+  "prefix": "constructorc",
+  "body": [
+    "constructor Create(${1:params}); ${2:override;}"
+  ],
+  "description": "constructor"
+  },
+  
+  "constructor destructor": {
+  "prefix": "constructord",
+  "body": [
+    "constructor Create(${1:params});",
+    "destructor Destroy; override;$0"
+  ],
+  "description": "constructor destructor"
+  },
+  
+  "destructor": {
+  "prefix": "destructor",
+  "body": [
+    "destructor Destroy; override;$0"
+  ],
+  "description": "destructor"
+  },
+  
+  "else end": {
+  "prefix": "else",
+  "body": [
+    "else",
+    "begin",
+    "\t$0",
+    "end;"
+  ],
+  "description": "else end"
+  },
+  
+  "enum": {
+  "prefix": "enum",
+  "body": [
+    "T${1:EnumName} = (${2:meOne}, $0);"
+  ],
+  "description": "enum"
+  },
+  
+  "for begin end": {
+  "prefix": "forb",
+  "body": [
+    "for ${1:i} := ${2:0} to ${3:max} do",
+    "begin",
+    "\t$0",
+    "end;"
+  ],
+  "description": "for begin end"
+  },
+  
+  "for in end": {
+  "prefix": "forin",
+  "body": [
+    "for ${1:MyElem} in ${2:MyList} do",
+    "begin",
+    "\t$0",
+    "end;"
+  ],
+  "description": "for in end"
+  },
+  
+  "for downto": {
+  "prefix": "forr",
+  "body": [
+    "for ${1:i} := ${2:max} downto ${3:0} do",
+    "begin",
+    "\t$0",
+    "end;"
+  ],
+  "description": "for downto"
+  },
+  
+  "for (no begin end)": {
+  "prefix": "for",
+  "body": [
+    "for ${1:i} := ${2:0} to ${3:max} do",
+    "\t$0"
+  ],
+  "description": "for (no begin end)"
+  },
+  
+  "function end": {
+  "prefix": "function",
+  "body": [
+    "function ${1:MyFunction}(${2:params}:${3:integer};",
+    "begin",
+    "\t$0",
+    "end;"
+  ],
+  "description": "function end"
+  },
+  
+  "if (no begin end)": {
+  "prefix": "if",
+  "body": [
+    "if ${1:True} then",
+    "\t$0"
+  ],
+  "description": "if (no begin end)"
+  },
+  
+  "if end": {
+  "prefix": "ifb",
+  "body": [
+    "if ${1:True} then",
+    "begin",
+    "\t$0",
+    "end;"
+  ],
+  "description": "if end"
+  },
+  
+  
+  "if else (no begin end)": {
+  "prefix": "ife",
+  "body": [
+    "if ${1:True} then",
+    "\t${2:then code here}",
+    "else",
+    "\t${3:else code here}"
+  ],
+  "description": "if else (no begin end)"
+  },
+  
+  "if else end": {
+  "prefix": "ifeb",
+  "body": [
+    "if ${1:True} then",
+    "begin",
+    "\t${2:then code here}",
+    "end",
+    "else",
+    "begin",
+    "\t${3:else code here}",
+    "end;"
+  ],
+  "description": "if else end"
+  },
+  
+  "if not Assigned (no begin end)": {
+  "prefix": "ifnass",
+  "body": [
+    "if not Assigned(${1:variable}) then",
+    "\t${1:variable} := T${2:ClassName}.Create(${3:params});$0"
+  ],
+  "description": "if not Assigned (no begin end)"
+  },
+  
+  "if nil (no begin end)": {
+  "prefix": "ifnil",
+  "body": [
+    "if ${1:variable} = nil then",
+    "\t${1:variable} := T${2:ClassName}.Create(${3:params});$0"
+  ],
+  "description": "if nil (no begin end)"
+  },
+  
+  "procedure": {
+  "prefix": "procedure",
+  "body": [
+    "procedure ${1:MyProcedure}(${2:params};",
+    "begin",
+    "\t$0",
+    "end;"
+  ],
+  "description": "procedure"
+  },
+  
+  "property getter": {
+  "prefix": "prop",
+  "body": [
+    "property ${1:name}: ${2:type} read ${3:getter} write ${4:setter};$0"
+  ],
+  "description": "property getter"
+  },
+  
+  "property field": {
+  "prefix": "propf",
+  "body": [
+    "property ${1:name}: ${2:type} read F${1:name} write F${1:name};$0"
+  ],
+  "description": "property field"
+  },
+  
+  "property get set": {
+  "prefix": "propgs",
+  "body": [
+    "property ${1:name}: ${2:type} read Get${1:name} write Set${1:name};$0"
+  ],
+  "description": "property get set"
+  },
+  
+  "property read only": {
+  "prefix": "propro",
+  "body": [
+    "property ${1:name}: ${2:type} read ${3:getter};$0"
+  ],
+  "description": "property read only"
+  },
+  
+  "property read only field": {
+  "prefix": "proprof",
+  "body": [
+    "property ${1:name}: ${2:type} read F${1:name};$0"
+  ],
+  "description": "property read only field"
+  },
+  
+  "raise": {
+  "prefix": "raise",
+  "body": [
+    "raise ${1:Exception}.Create('${2:Error Message}');$0"
+  ],
+  "description": "raise"
+  },
+  
+  "region": {
+  "prefix": "region",
+  "body": [
+    "{$REGION '${1:MyRegion}'}",
+    "\t$0",
+    "{$ENDREGION}"
+  ],
+  "description": "region"
+  },
+  
+  
+  "repeat until": {
+  "prefix": "repeat",
+  "body": [
+    "repeat",
+    "\t$0",
+    "until (${1:True});"
+  ],
+  "description": "repeat until"
+  },
+  
+  "try object finally": {
+  "prefix": "try",
+  "body": [
+    "${1:variable} := ${2:TComponent}.Create(${3:params});",
+    "try",
+    "\t$0",
+    "finally",
+    "\t${1:variable}",
+    "end;"
+  ],
+  "description": "try object finally"
+  },
+  
+  "try finally": {
+  "prefix": "tryf",
+  "body": [
+    "try",
+    "\t$0",
+    "finally",
+    "\t$1",
+    "end;"
+  ],
+  "description": "try finally"
+  },
+  
+  "try except": {
+  "prefix": "trye",
+  "body": [
+    "try",
+    "\t$0",
+    "except",
+    "\ton ${1:e}: ${2:Exception} do",
+    "end;"
+  ],
+  "description": "try except"
+  },
+  
+  "variable": {
+  "prefix": "var",
+  "body": [
+    "${1:variable}: ${2:type};$0"
+  ],
+  "description": "variable"
+  },
+  
+  "unit implementation end": {
+  "prefix": "unit",
+  "body": [
+    "unit ${1:unit_name};",
+    "\t",
+    "interface",
+    "\t",
+    "uses",
+    "\tSysUtils${2:, Classes};",
+    "\t",
+    "implementation",
+    "\t",
+    "$0",
+    "\t",
+    "end."
+  ],
+  "description": "unit implementation end"
+  },
+  
   "Constructor with ": {
   "prefix": "ctr",
   "body": [
     "constructor $1.Create;",
     "begin",
-    "  inherited",
-    "  $2",
+    "\tinherited",
+    "\t$2",
     "end;"
   ],
   "description": "Constructor method"
