@@ -41,7 +41,7 @@ Update two tags:
 * `DCC32.EXE_PATH`: The compiler location
 * `YOUR_DELPHI_PROJECT.DPR`: The project being built.
 
-
+```
     {
 		"version": "0.1.0",
 		"windows": {
@@ -60,6 +60,7 @@ Update two tags:
 			}
 		}
     }
+```
 
 ### Compatibility
 
