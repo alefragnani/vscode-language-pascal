@@ -1,4 +1,4 @@
-# Pascal language support in Visual Studio Code
+# Pascal language extension for Visual Studio Code
 
 Add support to **Pascal** language in **Visual Studio Code**.
 
