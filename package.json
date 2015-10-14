@@ -1,0 +1,20 @@
+{
+	"name": "pascal",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": ">=0.9.0-pre.1"
+	},
+	"publisher": "none",
+	"contributes": {
+		"languages": [{
+			"id": "pascal",
+			"aliases": ["Pascal", "pascal"],
+			"extensions": [".pas",".p",".dfm",".dpr",".dpk",".lfm",".dpr"]
+		}],
+		"grammars": [{
+			"language": "pascal",
+			"scopeName": "source.pascal",
+			"path": "./syntaxes/pascal.tmLanguage"
+		}]
+	}
+}

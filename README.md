@@ -1,10 +1,12 @@
 # Pascal language support in Visual Studio Code
 
-Add support to Pascal language in Visual Studio Code.
+Add support to **Pascal** language in **Visual Studio Code**.
 
-### What is inside?
+_Originally converted from the [Pascal TextMate bundle](https://github.com/alefragnani/pascal.tmbundle)._
 
-This repo contains the plugin for **Pascal** support in Visual Studio Code, which means:
+### What is it?
+
+You get:
 
 * Syntax Highlighting
 * Snippets
@@ -18,27 +20,27 @@ There is also a **Task Example**, which allows you to:
 
 ![screenshot](vscode-pascal-compile.png)
 
-### Unofficial Plugin
+### Installation
 
-_This is a unofficial plugin, since the plugin support is not available in VSCode yet. I created it based on this [post](http://owensd.io/2015/05/21/swift-vscode.html)._
+This instructions are for _version 0.9.1 and up_, which brings oficial extension support.
 
-### How to use it
+Simply clone this repo on the extensions folder and start using
 
-#### Syntax Highlighting
+* **Windows**: `%USERPROFILE%\.vscode\extensions`
+* **Mac**: `%HOME%\.vscode\extensions`
+* **Linux**: `%HOME%\.vscode\extensions`
 
-Simply download this repo and copy the **vs.language.pascal** folder inside your VSCode installation:
+### Building Tasks
 
-##### Windows
+If you want to build tasks _(Task: Run Task Build)_ you can use the snippets below.
 
-`$ProgramFiles$\Microsoft VS Code\resources\app\plugins\`
+#### Delphi
 
-##### Mac
+Update two tags:
 
-`/Applications/Visual Studio Code.app/Contents/Resources/app/plugins`
+* `DCC32.EXE_PATH`: The compiler location
+* `YOUR_DELPHI_PROJECT.DPR`: The project being built.
 
-#### Compilation
-
-When you try to **Build** a Delphi Project _(Task: Run Task Build)_ it will offer you to configure a task runner. Accept it and use the snippet below, updating the references (compiler location and project name).
 
     {
 		"version": "0.1.0",
@@ -59,11 +61,10 @@ When you try to **Build** a Delphi Project _(Task: Run Task Build)_ it will offe
 		}
     }
 
-### Know Issues
+### Compatibility
 
-* No Syntax Highlighting for comments with `{` `}`, yet
+The plugin is primarily compatible to **Delphi** variant of **Pascal**, but **FreePascal/Lazarus** support is on the roadmap.
 
-### TODO
+### Participate
 
-* Update it to follow the guidelines when the oficial plugin support is available
-* Support for FreePascal
+Contributions are greatly appreciated. Please fork this repository and open a pull request to add snippets, make grammar tweaks, etc.
