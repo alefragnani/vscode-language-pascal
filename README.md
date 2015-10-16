@@ -62,9 +62,38 @@ Update two tags:
     }
 ```
 
+#### FreePascal
+
+Update two tags:
+
+* `FPC.EXE_PATH`: The compiler location
+* `YOUR_FREEPASCAL_PROJECT`: The project being built.
+
+```
+    {
+		"version": "0.1.0",
+		"windows": {
+			"command": "FPC.EXE_PATH"
+		},
+		"isShellCommand": true,
+		"showOutput": "always",
+		"args": ["YOUR_FREEPASCAL_PROJECT"],
+		"problemMatcher": {
+			"owner": "external",
+			"pattern": {
+				"regexp": "^([\\w]+\\.p)\\((\\d+)\\,(\\d+)\\)\\s(Fatal|Error|Warning|Note):(.*)",
+				"file": 1,
+				"line": 2,
+				"column": 3,
+				"message": 5
+			}
+		}
+    }
+```
+
 ### Compatibility
 
-The plugin is primarily compatible to **Delphi** variant of **Pascal**, but **FreePascal/Lazarus** support is on the roadmap.
+The plugin is primarily compatible to **Delphi** variant of **Pascal**, but **FreePascal/Lazarus** support is getting better.
 
 ### Participate
 
