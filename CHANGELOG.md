@@ -1,3 +1,7 @@
+## 0.4.0
+
+* Better support for **FreePascal** (`.pp` filetype)
+
 ## 0.3.0
 
 * Updated build instructions for **FreePascal**
