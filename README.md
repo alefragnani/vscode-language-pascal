@@ -1,41 +1,27 @@
-# Pascal language extension for Visual Studio Code
+# Pascal for Visual Studio Code
+This extension adds support for the Pascal (Delphi/FreePascal/Lazarus) language to VS Code, including:
 
-Add support to **Pascal** language in **Visual Studio Code**.
+* Colorization
+![syntax](images/vscode-pascal-syntax.png)
 
-_Originally converted from the [Pascal TextMate bundle](https://github.com/alefragnani/pascal.tmbundle)._
-
-### What is it?
-
-You get:
-
-* Syntax Highlighting
 * Snippets
+![snippets](images/vscode-pascal-snippets.png)
 
-![screenshot](vscode-pascal-syntax.png)
 
-There is also a **Task Example**, which allows you to:
+There is also **Task Examples**, which allows you to:
 
-* Compile Delphi Projects:
+* Compile Delphi and FreePascal Projects:
 * Navigate to _Errors/Warnings/Hints_, using the native _View / Errors and Warnings_ command
 
-![screenshot](vscode-pascal-compile.png)
+![compile](images/vscode-pascal-compile.png) 
 
-### Installation
+## Using
+Just install the extension and start using. It will automatically recognize all Pascal (Delphi/FreePascal/Lazarus) files. 
 
-This instructions are for _version 0.9.1 and up_, which brings oficial extension support.
-
-Simply clone this repo on the extensions folder and start using
-
-* **Windows**: `%USERPROFILE%\.vscode\extensions`
-* **Mac**: `%HOME%\.vscode\extensions`
-* **Linux**: `%HOME%\.vscode\extensions`
-
-### Building Tasks
-
+## Building Tasks
 If you want to build tasks _(Task: Run Task Build)_ you can use the snippets below.
 
-#### Delphi
-
+### Delphi
 Update two tags:
 
 * `DCC32.EXE_PATH`: The compiler location
@@ -62,7 +48,7 @@ Update two tags:
     }
 ```
 
-#### FreePascal
+### FreePascal
 
 Update two tags:
 
@@ -91,10 +77,5 @@ Update two tags:
     }
 ```
 
-### Compatibility
-
+## Compatibility
 The plugin is primarily compatible to **Delphi** variant of **Pascal**, but **FreePascal/Lazarus** support is getting better.
-
-### Participate
-
-Contributions are greatly appreciated. Please fork this repository and open a pull request to add snippets, make grammar tweaks, etc.
