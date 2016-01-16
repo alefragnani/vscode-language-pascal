@@ -2,7 +2,7 @@
 	"name": "pascal",
 	"displayName": "Language Pascal",
 	"description": "Pascal support for Visual Studio Code",
-	"version": "0.1.1",
+	"version": "0.2.0",
 	"publisher": "alefragnani",
 	"galleryBanner": {
 		"color": "#4682B4",
@@ -15,6 +15,7 @@
  		"Languages", "Snippets" 
  	],
 	"icon": "images/icon.png",
+    "license": "SEE LICENSE IN LICENSE.md",
 	"homepage": "https://github.com/alefragnani/vscode-language-pascal/blob/master/README.md",
 	"repository": {
 		"type": "git",
