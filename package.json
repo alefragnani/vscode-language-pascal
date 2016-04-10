@@ -2,7 +2,7 @@
 	"name": "pascal",
 	"displayName": "Language Pascal",
 	"description": "Pascal support for Visual Studio Code",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"publisher": "alefragnani",
 	"galleryBanner": {
 		"color": "#4682B4",
@@ -12,8 +12,13 @@
 		"vscode": "0.10.x"
 	},
 	"categories":[ 
- 		"Languages", "Snippets" 
+ 		"Languages", "Snippets", "Other" 
  	],
+    "activationEvents": [
+        "onLanguage:pascal",
+        "onCommand:pascal.editFormatterParameters"
+    ],
+    "main": "./out/src/extension",
 	"icon": "images/icon.png",
     "license": "SEE LICENSE IN LICENSE.md",
 	"homepage": "https://github.com/alefragnani/vscode-language-pascal/blob/master/README.md",
@@ -40,6 +45,59 @@
                 "language": "pascal",
                 "path": "./snippets/pascal.json"
             }
+        ],
+        "commands": [
+            {
+                "command": "pascal.editFormatterParameters",
+                "title": "Pascal: Edit Formatter Parameters"
+            }
         ]
-	}
+	},
+    "configuration": {
+        "type": "object",
+        "title": "Pascal Formatter Configuration",
+        "properties": {
+            "pascal.formatter.engine": {
+                "type": "string",
+                "default": "",
+                "description": "Choose the Formatter engine to be used",
+                "enum": [
+                    "jcf",
+                    "ptop"
+                ]
+            },
+            "pascal.formatter.enginePath": {
+                "type": "string",
+                "default": "",
+                "description": "Indicates the Formatter app path"
+            },
+            "pascal.formatter.engineParameters": {
+                "type": "string",
+                "default": "",
+                "description": "Indicates the configuration file for the selected engine"
+            },
+            "pascal.format.indent": {
+                "type": "number",
+                "default": 2,
+                "description": "The number of spaces used for indentation"
+            },
+            "pascal.format.wrapLineLength": {
+                "type": "number",
+                "default": 80,
+                "description": "Maximum amount of characters per line"
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "dependencies": {
+        "opener": "~1.4.1"
+    },
+    "devDependencies": {
+        "typescript": "^1.6.2",
+        "vscode": "^0.11.x"
+    }
 }

@@ -1,0 +1,9 @@
+.vscode/**
+typings/**
+issues/**
+**/*.ts
+**/*.map
+.gitignore
+tsconfig.json
+out/projects.json
+npm-debug.log
