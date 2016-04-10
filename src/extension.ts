@@ -45,14 +45,12 @@ export function activate(context: vscode.ExtensionContext) {
                                 }
                             });
                         } else {
-                            console.log('achei');
                             vscode.workspace.openTextDocument(engineParametersFile).then(doc => {
                                 vscode.window.showTextDocument(doc);
                             });
                         }
                     })
                     .catch((error) => {
-                        // vscode.window.setStatusBarMessage('checkEngineParametersDefined: ' + error, 5000);
                         vscode.window.showErrorMessage(error);
                     })
             })
@@ -64,14 +62,17 @@ export function activate(context: vscode.ExtensionContext) {
         function generateDefaultEngineParameters(engine: string, enginePath: string): string {
 
             let configFileName: string;
-            configFileName = path.basename(enginePath, path.extname(enginePath)) + '.cfg';
-            configFileName = path.join(path.dirname(enginePath), configFileName);
 
-            if (engine == 'ptop') {
+            if (engine == 'ptop') { // can be anyfilename.cfg
+                configFileName = path.basename(enginePath, path.extname(enginePath)) + '.cfg';
+                configFileName = path.join(path.dirname(enginePath), configFileName);
+                
                 let command: string = "\"" + enginePath + "\" -g " + configFileName;
                 cp.exec(command);
-            } else { // jcf
-                let jsonFile: string = fs.readFileSync('src/jcfsettings.json', 'UTF8');
+            } else { // jcf -> must be JCFSettings.cfg
+                configFileName = path.join(path.dirname(enginePath), 'JCFSettings.cfg');
+                
+                let jsonFile: string = fs.readFileSync(path.join(__dirname, 'jcfsettings.json'), 'UTF8');
                 let xml = JSON.parse(jsonFile);
                 console.log(xml.defaultConfig.join('\n'));
                 fs.writeFileSync(configFileName, xml.defaultConfig.join(''));
@@ -239,15 +240,17 @@ export function activate(context: vscode.ExtensionContext) {
     
     function engineSupportsRange(engine:string, document: vscode.TextDocument, range: vscode.Range): boolean {
         
-        if (engine == 'ptop') {
-            return true;
-        } else {
-            if ((range.start.character > 0) || (range.start.line > 0) || 
-                (range.end.line < document.lineCount) || (range.end.character < document.lineAt(document.lineCount - 1).range.end.character)) {
-                return false;
-            } else {
-                return true;
-            }
-        }
+        return true;
+        
+        // if (engine == 'ptop') {
+        //     return true;
+        // } else {
+        //     if ((range.start.character > 0) || (range.start.line > 0) || 
+        //         (range.end.line < document.lineCount) || (range.end.character < document.lineAt(document.lineCount - 1).range.end.character)) {
+        //         return false;
+        //     } else {
+        //         return true;
+        //     }
+        // }
     }
 }
