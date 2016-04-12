@@ -10,6 +10,14 @@ var opener = require('opener');
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
+    
+    interface EngineParams {
+        engine: string;
+        enginePath: string;
+        engineParameters: string;
+        formatIndent: number;
+        formatWrapLineLength: number;
+    }
 
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
@@ -24,7 +32,7 @@ export function activate(context: vscode.ExtensionContext) {
                 checkEngineParametersDefined(engineType.toString())
                     .then((engineParameters) => {
 
-                        let engineParametersFile: string = engineParameters.engineParameters;
+                        let engineParametersFile: string = engineParameters['engineParameters'];
                         if (engineParametersFile == '') {
                             var optionGenerate = <vscode.MessageItem>{
                                 title: "Generate"
@@ -35,8 +43,8 @@ export function activate(context: vscode.ExtensionContext) {
                                     return;
                                 }
                                 if (option.title == "Generate") {
-                                    engineParametersFile = generateDefaultEngineParameters(engineParameters.engine,
-                                        engineParameters.enginePath);
+                                    engineParametersFile = generateDefaultEngineParameters(engineParameters['engine'],
+                                        engineParameters['enginePath']);
                                     vscode.workspace.openTextDocument(engineParametersFile).then(doc => {
                                         vscode.window.showTextDocument(doc);
                                     });
@@ -105,7 +113,7 @@ export function activate(context: vscode.ExtensionContext) {
                                     document.lineAt(document.lineCount - 1).range.end.character
                                 );
 
-                                f.format(range, engineParameters.engine, engineParameters.enginePath, engineParameters.engineParameters, engineParameters.formatIndent, engineParameters.formatWrapLineLength)
+                                f.format(range, engineParameters['engine'], engineParameters['enginePath'], engineParameters['engineParameters'], engineParameters['formatIndent'], engineParameters['formatWrapLineLength'])
                                     .then((formattedXml) => {
                                         resolve([new vscode.TextEdit(range, formattedXml.toString())]);
                                     })
@@ -146,7 +154,7 @@ export function activate(context: vscode.ExtensionContext) {
 
                                 let f: formatter.Formatter;
                                 f = new formatter.Formatter(document, options);
-                                f.format(range, engineParameters.engine, engineParameters.enginePath, engineParameters.engineParameters, engineParameters.formatIndent, engineParameters.formatWrapLineLength)
+                                f.format(range, engineParameters['engine'], engineParameters['enginePath'], engineParameters['engineParameters'], engineParameters['formatIndent'], engineParameters['formatWrapLineLength'])
                                     .then((formattedXml) => {
                                         resolve([new vscode.TextEdit(range, formattedXml.toString())]);
                                     })
@@ -240,17 +248,13 @@ export function activate(context: vscode.ExtensionContext) {
     
     function engineSupportsRange(engine:string, document: vscode.TextDocument, range: vscode.Range): boolean {
         
-        return true;
-        
-        // if (engine == 'ptop') {
-        //     return true;
-        // } else {
-        //     if ((range.start.character > 0) || (range.start.line > 0) || 
-        //         (range.end.line < document.lineCount) || (range.end.character < document.lineAt(document.lineCount - 1).range.end.character)) {
-        //         return false;
-        //     } else {
-        //         return true;
-        //     }
-        // }
+        if (engine == 'ptop') {
+            return true;
+        } else { // jcf
+            return (range.start.character == 0) && 
+                   (range.start.line == 0) && 
+                   (range.end.line == document.lineCount - 1) &&
+                   (range.end.character == document.lineAt(document.lineCount - 1).range.end.character);               
+        }
     }
 }

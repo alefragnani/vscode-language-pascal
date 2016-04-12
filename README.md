@@ -59,7 +59,7 @@ Standardise your Pascal code! The extension uses external tools _(engines)_ to f
 
 The extension seamlessly integrates with the `Format Code` command in **Visual Studio Code**.
 
-![format-code](images/vscode-pascal-format-code.gif);
+![format-code](images/vscode-pascal-format-code.gif)
 
 There is also:
 
