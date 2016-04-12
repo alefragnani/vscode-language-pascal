@@ -27,32 +27,34 @@ Almost 40 snippets available:
 
 ## Format Code
 
+> _new in version 0.3.0_  
+
 Standardise your Pascal code! The extension uses external tools _(engines)_ to format the code, so you must install them prior to use the `Format Code` command.
 
 * **Jedi Code Format:** http://jedicodeformat.sourceforge.net/ (Windows only)
 * **FreePascal PToP:** http://wiki.freepascal.org/PTop (Windows, Linux and Mac OS X)
 
-> If you intend to format _selected texts_ instead of _the entire file_, you should use **FreePascal PToP**, because the **Jedi Code Format** only works for full pascal files. 
+> If you intend to format _pieces of selected texts_ instead of _the entire file_, you should use **FreePascal PToP**, because the **Jedi Code Format** only works for entire files. 
 
 ### Available settings
 
 * Choose the engine to be used _(required)_
 ```
     // ptop means FreePascal PToP
-    "pascalFormatter.engine": "ptop"
+    "pascal.formatter.engine": "ptop"
     
     // jcf means Jedi Code Format 
-    "pascalFormatter.engine": "jcf"
+    "pascal.formatter.engine": "jcf"
 ```
 
 * Indicates the engine app path _(required)_
 ```
-    "pascalFormatter.enginePath": "C:\\FPC\\2.6.4\\bin\\i386-win32\\ptop.exe" 
+    "pascal.formatter.enginePath": "C:\\FPC\\2.6.4\\bin\\i386-win32\\ptop.exe" 
 ```
 
 * Indicates the configuration file for the selected engine _(optional)_
 ```
-    "pascalFormatter.engineParameters": "C:\\FPC\\2.6.4\\bin\\i386-win32\\default.cfg"
+    "pascal.formatter.engineParameters": "C:\\FPC\\2.6.4\\bin\\i386-win32\\default.cfg"
 ```
 
 ### Available commands
