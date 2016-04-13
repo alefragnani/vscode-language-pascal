@@ -78,7 +78,7 @@ export class Formatter {
                         if (parameters != '') {
                             configFileParameters = ' -config=' + parameters; 
                         }
-                        command = "\"" + path + "\" " + configFileParameters + '  -y \"$file\" ';
+                        command = "\"" + path + "\" " + configFileParameters + '  -y -F \"$file\" ';
                         command = command.replace('$file', tempFile);
                     }
                     
