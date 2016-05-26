@@ -21,10 +21,10 @@ export function activate(context: vscode.ExtensionContext) {
 
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
-    console.log('Congratulations, your extension "pascal" is now active!');
+    console.log('Congratulations, your extension "iRite" is now active!');
 
 
-    vscode.commands.registerCommand('pascal.editFormatterParameters', () => {
+    vscode.commands.registerCommand('irite.editFormatterParameters', () => {
 
         checkEngineDefined()
             .then((engineType) => {
@@ -37,7 +37,7 @@ export function activate(context: vscode.ExtensionContext) {
                             var optionGenerate = <vscode.MessageItem>{
                                 title: "Generate"
                             };
-                            vscode.window.showErrorMessage('The \"pascal.formatter.engineParameters\" setting is not defined. Would you like to generate the default?', optionGenerate).then(option => {
+                            vscode.window.showErrorMessage('The \"irite.formatter.engineParameters\" setting is not defined. Would you like to generate the default?', optionGenerate).then(option => {
                                 // nothing selected
                                 if (typeof option == 'undefined') {
                                     return;
@@ -92,7 +92,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 
     // 
-    context.subscriptions.push(vscode.languages.registerDocumentFormattingEditProvider('pascal', {
+    context.subscriptions.push(vscode.languages.registerDocumentFormattingEditProvider('irite', {
         provideDocumentFormattingEdits: (document, options) => {
 
             return new Promise((resolve, reject) => {
@@ -136,7 +136,7 @@ export function activate(context: vscode.ExtensionContext) {
         }
     }));
 
-    context.subscriptions.push(vscode.languages.registerDocumentRangeFormattingEditProvider('pascal', {
+    context.subscriptions.push(vscode.languages.registerDocumentRangeFormattingEditProvider('irite', {
         provideDocumentRangeFormattingEdits: (document, range, options) => {
 
             return new Promise((resolve, reject) => {
@@ -184,15 +184,15 @@ export function activate(context: vscode.ExtensionContext) {
 
         return new Promise((resolve, reject) => {
 
-            let engineType: string = vscode.workspace.getConfiguration('pascal').get('formatter.engine', '');
+            let engineType: string = vscode.workspace.getConfiguration('irite').get('formatter.engine', '');
             if (engineType == '') {
                 var optionJCF = <vscode.MessageItem>{
                     title: "Jedi Code Format"
                 };
                 var optionPTOP = <vscode.MessageItem>{
-                    title: "FreePascal PtoP"
+                    title: "Freeirite PtoP"
                 };
-                vscode.window.showErrorMessage('The \"pascal.formatter.engine\" setting is not defined. Do you want to download some formatter tool first?', optionJCF, optionPTOP).then(option => {
+                vscode.window.showErrorMessage('The \"irite.formatter.engine\" setting is not defined. Do you want to download some formatter tool first?', optionJCF, optionPTOP).then(option => {
                     // nothing selected
                     if (typeof option == 'undefined') {
                         reject('undefined');
@@ -205,7 +205,7 @@ export function activate(context: vscode.ExtensionContext) {
                             break;
 
                         case optionPTOP.title:
-                            opener('http://www.freepascal.org/tools/ptop.var');
+                            opener('http://www.freeirite.org/tools/ptop.var');
                             break;
 
                         default:
@@ -225,16 +225,16 @@ export function activate(context: vscode.ExtensionContext) {
 
         return new Promise((resolve, reject) => {
 
-            let enginePath: string = vscode.workspace.getConfiguration('pascal').get('formatter.enginePath', '');
+            let enginePath: string = vscode.workspace.getConfiguration('irite').get('formatter.enginePath', '');
             if (enginePath == '') {
-                reject('The \"pascal.formatter.enginePath\" setting is not defined. Please configure.');
+                reject('The \"irite.formatter.enginePath\" setting is not defined. Please configure.');
                 return;
             }
 
-            let engineParameters: string = vscode.workspace.getConfiguration('pascal').get('formatter.engineParameters', '');
+            let engineParameters: string = vscode.workspace.getConfiguration('irite').get('formatter.engineParameters', '');
 
-            let formatIndent: number = vscode.workspace.getConfiguration('pascal').get('format.indent', 0);
-            let formatWrapLineLength: number = vscode.workspace.getConfiguration('pascal').get('format.wrapLineLength', 0);
+            let formatIndent: number = vscode.workspace.getConfiguration('irite').get('format.indent', 0);
+            let formatWrapLineLength: number = vscode.workspace.getConfiguration('irite').get('format.wrapLineLength', 0);
 
             resolve({
                 'engine': engine,
