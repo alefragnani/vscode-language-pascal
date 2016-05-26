@@ -1,9 +1,9 @@
 {
-    "name": "pascal",
-    "displayName": "Language Pascal",
-    "description": "Pascal support for Visual Studio Code",
+    "name": "irite",
+    "displayName": "Language iRite",
+    "description": "iRite support for Visual Studio Code",
     "version": "0.3.1",
-    "publisher": "alefragnani",
+    "publisher": "bryanmullin",
     "galleryBanner": {
         "color": "#4682B4",
         "theme": "dark"
@@ -17,34 +17,31 @@
         "Other"
     ],
     "keywords": [
-        "pascal",
-        "delphi",
-        "freepascal",
-        "lazarus",
-        "formatter"
+        "irite",
+        "iRite"
     ],
     "activationEvents": [
-        "onLanguage:pascal",
-        "onCommand:pascal.editFormatterParameters"
+        "onLanguage:irite",
+        "onCommand:irite.editFormatterParameters"
     ],
     "main": "./out/src/extension",
     "icon": "images/icon.png",
     "license": "SEE LICENSE IN LICENSE.md",
-    "homepage": "https://github.com/alefragnani/vscode-language-pascal/blob/master/README.md",
+    "homepage": "https://github.com/bryanmullin/vscode-language-irite/blob/master/README.md",
     "repository": {
         "type": "git",
-        "url": "https://github.com/alefragnani/vscode-language-pascal.git"
+        "url": "https://github.com/bryanmullin/vscode-language-irite.git"
     },
     "bugs": {
-        "url": "https://github.com/alefragnani/vscode-language-pascal/issues"
+        "url": "https://github.com/bryanmullin/vscode-language-irite/issues"
     },
     "contributes": {
         "languages": [
             {
-                "id": "pascal",
+                "id": "irite",
                 "aliases": [
-                    "Pascal",
-                    "pascal"
+                    "irite",
+                    "irite"
                 ],
                 "extensions": [
                     ".pas",
@@ -59,28 +56,28 @@
         ],
         "grammars": [
             {
-                "language": "pascal",
-                "scopeName": "source.pascal",
-                "path": "./syntaxes/pascal.tmLanguage"
+                "language": "irite",
+                "scopeName": "source.irite",
+                "path": "./syntaxes/irite.tmLanguage"
             }
         ],
         "snippets": [
             {
-                "language": "pascal",
-                "path": "./snippets/pascal.json"
+                "language": "irite",
+                "path": "./snippets/irite.json"
             }
         ],
         "commands": [
             {
-                "command": "pascal.editFormatterParameters",
-                "title": "Pascal: Edit Formatter Parameters"
+                "command": "irite.editFormatterParameters",
+                "title": "irite: Edit Formatter Parameters"
             }
         ],
         "configuration": {
             "type": "object",
-            "title": "Pascal Formatter Configuration",
+            "title": "irite Formatter Configuration",
             "properties": {
-                "pascal.formatter.engine": {
+                "irite.formatter.engine": {
                     "type": "string",
                     "default": "",
                     "description": "Choose the Formatter engine to be used",
@@ -89,22 +86,22 @@
                         "ptop"
                     ]
                 },
-                "pascal.formatter.enginePath": {
+                "irite.formatter.enginePath": {
                     "type": "string",
                     "default": "",
                     "description": "Indicates the Formatter app path"
                 },
-                "pascal.formatter.engineParameters": {
+                "irite.formatter.engineParameters": {
                     "type": "string",
                     "default": "",
                     "description": "Indicates the configuration file for the selected engine"
                 },
-                "pascal.format.indent": {
+                "irite.format.indent": {
                     "type": "number",
                     "default": 2,
                     "description": "The number of spaces used for indentation"
                 },
-                "pascal.format.wrapLineLength": {
+                "irite.format.wrapLineLength": {
                     "type": "number",
                     "default": 80,
                     "description": "Maximum amount of characters per line"
