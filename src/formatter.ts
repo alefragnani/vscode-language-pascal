@@ -4,14 +4,6 @@ import cp = require('child_process');
 import os = require('os');
 import npath = require('path');
 
-/*
-
-linux: 
-    "pascal.formatter.engine": "ptop",
-    "pascal.formatter.enginePath": "/usr/bin/ptop",
-
-*/
-
 export class Formatter {
 
     constructor(private _document: vscode.TextDocument, private _options?: vscode.FormattingOptions) {
