@@ -54,9 +54,9 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(?i:(function|procedure))\b\s+(\w+(\.\w+)?)</string>
+			<string>\b(?i:(function|procedure|program))\b\s+(\w+(\.\w+)?)</string>
 			<key>name</key>
-			<string>meta.function.irite</string>
+			<string>meta.function.irite</string>	
 		</dict>
 		<dict>
 			<key>match</key>

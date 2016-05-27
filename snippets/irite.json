@@ -259,7 +259,7 @@
   "procedure": {
   "prefix": "procedure",
   "body": [
-    "procedure ${1:MyProcedure}(${2:params};",
+    "procedure ${1:MyProcedure};",
     "begin",
     "\t$0",
     "end;"

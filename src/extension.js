@@ -156,17 +156,19 @@ function activate(context) {
                         return;
                     }
                     /*
-                    switch (option.title) {
-                        case optionJCF.title:
-                            opener('http://jedicodeformat.sourceforge.net/');
-                            break;
-                        case optionPTOP.title:
-                            opener('http://www.freeirite.org/tools/ptop.var');
-                            break;
-                        default:
-                            break;
-                    }
-                    */
+                                        switch (option.title) {
+                                            case optionJCF.title:
+                                                opener('http://jedicodeformat.sourceforge.net/');
+                                                break;
+                    
+                                            case optionPTOP.title:
+                                                opener('http://www.freeirite.org/tools/ptop.var');
+                                                break;
+                    
+                                            default:
+                                                break;
+                                        }
+                                        */
                     reject('hyperlink');
                 });
             }
