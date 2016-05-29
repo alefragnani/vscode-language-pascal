@@ -6,6 +6,7 @@ This extension adds support for the Pascal Language to Visual Studio Code. It wo
 * Snippets
 * Format Code
 * Task Build
+* Go to Symbol
 
 # Installation
 
@@ -35,6 +36,43 @@ Standardise your Pascal code! The extension uses external tools _(engines)_ to f
 * **FreePascal PToP:** http://wiki.freepascal.org/PTop (Windows, Linux and Mac OS X)
 
 > If you intend to format _pieces of selected texts_ instead of _the entire file_, you should use **FreePascal PToP**, because the **Jedi Code Format** only works for entire files. 
+
+## Go to Symbol
+
+> _new in version 0.4.0_  
+
+Easily navigate to methods (procedures and functions) inside Pascal files.
+
+It uses GNU Global, a source code tagging system, which means that it has some limitations if you compare with an AST parsing.
+
+#### Installing and Configuring GNU Global
+
+1. You have to install 4 tools:
+
+ * GNU GLobal 6.5 or higher (http://www.gnu.org/software/global/global.html) 
+ * Exuberant Tags 5.5 or higher (http://ctags.sourceforge.net/)
+ * Python 2.7 or higher (https://www.python.org/)
+ * Python Pygments (via `pip install Pygments`)
+
+2. Update your `%PATH%` Environment Variable (_System_)
+
+ Let's say you extract GNU Global and CTags in `C:\gnu` folder. The two new entries in `%PATH%` should be:
+ 
+ * GNU Global: `C:\gnu\glo653wb\bin`
+ * Excuberant Tags: `C:\gnu\ctags58\ctags58`
+
+ Also make sure Python is in `%PATH%`
+
+3. Create 2 new Environment Variables (_System_)
+
+ GNU Global uses CTags + Python Pygments as plugin in order to recognizes Pascal source code, so you have to configure them. 
+ 
+ * `GTAGSCONF`: `C:\gnu\glo653wb\share\gtags\gtags.conf` 
+ * `GTAGSLABEL`: `pygments`
+
+![py-envvar](images/vscode-pascal-py-envvar.png)
+ 
+> **NOTE:** For now, it was tested only on Windows, but since these tools are multiplatform (in fact, it comes from Unix), it should work on Linux and Mac. I will update these instructions since I test on these platforms.
 
 ### Available settings
 
@@ -136,6 +174,36 @@ Update two tags:
 		}
     }
 ```
+
+# Changelog
+
+## Version 0.4.0
+
+* **New:** Go to Symbol
+
+## Version 0.3.1
+
+* **Fix:** Formatter settings not available (issue [#1](https://github.com/alefragnani/vscode-language-pascal/issues/1))
+
+## Version 0.3.0
+
+* **New:** Formatter added
+
+## Version 0.2.0
+
+* License updated
+
+## Version 0.1.1
+
+* Icon added for Marketplace
+
+## Version 0.1.0
+
+* Update to official guidelines
+
+## Version 0.0.1
+
+* Initial release
 
 # License
 
