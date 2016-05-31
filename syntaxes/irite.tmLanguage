@@ -16,7 +16,7 @@
 	<array>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:(and|array|begin|builtin|constant|database|else|elsif|end|exit|for|handler|if|integer|is|loop|mod|not|of|or|program|real|record|return|step|stored|string|then|to|type|var|while))\b</string>
+			<string>\b(?i:(and|array|begin|builtin|constant|database|else|elsif|end|exit|for|if|integer|is|loop|mod|not|of|or|real|record|return|step|stored|string|then|to|type|var|while))\b</string>
 			<key>name</key>
 			<string>keyword.control.irite</string>
 		</dict>
@@ -35,7 +35,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(?i:(function|procedure))\b\s+(\w+(\.\w+)?)(\(.*?\))?;\s*(?=(?i:attribute|forward|external))</string>
+			<string>\b(?i:(function|procedure|handler))\b\s+(\w+(\.\w+)?)(\(.*?\))?;\s*(?=(?i:attribute|forward|external))</string>
 			<key>name</key>
 			<string>meta.function.prototype.irite</string>
 		</dict>
@@ -54,7 +54,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(?i:(function|procedure|program))\b\s+(\w+(\.\w+)?)</string>
+			<string>\b(?i:(function|procedure|program|handler))\b\s+(\w+(\.\w+)?)</string>
 			<key>name</key>
 			<string>meta.function.irite</string>	
 		</dict>

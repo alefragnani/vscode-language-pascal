@@ -9,6 +9,17 @@
   "description": "Begin end"
   },
   
+"handler": {
+  "prefix": "handler",
+  "body": [
+    "handler ${1:MyHandler};",
+    "begin",
+    "\t$0",
+    "end;"
+  ],
+  "description": "handler"
+  },
+  
   "case end": {
   "prefix": "case",
   "body": [
