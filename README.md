@@ -32,7 +32,3 @@ TODO:
 ### Building Tasks
 
 TODO:
-
-# License
-
-[MIT](LICENSE.md) &copy; Alessandro Fragnani
