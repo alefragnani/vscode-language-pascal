@@ -1,8 +1,6 @@
 @echo off
 
-SET ASSEMBLE="C:\Program Files (x86)\Rice Lake Weighing Systems\Revolution\iRite Editor\Compilers\920Compiler\assemble.exe"
-SET COMPILE="C:\Program Files (x86)\Rice Lake Weighing Systems\Revolution\iRite Editor\Compilers\920Compiler\compile.exe"
-SET LANG="C:\Program Files (x86)\Rice Lake Weighing Systems\Revolution\iRite Editor\Compilers\920Compiler\lang.exe"
+SET COMPILE="C:\Program Files (x86)\Rice Lake Weighing Systems\Revolution\iRite Editor\Compilers\1280Compiler\compile.exe"
 
 if /i %1%==test (
   SET PROJECT=test.src
@@ -10,8 +8,7 @@ if /i %1%==test (
   SET PROJECT=real.src
 ) 
 
-call %ASSEMBLE% %PROJECT% "/t:Clean,Make" "/p:config=Debug" "/verbosity:minimal"
-call %COMPILE% %PROJECT% "/t:Clean,Make" "/p:config=Debug" "/verbosity:minimal"
+call %COMPILE% %PROJECT% "PATH HERE" "-v" TODO: THIS
 
 if %ERRORLEVEL% NEQ 0 GOTO END
 

@@ -421,5 +421,51 @@
     "end;"
   ],
   "description": "Constructor method"
+  },
+
+  "GetGross ": {
+  "prefix": "GetGross",
+  "body": [
+    "GetGross(${1:scaleNum}, ${2:Units}, ${3:GrossOut});"
+  ],
+  "description": "getgross"
+  },
+
+  "GetNet ": {
+  "prefix": "GetNet",
+  "body": [
+    "GetNet(${1:scaleNum}, ${2:Units}, ${3:NetOut});"
+  ],
+  "description": "getnet"
+  },
+  "GetTare ": {
+  "prefix": "GetTare",
+  "body": [
+    "GetTare(${1:scaleNum}, ${2:Units}, ${3:TareOut});"
+  ],
+  "description": "getTare"
+  },
+  "GetFilteredCount ": {
+  "prefix": "GetFilteredCount",
+  "body": [
+    "GetFilteredCount(${1:scaleNum}, ${2:FilteredCount});"
+  ],
+  "description": "GetFilteredCount"
+  },
+  "GetRawCount ": {
+  "prefix": "GetRawCount",
+  "body": [
+    "GetRawCount(${1:scaleNum}, ${2:RawCount});"
+  ],
+  "description": "getRawCount"
+  },
+  "GetCapacity ": {
+  "prefix": "GetCapacity",
+  "body": [
+    "GetCapacity(${1:scaleNum}, ${2:ScaleCapacity});"
+  ],
+  "description": "getCapacity"
   }
+  
+//start at 5.1.2 weight data recording
 }
