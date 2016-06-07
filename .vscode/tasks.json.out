@@ -1,4 +1,4 @@
---$START  c:\Users\brymul\aacode\vscode-language-iRite\.vscode\tasks.json
+--$START  c:\Users\brymul\aacode\vscode-language-iRite\.vscode/tasks.json
 // Available variables which can be used inside of strings.
 // ${workspaceRoot}: the root folder of the team
 // ${file}: the current opened file
@@ -8,8 +8,8 @@
 // ${cwd}: the current working directory of the spawned process
 {
     "version": "0.1.0",
-    "command": "C:/Users/brymul/Desktop/iRite_preprocessor.exe",
-    "args": ["${fileDirname}\\${fileBasename}"],
+    "command": "C:/Program Files (x86)/Rice Lake Weighing Systems/Revolution/iRite Editor/iRite_preprocessor.exe",
+    "args": ["${fileDirname}/${fileBasename}"],
     "isShellCommand": false,
     "isBuildCommand": true,
     "showOutput": "always",
@@ -26,4 +26,4 @@
                 }
     }
 }
---$END  c:\Users\brymul\aacode\vscode-language-iRite\.vscode\tasks.json
+--$END  c:\Users\brymul\aacode\vscode-language-iRite\.vscode/tasks.json
