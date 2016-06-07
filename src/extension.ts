@@ -5,7 +5,7 @@ import * as formatter from './formatter';
 import fs = require('fs');
 import path = require('path');
 import cp = require('child_process');
-var opener = require('opener');
+//var opener = require('opener');
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -199,6 +199,7 @@ export function activate(context: vscode.ExtensionContext) {
                         return;
                     }
 
+/*
                     switch (option.title) {
                         case optionJCF.title:
                             opener('http://jedicodeformat.sourceforge.net/');
@@ -211,6 +212,7 @@ export function activate(context: vscode.ExtensionContext) {
                         default:
                             break;
                     }
+                    */
                     reject('hyperlink');
                 });
             } else {

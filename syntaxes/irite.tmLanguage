@@ -4,26 +4,21 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
-		<string>pas</string>
-		<string>p</string>
-		<string>pp</string>
-		<string>dfm</string>
-		<string>dpr</string>
-		<string>dpk</string>
-		<string>lfm</string>
-		<string>lpr</string>
+		<string>iri</string>
+		<string>src</string>
+		<string>cod</string>
 	</array>
 	<key>keyEquivalent</key>
 	<string>^~P</string>
 	<key>name</key>
-	<string>Pascal</string>
+	<string>iRite</string>
 	<key>patterns</key>
 	<array>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:(absolute|abstract|all|and|and_then|array|as|asm|attribute|begin|bindable|case|class|const|contains|default|div|do|do|else|end|except|export|exports|external|far|file|finalization|finally|for|forward|generic|goto|if|implementation|implements|import|in|index|inherited|initialization|interface|interrupt|is|label|library|mod|module|name|near|nil|not|object|of|only|operator|or|or_else|otherwise|override|package|packed|pow|private|program|property|protected|public|published|qualified|raise|read|record|repeat|resident|requires|resourcestring|restricted|segment|set|shl|shr|specialize|stored|then|threadvar|to|try|type|unit|until|uses|value|var|view|virtual|dynamic|overload|reintroduce|while|with|write|xor))\b</string>
+			<string>\b(?i:(and|array|begin|builtin|constant|database|else|elsif|end|exit|for|if|integer|is|loop|mod|not|of|or|real|record|return|step|stored|string|then|to|type|var|while))\b</string>
 			<key>name</key>
-			<string>keyword.control.pascal</string>
+			<string>keyword.control.irite</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -31,18 +26,18 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>storage.type.prototype.pascal</string>
+					<string>storage.type.prototype.irite</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function.prototype.pascal</string>
+					<string>entity.name.function.prototype.irite</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(?i:(function|procedure|constructor|destructor))\b\s+(\w+(\.\w+)?)(\(.*?\))?;\s*(?=(?i:attribute|forward|external))</string>
+			<string>\b(?i:(function|procedure|handler))\b\s+(\w+(\.\w+)?)(\(.*?\))?;\s*(?=(?i:attribute|forward|external))</string>
 			<key>name</key>
-			<string>meta.function.prototype.pascal</string>
+			<string>meta.function.prototype.irite</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -50,24 +45,24 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>storage.type.function.pascal</string>
+					<string>storage.type.function.irite</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function.pascal</string>
+					<string>entity.name.function.irite</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(?i:(function|procedure|constructor|destructor))\b\s+(\w+(\.\w+)?)</string>
+			<string>\b(?i:(function|procedure|program|handler))\b\s+(\w+(\.\w+)?)</string>
 			<key>name</key>
-			<string>meta.function.pascal</string>
+			<string>meta.function.irite</string>	
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\b</string>
 			<key>name</key>
-			<string>constant.numeric.pascal</string>
+			<string>constant.numeric.irite</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -77,7 +72,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.whitespace.comment.leading.pascal</string>
+					<string>punctuation.whitespace.comment.leading.irite</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -92,13 +87,13 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.comment.pascal</string>
+							<string>punctuation.definition.comment.irite</string>
 						</dict>
 					</dict>
 					<key>end</key>
 					<string>\n</string>
 					<key>name</key>
-					<string>comment.line.double-dash.pascal.one</string>
+					<string>comment.line.double-dash.irite.one</string>
 				</dict>
 			</array>
 		</dict>
@@ -110,7 +105,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.whitespace.comment.leading.pascal</string>
+					<string>punctuation.whitespace.comment.leading.irite</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -119,19 +114,19 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>//</string>
+					<string>--</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.comment.pascal</string>
+							<string>punctuation.definition.comment.irite</string>
 						</dict>
 					</dict>
 					<key>end</key>
 					<string>\n</string>
 					<key>name</key>
-					<string>comment.line.double-slash.pascal.two</string>
+					<string>comment.line.double-slash.irite.two</string>
 				</dict>
 			</array>
 		</dict>
@@ -143,13 +138,13 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.comment.pascal</string>
+					<string>punctuation.definition.comment.irite</string>
 				</dict>
 			</dict>
 			<key>end</key>
 			<string>\*\)</string>
 			<key>name</key>
-			<string>comment.block.pascal.one</string>
+			<string>comment.block.irite.one</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -159,13 +154,13 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.comment.pascal</string>
+					<string>punctuation.definition.comment.irite</string>
 				</dict>
 			</dict>
 			<key>end</key>
 			<string>\}</string>
 			<key>name</key>
-			<string>comment.block.pascal.two</string>
+			<string>comment.block.irite.two</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -175,7 +170,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.begin.pascal</string>
+					<string>punctuation.definition.string.begin.irite</string>
 				</dict>
 			</dict>
 			<key>comment</key>
@@ -187,18 +182,18 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.end.pascal</string>
+					<string>punctuation.definition.string.end.irite</string>
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>string.quoted.double.pascal</string>
+			<string>string.quoted.double.irite</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
 					<string>\\.</string>
 					<key>name</key>
-					<string>constant.character.escape.pascal</string>
+					<string>constant.character.escape.irite</string>
 				</dict>
 			</array>
 		</dict>
@@ -212,7 +207,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.begin.pascal</string>
+					<string>punctuation.definition.string.begin.irite</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -222,24 +217,24 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.end.pascal</string>
+					<string>punctuation.definition.string.end.irite</string>
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>string.quoted.single.pascal</string>
+			<string>string.quoted.single.irite</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
 					<string>''</string>
 					<key>name</key>
-					<string>constant.character.escape.apostrophe.pascal</string>
+					<string>constant.character.escape.apostrophe.irite</string>
 				</dict>
 			</array>
 		</dict>
 	</array>
 	<key>scopeName</key>
-	<string>source.pascal</string>
+	<string>source.irite</string>
 	<key>uuid</key>
 	<string>F42FA544-6B1C-11D9-9517-000D93589AF6</string>
 </dict>
