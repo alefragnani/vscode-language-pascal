@@ -1,14 +1,19 @@
-@echo off
+@echo on
 
-SET COMPILE="C:\Program Files (x86)\Rice Lake Weighing Systems\Revolution\iRite Editor\Compilers\1280Compiler\compile.exe"
+SET IRITEPROC="C:\Users\brymul\Desktop\iRite_preprocessor.exe"
 
-if /i %1%==test (
-  SET PROJECT=test.src
+set pathName=%2%
+set /p method=Enter The Comm Method:
+set /p ip=Enter The IP:
+set /p port=Enter The Port:
+
+if /i %1%==TCP1280 (
+  SET FILE=%pathName%
+  call %IRITEPROC% %FILE% %method% %ip% %port%
 ) else (
-  SET PROJECT=real.src
+  SET FILE=%pathName%
+  call %IRITEPROC% %FILE% %method% %ip% %port%
 ) 
-
-call %COMPILE% %PROJECT% "PATH HERE" "-v" TODO: THIS
 
 if %ERRORLEVEL% NEQ 0 GOTO END
 

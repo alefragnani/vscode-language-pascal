@@ -1,3 +1,4 @@
+--$START  c:\Users\brymul\aacode\vscode-language-iRite\.vscode\tasks.json
 // Available variables which can be used inside of strings.
 // ${workspaceRoot}: the root folder of the team
 // ${file}: the current opened file
@@ -8,7 +9,7 @@
 {
     "version": "0.1.0",
     "command": "C:/Users/brymul/Desktop/iRite_preprocessor.exe",
-    "args": ["${fileDirname}/${fileBasename}"],
+    "args": ["${fileDirname}\\${fileBasename}"],
     "isShellCommand": false,
     "isBuildCommand": true,
     "showOutput": "always",
@@ -25,3 +26,4 @@
                 }
     }
 }
+--$END  c:\Users\brymul\aacode\vscode-language-iRite\.vscode\tasks.json
