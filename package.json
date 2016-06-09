@@ -2,7 +2,7 @@
     "name": "irite",
     "displayName": "Language iRite",
     "description": "iRite support for Visual Studio Code",
-    "version": "0.0.1",
+    "version": "0.3.0",
     "publisher": "bryanmullin",
     "galleryBanner": {
         "color": "#4682B4",
@@ -109,9 +109,7 @@
         "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
         "postinstall": "node ./node_modules/vscode/bin/install"
     },
-    "dependencies": {
-        
-    },
+    "dependencies": {},
     "devDependencies": {
         "typescript": "^1.6.2",
         "vscode": "^0.11.x"

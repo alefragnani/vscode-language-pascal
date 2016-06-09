@@ -9,9 +9,7 @@ This extension adds support for the iRite Language to Visual Studio Code. It sup
 
 # Installation
 
-Press `F1` in VSCode, type `ext install` and then look for `Language iRite`.
-
-# Usage
+Launch VS Code Quick Open (Ctrl+P), paste the following command: "ext install irite", and type enter
 
 ## Colorization
 
@@ -27,8 +25,8 @@ Almost 40 snippets available:
 
 ## Preprocessor & Compilation
 
-TODO:
+External compiler is packaged with Revolution
 
 ### Building Tasks
 
-TODO:
+VScode tasking must be configured along with the settings file before automated deployment is enabled.
