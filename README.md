@@ -23,10 +23,36 @@ Almost 40 snippets available:
 
 ![snippets](images/vscode-irite-snippets.png)
 
-## Preprocessor & Compilation
+## Preprocessor/Compilation/Deployment
 
+Add this as your tasks.json:
+
+{
+    "version": "0.1.0",
+    "command": "C:/(exe path)/iRite_preprocessor.exe",
+    "args": ["${fileDirname}/${fileBasename}", "${fileDirname}"],
+    "isShellCommand": false,
+    "isBuildCommand": true,
+    "showOutput": "always",
+    "problemMatcher": {
+        "owner": "cpp",
+        "fileLocation": ["relative", "${workspaceRoot}"],
+        "pattern": {
+                    "regexp": "((([A-Za-z]):\\\\(?:[^\\/:*?\\\"<>|\\r\\n]+\\\\)*)?[^\\/\\s\\(:*?\\\"<>|\\r\\n]*)\\((\\d+)\\):\\s.*(fatal|error|warning|hint)\\s(.*):\\s(.*)",
+                    "file": 1, 
+                    "line": 4,
+                    "severity": 5,
+                    "code": 6,
+                    "message": 7
+                }
+    }
+}
+
+<<<<<<< HEAD
 External compiler is packaged with Revolution
 
 ### Building Tasks
 
 VScode tasking must be configured along with the settings file before automated deployment is enabled.
+=======
+>>>>>>> origin/master

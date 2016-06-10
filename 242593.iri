@@ -1,2 +1,0 @@
--- Scale Aliases
-Scale1    : constant integer := 1;
