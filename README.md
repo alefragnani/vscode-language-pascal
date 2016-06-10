@@ -48,11 +48,6 @@ Add this as your tasks.json:
     }
 }
 
-<<<<<<< HEAD
-External compiler is packaged with Revolution
-
 ### Building Tasks
 
 VScode tasking must be configured along with the settings file before automated deployment is enabled.
-=======
->>>>>>> origin/master
