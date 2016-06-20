@@ -14,6 +14,35 @@
 	<string>iRite</string>
 	<key>patterns</key>
 	<array>
+	<dict>
+
+			<key>match</key>
+			<string>(DisplayStatus|SetLabelText|EventChar|EventString|GetSoftwareVersion|GetUID|Time|GetEntry|
+Chr|Hex|Lcase|Left|Mid|Oct|Right|Space|UCase|IntegerToString|
+RealToString|SysCodeToString|GetDataRecordSize|CurrentScale|DisplayIsSuspended|EventPort|GetConsecNum|EventStatus|EventTime|Stick|
+StringToReal|GetGross|GetNet|GetTare|InitDataRecording|AcquireTare|ClearTare|GetTareType|SetTare|
+GetRoc|SetAccum|GetMode|GetUnits|InCoz|InMotion|InRange|SelectScale|ClearAccum|SetMode|
+SetUnits|ZeroScale|GetAccum|GetAccumCount|GetAccumDate|GetAccumTime|GetAvgAccum|GetUnitsString|GetFilteredCount|GetLccd|GetLccw|GetMv|GetRawCount|GetWval|GetZeroCount|
+GetCountBy|GetGrads|GetIqubeData|GetKey|KeyPress|LockKey|LockKeypad|SetConsecNum|
+SetDate|SetSoftKeyText|SetSystemTime|SetTime|SetUID|UnlockKey|UnlockKeypad|
+Print|SetPrintText|StartStreaming|StopStreaming|SubmitData|SubmitDSPData|
+DisableSP|EnableSP|GetBatchStatus|GetCurrentSP|GetSPCaptured|GetSPBand|GetSPCount|
+GetSPDuration|GetSPHyster|GetSPNSample|GetSPPReact|GetSPPreCount|GetSPTime|SetSPValue|
+GetSPVOver|GetSPVUnder|PauseBatch|ResetBatch|SetBatchingMode|SetSPBand|SetSPCount|
+SetSPDuration|SetSPHyster|SetSPNSample|SetSPPReact|SetSPPRecount|SetSPTime|GetSPValue|
+SetSPVOver|SetSPVUnder|StartBatch|StopBatch|GetDigin|GetDigOut|SetDigOut|GetFBStatus|GetImage|GetImageReal|SetImage|SetImageReal|SetAlgOut|
+ClearPulseCount|PulseCount|PulseRate|PromptUser|SelectScreen|DrawGraphic|SetBargraphLevel|SetNumericValue|SetSymbolState|SetWidgetVisibility|
+GraphCreate|GraphInit|GraphPlot|GraphScale|ChartInit|ChartPlot|ChartRender|ChartInsertToExisting|ChartSetAnimation|DBAdd|DbClear|DBDelete|DBFindFirst|DBFindLast|DBFindNext|DBFindPrev|
+DBGetFirst|DBGetLast|DBGetNext|DBGetPrev|DBSort|DBUpdate|ResetTimer|ResumeTimer|SetTimer|SetTimerDigOut|SetTimerMode|StartTimer|StopTimer|StringSpaceCompress|
+DecodeMessage|DecodeWeight|InitHiPrec|SubmitMessage|USBFileOpen|USBFileClose|USBFileDelete|USBFileExists|ReadLn|GetUSBStatus|
+SetUSBAssignment|ReleaseUSBAssignment|IsUSBDevicePresent|DBLoad|DBSave)\b</string>
+			<key>name</key>
+			<string>meta.variable.irite</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			</dict>
+
 		<dict>
 			<key>match</key>
 			<string>\b(?i:(and|array|begin|builtin|constant|database|else|elsif|end|exit|for|if|integer|is|loop|mod|not|of|or|real|record|return|step|stored|string|then|to|type|var|while))\b</string>
