@@ -35,7 +35,8 @@ ClearPulseCount|PulseCount|PulseRate|PromptUser|SelectScreen|DrawGraphic|SetBarg
 GraphCreate|GraphInit|GraphPlot|GraphScale|ChartInit|ChartPlot|ChartRender|ChartInsertToExisting|ChartSetAnimation|DBAdd|DbClear|DBDelete|DBFindFirst|DBFindLast|DBFindNext|DBFindPrev|
 DBGetFirst|DBGetLast|DBGetNext|DBGetPrev|DBSort|DBUpdate|ResetTimer|ResumeTimer|SetTimer|SetTimerDigOut|SetTimerMode|StartTimer|StopTimer|StringSpaceCompress|
 DecodeMessage|DecodeWeight|InitHiPrec|SubmitMessage|USBFileOpen|USBFileClose|USBFileDelete|USBFileExists|ReadLn|GetUSBStatus|
-SetUSBAssignment|ReleaseUSBAssignment|IsUSBDevicePresent|DBLoad|DBSave)\b</string>
+SetUSBAssignment|ReleaseUSBAssignment|IsUSBDevicePresent|DBLoad|DBSave|CloseDataRecording|Beep|DisableHandler|EnableHandler|GetDate|GetTime|Hardware|ProgramDelay|
+ResumeDisplay|SuspendDisplay|Send|SendChr|SendNull|Write|WriteLn|ClosePrompt|DisplayStatus|SetEntry|WaitForEntry|ClearGraph|RemoveGraph|SetFileTermin)\b</string>
 			<key>name</key>
 			<string>meta.variable.irite</string>
 		</dict>
