@@ -16,8 +16,8 @@
 	<array>
 	<dict>
 
-			<key>match</key>
-			<string>(DisplayStatus|SetLabelText|EventChar|EventString|GetSoftwareVersion|GetUID|Time|GetEntry|
+	<key>match</key>
+	<string>(DisplayStatus|SetLabelText|EventChar|EventString|GetSoftwareVersion|GetUID|Time|GetEntry|
 Chr|Hex|Lcase|Left|Mid|Oct|Right|Space|UCase|IntegerToString|
 RealToString|SysCodeToString|GetDataRecordSize|CurrentScale|DisplayIsSuspended|EventPort|GetConsecNum|EventStatus|EventTime|Stick|
 StringToReal|GetGross|GetNet|GetTare|InitDataRecording|AcquireTare|ClearTare|GetTareType|SetTare|
@@ -36,9 +36,11 @@ GraphCreate|GraphInit|GraphPlot|GraphScale|ChartInit|ChartPlot|ChartRender|Chart
 DBGetFirst|DBGetLast|DBGetNext|DBGetPrev|DBSort|DBUpdate|ResetTimer|ResumeTimer|SetTimer|SetTimerDigOut|SetTimerMode|StartTimer|StopTimer|StringSpaceCompress|
 DecodeMessage|DecodeWeight|InitHiPrec|SubmitMessage|USBFileOpen|USBFileClose|USBFileDelete|USBFileExists|ReadLn|GetUSBStatus|
 SetUSBAssignment|ReleaseUSBAssignment|IsUSBDevicePresent|DBLoad|DBSave|CloseDataRecording|Beep|DisableHandler|EnableHandler|GetDate|GetTime|Hardware|ProgramDelay|
-ResumeDisplay|SuspendDisplay|Send|SendChr|SendNull|Write|WriteLn|ClosePrompt|DisplayStatus|SetEntry|WaitForEntry|ClearGraph|RemoveGraph|SetFileTermin)\b</string>
-			<key>name</key>
-			<string>meta.variable.irite</string>
+ResumeDisplay|SuspendDisplay|Send|SendChr|SendNull|Write|WriteLn|ClosePrompt|DisplayStatus|SetEntry|WaitForEntry|ClearGraph|RemoveGraph|SetFileTermin|SysCodeEnum|ModeEnum|UnitsEnum|TareTypeEnum|BatchingModeEnum|BatchStatusEnum|PrintFormatEnum|TimerModeEnum|
+OnOffTypeEnum|KeysEnum|DTComponentEnum|UnitTypeEnum|ColorTypeEnum|HardwareTypeEnum|GraphTypeEnum|
+DecimalTypeEnum|IQValTypeEnum|USBDeviceTypeEnum|FileAccessModeEnum|FileLineTerminationEnum|BooleanTypeEnum)\b</string>
+		<key>name</key>
+		<string>meta.variable.irite</string>
 		</dict>
 		<dict>
 			<key>match</key>
