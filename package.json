@@ -2,7 +2,7 @@
     "name": "irite",
     "displayName": "Language iRite",
     "description": "iRite support for Visual Studio Code",
-    "version": "0.5.1",
+    "version": "0.5.2",
     "publisher": "bryanmullin",
     "galleryBanner": {
         "color": "#4682B4",
