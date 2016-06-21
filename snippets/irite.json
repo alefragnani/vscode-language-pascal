@@ -136,7 +136,7 @@
     "else",
     "begin",
     "\t$0",
-    "end;"
+    "end if;"
   ],
   "description": "else end"
   },
