@@ -5,7 +5,8 @@ This extension adds support for the iRite Language to Visual Studio Code. It sup
 * Colorization
 * Snippets
 * Preprocessing
-* External compiler
+* Compiling
+* Deployment to Indicator
 
 # Installation
 
@@ -19,7 +20,7 @@ Full syntax highlight for iRite
 
 ## Snippets
 
-Almost 40 snippets available:
+Over 120 snippets available:
 
 ![snippets](images/vscode-irite-snippets.png)
 
