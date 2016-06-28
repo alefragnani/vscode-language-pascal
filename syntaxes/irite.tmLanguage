@@ -17,7 +17,7 @@
 	<dict>
 
 	<key>match</key>
-	<string>(DisplayStatus|SetLabelText|EventChar|EventString|GetSoftwareVersion|GetUID|GetEntry|Oct$|Mid$|Chr$|Hex$|Right$|Space$|Left$|Lcase$|UCase$|IntegerToString|
+	<string>(DisplayStatus|SetLabelText|EventChar|Math|EventString|GetSoftwareVersion|GetUID|GetEntry|Oct$|Mid$|Chr$|Hex$|Right$|Space$|Left$|Lcase$|UCase$|IntegerToString|
 RealToString|SysCodeToString|GetDataRecordSize|CurrentScale|DisplayIsSuspended|EventPort|GetConsecNum|EventStatus|EventTime|Stick|
 StringToReal|GetGross|GetNet|GetTare|InitDataRecording|AcquireTare|ClearTare|GetTareType|SetTare|
 GetRoc|SetAccum|GetMode|GetUnits|InCOZ|InMotion|InRange|SelectScale|ClearAccum|SetMode|
