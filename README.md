@@ -17,7 +17,7 @@ Launch VS Code Quick Open (Ctrl+P), type the following command: "ext install iri
 * Hit Ctrl+Shift+B and select Configure Task Runner, select Other.
 * Paste this into your tasks.json generated folder (modify the command path to point to the iRite_preprocessor).
 
-
+```
 {
     "version": "0.1.0",
     "command": "C:/(exe path)/iRite_preprocessor.exe",
@@ -38,6 +38,7 @@ Launch VS Code Quick Open (Ctrl+P), type the following command: "ext install iri
                 }
     }
 }
+```
 
 * Hit Ctrl+Shift+B again, the iRite processor has now generated an irite.settings.json file in your project directory.
 * Modify the settings file to your preferences.
