@@ -577,5 +577,10 @@
 "USBFileDelete ": {"prefix": "USBFileDelete","body": ["USBFileDelete(${1:FileName_string});"],"description": "USBFileDelete"},
 "SetFileTermin ": {"prefix": "SetFileTermin","body": ["SetFileTermin(${1:FileLineTermination});"],"description": "SetFileTermin"},
 "SysCodeToString ": {"prefix": "SysCodeToString","body": ["SysCodeToString(${1:Code_SysCode});"],"description": "SysCodeToString"},
+"ChartInit ": {"prefix": "ChartInit","body": ["ChartInit(${1:widget_num}, ${2:fillColor}, ${3:lineColor}, ${4:pointColor}, ${5:maxPoints});"],"description": "ChartInit"},
+"ChartPlot ": {"prefix": "ChartPlot","body": ["ChartPlot(${1:widget_num}, ${2:label}, ${3:value});"],"description": "ChartPlot"},
+"ChartSetAnimation ": {"prefix": "ChartSetAnimation","body": ["ChartSetAnimation(${1:widget_num});"],"description": "ChartSetAnimation"},
+"ChartRender ": {"prefix": "ChartRender","body": ["ChartRender(${1:widget_num});"],"description": "ChartRender"},
+"ChartInsertToExisting ": {"prefix": "ChartInsertToExisting","body": ["ChartInsertToExisting(${1:widget_num}, ${2:label}, ${3:value});"],"description": "ChartInsertToExisting"},
 "ReadLn ": {"prefix": "ReadLn","body": ["ReadLn(${1:varD_string});"],"description": "ReadLn"}
 }
