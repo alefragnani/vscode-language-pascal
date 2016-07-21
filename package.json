@@ -37,7 +37,7 @@
     },
     "contributes": {
         "languages": [
-            {
+            { 
                 "id": "irite",
                 "aliases": [
                     "irite",
@@ -81,6 +81,7 @@
                         "ptop"
                     ]
                 },
+                
                 "irite.formatter.enginePath": {
                     "type": "string",
                     "default": "",

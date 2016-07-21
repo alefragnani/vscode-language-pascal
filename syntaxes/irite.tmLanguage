@@ -20,6 +20,7 @@
 		<key>name</key>
 		<string>meta.variable.irite</string>
 		</dict>
+		
 		<dict>
 			<key>match</key>
 			<string>\b(?i:(and|array|begin|builtin|constant|database|else|elsif|end|exit|for|if|integer|is|loop|mod|not|of|or|real|record|return|step|stored|string|then|to|type|var|while))\b</string>
