@@ -177,6 +177,10 @@ Update two tags:
 
 # Changelog
 
+## Version 0.4.1
+
+* **Fix:** Toggle Line/Block Comment not working (issue [#8](https://github.com/alefragnani/vscode-language-pascal/issues/8))
+
 ## Version 0.4.0
 
 * **New:** Go to Symbol

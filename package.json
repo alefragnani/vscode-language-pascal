@@ -2,7 +2,7 @@
     "name": "pascal",
     "displayName": "Language Pascal",
     "description": "Pascal support for Visual Studio Code",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "publisher": "alefragnani",
     "galleryBanner": {
         "color": "#4682B4",
@@ -54,7 +54,8 @@
                     ".dpk",
                     ".lfm",
                     ".dpr"
-                ]
+                ],
+                "configuration": "./pascal.configuration.json"
             }
         ],
         "grammars": [
