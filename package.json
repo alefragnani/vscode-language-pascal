@@ -2,7 +2,7 @@
     "name": "irite",
     "displayName": "Language iRite",
     "description": "iRite support for Visual Studio Code",
-    "version": "0.7.5",
+    "version": "0.7.6",
     "publisher": "bryanmullin",
     "galleryBanner": {
         "color": "#4682B4",
@@ -37,7 +37,7 @@
     },
     "contributes": {
         "languages": [
-            { 
+            {
                 "id": "irite",
                 "aliases": [
                     "irite",
@@ -46,7 +46,8 @@
                 "extensions": [
                     ".src",
                     ".iri"
-                ]
+                ],
+                 "configuration": "./irite.configuration.json"
             }
         ],
         "grammars": [
@@ -56,6 +57,7 @@
                 "path": "./syntaxes/irite.tmLanguage"
             }
         ],
+        
         "snippets": [
             {
                 "language": "irite",
@@ -81,7 +83,6 @@
                         "ptop"
                     ]
                 },
-                
                 "irite.formatter.enginePath": {
                     "type": "string",
                     "default": "",
