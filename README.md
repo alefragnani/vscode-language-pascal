@@ -10,7 +10,7 @@ This extension adds support for the iRite Language to Visual Studio Code. It sup
 
 # Installation
 
-Launch VS Code Quick Open (Ctrl+P), type the following command: "ext install irite", and hit enter. You now have syntax highlighting and snippets.
+Click on the Extension tab, and type in iRite. Click install and allow VScode to restart. You now have syntax highlighting and snippets.
 
 ## Compilation and Deployment
 
