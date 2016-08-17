@@ -4,7 +4,7 @@ import cp = require('child_process');
 import os = require('os');
 import npath = require('path');
 
-export class Formatter {
+export class Builder {
 
     constructor(private _document: vscode.TextDocument, private _options?: vscode.FormattingOptions) {
         this._options = this._options || {

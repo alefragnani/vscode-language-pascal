@@ -5,23 +5,27 @@
 // ${fileDirname}: the current opened file's dirname
 // ${fileExtname}: the current opened file's extension
 // ${cwd}: the current working directory of the spawned process
+
+// A task runner that calls the Typescript compiler (tsc) and
+// compiles the extension.
 {
-    "version": "0.1.0",
-    "command": "C:/Program Files (x86)/Rice Lake Weighing Systems/Revolution/iRite Editor/iRite_preprocessor.exe",
-    "args": ["${fileDirname}/${fileBasename}"],
-    "isShellCommand": false,
-    "isBuildCommand": true,
-    "showOutput": "always",
-    "problemMatcher": {
-        "owner": "cpp",
-        "fileLocation": ["relative", "${workspaceRoot}"],
-        "pattern": {
-                    "regexp": "((([A-Za-z]):\\\\(?:[^\\/:*?\\\"<>|\\r\\n]+\\\\)*)?[^\\/\\s\\(:*?\\\"<>|\\r\\n]*)\\((\\d+)\\):\\s.*(fatal|error|warning|hint)\\s(.*):\\s(.*)",
-                    "file": 1, 
-                    "line": 4,
-                    "severity": 5,
-                    "code": 6,
-                    "message": 7
-                }
-    }
+	"version": "0.1.0",
+
+	// we want to run npm
+	"command": "npm",
+
+	// the command is a shell script
+	"isShellCommand": true,
+
+	// show the output window only if unrecognized errors occur.
+	"showOutput": "always",
+
+	// we run the custom script "compile" as defined in package.json
+	"args": ["run", "compile"],
+
+	// The tsc compiler is started in watching mode
+	"isWatching": true,
+
+	// use the standard tsc in watch mode problem matcher to find compile problems in the output.
+	"problemMatcher": "$tsc-watch"
 }

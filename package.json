@@ -2,7 +2,7 @@
     "name": "irite",
     "displayName": "Language iRite",
     "description": "iRite support for Visual Studio Code",
-    "version": "0.7.6",
+    "version": "0.7.8",
     "publisher": "bryanmullin",
     "galleryBanner": {
         "color": "#4682B4",
@@ -22,9 +22,9 @@
     ],
     "activationEvents": [
         "onLanguage:irite",
-        "onCommand:irite.editFormatterParameters"
+        "onCommand:irite.build"
     ],
-    "main": "./src/extension",
+    "main": "./out/src/extension",
     "icon": "images/icon.png",
     "license": "SEE LICENSE IN LICENSE.md",
     "homepage": "https://github.com/bryanmullin/vscode-language-irite/blob/master/README.md",
@@ -47,9 +47,32 @@
                     ".src",
                     ".iri"
                 ],
-                 "configuration": "./irite.configuration.json"
+                "configuration": "./irite.configuration.json"
             }
         ],
+        "keybindings": [{
+        "command": "irite.build",
+        "key": "f7",
+        "mac": "f7",
+        "when": "editorTextFocus"
+        },
+        {
+        "command": "irite.deploy",
+        "key": "f8",
+        "mac": "f8",
+        "when": "editorTextFocus"
+        }],
+        "menus": {
+        "editor/title": [{
+            "when": "resourceLangId == irite",
+            "command": "irite.build",
+            "group": "navigation"
+        },{
+            "when": "resourceLangId == irite",
+            "command": "irite.deploy",
+            "group": "navigation"
+        }]
+        },
         "grammars": [
             {
                 "language": "irite",
@@ -57,7 +80,6 @@
                 "path": "./syntaxes/irite.tmLanguage"
             }
         ],
-        
         "snippets": [
             {
                 "language": "irite",
@@ -66,42 +88,38 @@
         ],
         "commands": [
             {
-                "command": "irite.editFormatterParameters",
-                "title": "irite: Edit Formatter Parameters"
+                "command": "irite.build",
+                "title": "iRite: Build | ",
+                "description": "Setup Build Enviroment"
+            },
+            {
+                "command": "irite.deploy",
+                "title": "iRite: Deploy",
+                "description": "Deploy to Indicator"
             }
         ],
         "configuration": {
             "type": "object",
-            "title": "irite Formatter Configuration",
+            "title": "iRite Setup Build",
             "properties": {
-                "irite.formatter.engine": {
+                "irite.build.engine": {
                     "type": "string",
-                    "default": "",
-                    "description": "Choose the Formatter engine to be used",
+                    "default": "revolution",
+                    "description": "Choose the build engine to be used",
                     "enum": [
-                        "jcf",
-                        "ptop"
+                        "revolution",
+                        "test"
                     ]
                 },
-                "irite.formatter.enginePath": {
+                "irite.build.enginePath": {
                     "type": "string",
-                    "default": "",
-                    "description": "Indicates the Formatter app path"
+                    "default": "C:\\Program Files (x86)\\Rice Lake Weighing Systems\\Revolution\\iRite Editor\\Compilers\\iRite_preprocessor.exe",
+                    "description": "Indicates the build engine app path"
                 },
-                "irite.formatter.engineParameters": {
+                "irite.build.compilerPath": {
                     "type": "string",
-                    "default": "",
-                    "description": "Indicates the configuration file for the selected engine"
-                },
-                "irite.format.indent": {
-                    "type": "number",
-                    "default": 2,
-                    "description": "The number of spaces used for indentation"
-                },
-                "irite.format.wrapLineLength": {
-                    "type": "number",
-                    "default": 80,
-                    "description": "Maximum amount of characters per line"
+                    "default": "C:\\Program Files (x86)\\Rice Lake Weighing Systems\\Revolution\\iRite Editor\\Compilers",
+                    "description": "Indicates the compilers path"
                 }
             }
         }
