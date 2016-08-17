@@ -31,4 +31,8 @@ Defaults are established on build, but must be modified for which indicator you 
 
 # Deployment
 
+<<<<<<< HEAD
 * Ensure the irite.settings.json file has been modified to your system specs and then click iRite: Deploy
+=======
+![snippets](images/vscode-irite-snippets.png)
+>>>>>>> 1f2e411adb616d46abe6ce7320ef67a88bf6804b
