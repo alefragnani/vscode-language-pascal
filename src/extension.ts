@@ -38,7 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
                     });
 
     iRiteChannel.show();
-
+    
     vscode.commands.registerCommand('irite.build', () => {
     checkEngineDefined()
         .then((engineType) => {
