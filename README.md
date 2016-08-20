@@ -177,6 +177,10 @@ Update two tags:
 
 # Changelog
 
+## Version 0.5.0
+
+* **New** Updated Syntax definitions (basic types, hexadecimal values, operators, flow control and others)
+
 ## Version 0.4.1
 
 * **Fix:** Toggle Line/Block Comment not working (issue [#8](https://github.com/alefragnani/vscode-language-pascal/issues/8))
