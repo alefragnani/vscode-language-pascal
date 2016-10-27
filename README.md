@@ -177,6 +177,10 @@ Update two tags:
 
 # Changelog
 
+## Version 0.6.0
+
+* **New** Added _Formatters_ category for Marketplace (kudos to @waderyan)
+
 ## Version 0.5.0
 
 * **New** Updated Syntax definitions (basic types, hexadecimal values, operators, flow control and others)
