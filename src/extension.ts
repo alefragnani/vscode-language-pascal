@@ -10,6 +10,7 @@ var opener = require('opener');
 // language providers
 import { PascalDocumentSymbolProvider } from './pascalOutline';
 import { PascalDefinitionProvider } from './definitionProvider';
+import { PascalReferenceProvider } from './referenceProvider';
 
 
 // this method is called when your extension is activated
@@ -31,6 +32,7 @@ export function activate(context: vscode.ExtensionContext) {
     // language providers
 	context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider(['pascal'], new PascalDocumentSymbolProvider()));
 	context.subscriptions.push(vscode.languages.registerDefinitionProvider(['pascal'], new PascalDefinitionProvider()));
+	context.subscriptions.push(vscode.languages.registerReferenceProvider(['pascal'], new PascalReferenceProvider()));
 
 
     vscode.commands.registerCommand('pascal.editFormatterParameters', () => {
