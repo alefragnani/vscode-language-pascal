@@ -6,7 +6,7 @@ This extension adds support for the Pascal Language to Visual Studio Code. It wo
 * Snippets
 * Format Code
 * Task Build
-* Go to Symbol
+* Go to Symbol / Go to Definition / Peek Definition / Find All References
 
 # Installation
 
@@ -37,11 +37,11 @@ Standardise your Pascal code! The extension uses external tools _(engines)_ to f
 
 > If you intend to format _pieces of selected texts_ instead of _the entire file_, you should use **FreePascal PToP**, because the **Jedi Code Format** only works for entire files. 
 
-## Go to Symbol
+## Go to Symbol / Go to Definition / Peek Definition / Find All References
 
-> _new in version 0.4.0_  
+> _new in version 0.7.0_  
 
-Easily navigate to methods (procedures and functions) inside Pascal files.
+Easily navigate to any language element (methods, attributes, classes, interfaces, and so on) inside Pascal files.
 
 It uses GNU Global, a source code tagging system, which means that it has some limitations if you compare with an AST parsing.
 
@@ -72,7 +72,7 @@ It uses GNU Global, a source code tagging system, which means that it has some l
 
 ![py-envvar](images/vscode-pascal-py-envvar.png)
  
-> **NOTE:** For now, it was tested only on Windows, but since these tools are multiplatform (in fact, it comes from Unix), it should work on Linux and Mac. I will update these instructions since I test on these platforms.
+> **NOTE:** For now, it was tested only on Windows, but since these tools are multiplatform (in fact, it comes from Unix), it should work on Linux and Mac. 
 
 ### Available settings
 
@@ -176,6 +176,12 @@ Update two tags:
 ```
 
 # Changelog
+
+## Version 0.7.0
+
+* **New** Go to Definition
+* **New** Peek Definition
+* **New** Find All References
 
 ## Version 0.6.0
 
