@@ -65,28 +65,7 @@ export function referenceLocations(word: string): Promise<vscode.Definition> {
 export class PascalReferenceProvider implements vscode.ReferenceProvider {
 
 	public provideReferences(document: vscode.TextDocument, position: vscode.Position, context: vscode.ReferenceContext, token: vscode.CancellationToken): vscode.Location[] | Thenable<vscode.Location[]> {
-		//public provideReference(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken): vscode.Definition | Thenable<vscode.Definition> {
-		let fileName: string;
-		if (document.isDirty) {
-			let range: vscode.Range = new vscode.Range(
-                0, 0,
-                document.lineCount,
-                document.lineAt(document.lineCount - 1).range.end.character
-            );
-
-            let textToFormat = document.getText(range);
-            let tempFile: string = path.join(vscode.workspace.rootPath, '.vscode/GTEMP.pas');
-
-			if (!fs.existsSync(path.join(vscode.workspace.rootPath, '.vscode'))) {
-				fs.mkdirSync(path.join(vscode.workspace.rootPath, '.vscode'));
-			}
-
-            fs.writeFileSync(tempFile, textToFormat);
-			fileName = tempFile;
-		} else {
-			fileName = document.fileName;
-		}
-
+		let fileName: string = document.fileName;
 		let word = document.getText(document.getWordRangeAtPosition(position)).split(/\r?\n/)[0];
 		return referenceLocations(word).then(locs => {
 			return locs;
