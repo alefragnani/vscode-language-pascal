@@ -6,7 +6,11 @@ This extension adds support for the Pascal Language to Visual Studio Code. It wo
 * Snippets
 * Format Code
 * Task Build
-* Go to Symbol / Go to Definition / Peek Definition / Find All References
+* Code Navigation
+	* Go to Symbol
+	* Go to Definition
+	* Peek Definition
+	* Find All References
 
 # Installation
 
@@ -28,22 +32,46 @@ Almost 40 snippets available:
 
 ## Format Code
 
-> _new in version 0.3.0_  
-
-Standardise your Pascal code! The extension uses external tools _(engines)_ to format the code, so you must install them prior to use the `Format Code` command.
+Standardise your Pascal code! The extension uses external tools _(engines)_ to format the code, so you must install them prior to use the `Format Document` and `Format Selection` commands.
 
 * **Jedi Code Format:** http://jedicodeformat.sourceforge.net/ (Windows only)
 * **FreePascal PToP:** http://wiki.freepascal.org/PTop (Windows, Linux and Mac OS X)
 
 > If you intend to format _pieces of selected texts_ instead of _the entire file_, you should use **FreePascal PToP**, because the **Jedi Code Format** only works for entire files. 
 
-## Go to Symbol / Go to Definition / Peek Definition / Find All References
+### Available settings
+
+* Choose the engine to be used _(required)_
+```
+    // ptop means FreePascal PToP
+    "pascal.formatter.engine": "ptop"
+    
+    // jcf means Jedi Code Format 
+    "pascal.formatter.engine": "jcf"
+```
+
+* Indicates the engine app path _(required)_
+```
+    "pascal.formatter.enginePath": "C:\\FPC\\2.6.4\\bin\\i386-win32\\ptop.exe" 
+```
+
+* Indicates the configuration file for the selected engine _(optional)_
+```
+    "pascal.formatter.engineParameters": "C:\\FPC\\2.6.4\\bin\\i386-win32\\default.cfg"
+```
+
+## Code Navigation
 
 > _new in version 0.7.0_  
 
-Easily navigate to any language element (methods, attributes, classes, interfaces, and so on) inside Pascal files.
+* Go to Symbol
+* Go to Definition
+* Peek Definition
+* Find All References
 
-It uses GNU Global, a source code tagging system, which means that it has some limitations if you compare with an AST parsing.
+Navigate to any language element (methods, attributes, classes, interfaces, and so on) inside Pascal files.
+
+> It uses GNU Global, a source code tagging system, which means that it has some limitations if you compare with an AST parsing.
 
 #### Installing and Configuring GNU Global
 
@@ -74,30 +102,11 @@ It uses GNU Global, a source code tagging system, which means that it has some l
  
 > **NOTE:** For now, it was tested only on Windows, but since these tools are multiplatform (in fact, it comes from Unix), it should work on Linux and Mac. 
 
-### Available settings
+# Available commands
 
-* Choose the engine to be used _(required)_
-```
-    // ptop means FreePascal PToP
-    "pascal.formatter.engine": "ptop"
-    
-    // jcf means Jedi Code Format 
-    "pascal.formatter.engine": "jcf"
-```
+## Code Formatter
 
-* Indicates the engine app path _(required)_
-```
-    "pascal.formatter.enginePath": "C:\\FPC\\2.6.4\\bin\\i386-win32\\ptop.exe" 
-```
-
-* Indicates the configuration file for the selected engine _(optional)_
-```
-    "pascal.formatter.engineParameters": "C:\\FPC\\2.6.4\\bin\\i386-win32\\default.cfg"
-```
-
-### Available commands
-
-The extension seamlessly integrates with the `Format Code` command in **Visual Studio Code**.
+The extension seamlessly integrates with the `Format Document` and `Format Selection` commands **Visual Studio Code**.
 
 ![format-code](images/vscode-pascal-format-code.gif)
 
@@ -105,7 +114,14 @@ There is also:
 
 * **Pascal: Edit Formatter Parameters** Opens/Generate the _parameters file_ for the selected engine
 
-## Task Build
+## Code Navigation
+
+To enable **Code Navigation**, the extension depends on **GNU Global and Exuberant Tags** and for that, you must run `gtags` on the Root folder, so the tags are created. In order to make your life easier, two commands where added:
+
+* **Pascal: Generate/Reset Tags**: Use this to _create_ or _reset_ the tags in the current project. You just have to do it once. 
+* **Pascal: Update Tags**: Use this to _update_ the tags for current project. You should use this command to _update the references_ when any source code is updated.
+
+# Task Build
 
 Use this **Task Examples**, so you can:
 
