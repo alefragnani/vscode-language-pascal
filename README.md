@@ -183,11 +183,11 @@ Update two tags:
 		"problemMatcher": {
 			"owner": "external",
 			"pattern": {
-				"regexp": "^([\\w]+\\.p)\\((\\d+)\\,(\\d+)\\)\\s(Fatal|Error|Warning|Note):(.*)",
+				"regexp": "^([\\w]+\\.(p|pp|pas))\\((\\d+)\\,(\\d+)\\)\\s(Fatal|Error|Warning|Note):(.*)",
 				"file": 1,
-				"line": 2,
-				"column": 3,
-				"message": 5
+				"line": 3,
+				"column": 4,
+				"message": 6
 			}
 		}
     }
