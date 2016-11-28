@@ -165,18 +165,21 @@ Update two tags:
 
 Update two tags:
 
-* `FPC.EXE_PATH`: The compiler location
-* `YOUR_FREEPASCAL_PROJECT`: The project being built.
+* `FPC_BIN_PATH`: The full compiler location. If its `PATH` is already in _Environment Variables_, simply use `FPC_BIN` filename
+* `YOUR_FREEPASCAL_PROJECT_OR_FILE`: The project/file being built.
 
 ```
     {
 		"version": "0.1.0",
 		"windows": {
-			"command": "FPC.EXE_PATH"
+			"command": "FPC_BIN_PATH"
+		},
+		"linux": {
+			"command": "FPC_BIN_PATH"
 		},
 		"isShellCommand": true,
 		"showOutput": "always",
-		"args": ["YOUR_FREEPASCAL_PROJECT"],
+		"args": ["YOUR_FREEPASCAL_PROJECT_OR_FILE"],
 		"problemMatcher": {
 			"owner": "external",
 			"pattern": {
