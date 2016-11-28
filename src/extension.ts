@@ -8,10 +8,10 @@ import cp = require('child_process');
 var opener = require('opener');
 
 // language providers
-import { PascalDocumentSymbolProvider } from './pascalOutline';
+import { PascalDocumentSymbolProvider } from './documentSymbolProvider';
 import { PascalDefinitionProvider } from './definitionProvider';
 import { PascalReferenceProvider } from './referenceProvider';
-
+import { TagsBuilder } from './tagsBuilder';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -34,6 +34,13 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(vscode.languages.registerDefinitionProvider(['pascal'], new PascalDefinitionProvider()));
 	context.subscriptions.push(vscode.languages.registerReferenceProvider(['pascal'], new PascalReferenceProvider()));
 
+    vscode.commands.registerCommand('pascal.generateTags', () => generateTags(false));
+    vscode.commands.registerCommand('pascal.updateTags', () => generateTags(true));
+
+    function generateTags(update: boolean) {
+        let tagBuilder: TagsBuilder = new TagsBuilder();
+        tagBuilder.generateTags(vscode.workspace.rootPath, update);
+    }
 
     vscode.commands.registerCommand('pascal.editFormatterParameters', () => {
 

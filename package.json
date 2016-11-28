@@ -76,6 +76,14 @@
             {
                 "command": "pascal.editFormatterParameters",
                 "title": "Pascal: Edit Formatter Parameters"
+            },
+            {
+                "command": "pascal.generateTags",
+                "title": "Pascal: Generate Tags"
+            },
+            {
+                "command": "pascal.updateTags",
+                "title": "Pascal: Update Tags"
             }
         ],
         "configuration": {
