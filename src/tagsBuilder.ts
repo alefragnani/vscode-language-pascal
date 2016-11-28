@@ -12,6 +12,11 @@ export class TagsBuilder {
         let command: string = update ? "global" : "gtags";
         let params: string = update ? "--update" : "";
 
+		if (!fs.existsSync(path.join(rootPath, 'GTAGS'))) {
+			command = "gtags";
+			params = "";
+		}
+
 		let p = cp.execFile(command, [params], { cwd: rootPath }, (err, stdout, stderr) => {
 			try {
 				if (err && (<any>err).code === 'ENOENT') {

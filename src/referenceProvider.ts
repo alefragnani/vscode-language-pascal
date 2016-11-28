@@ -23,8 +23,8 @@ export function parseReferenceLocation(output: string): vscode.Definition {
 				let rest: string = values.join(' ');
 				let idxProc = rest.match(/(\w|\s)+.pas\s+/gi);
 
-				console.log(idxProc);
-				console.log(idxProc[0]);
+				// console.log(idxProc);
+				// console.log(idxProc[0]);
 
 				filePath = rest.substr(0, rest.indexOf(idxProc[0]) + idxProc[0].length - 1)
 				filePath = path.join(vscode.workspace.rootPath, filePath);
@@ -52,7 +52,7 @@ export function referenceLocations(word: string): Promise<vscode.Definition> {
 				}
 				if (err) return resolve(null);
 				let result = stdout.toString();
-				console.log(result);
+				// console.log(result);
 				let locs = <vscode.Definition>parseReferenceLocation(result);
 				return resolve(locs);
 			} catch (e) {

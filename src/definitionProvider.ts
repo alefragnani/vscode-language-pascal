@@ -53,7 +53,7 @@ export function definitionLocations(word: string): Promise<vscode.Definition> {
 				}
 				if (err) return resolve(null);
 				let result = stdout.toString();
-				console.log(result);
+				// console.log(result);
 				let locs = <vscode.Definition>parseDefinitionLocation(result);
 				return resolve(locs);
 			} catch (e) {
