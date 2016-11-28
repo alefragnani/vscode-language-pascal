@@ -15,7 +15,7 @@ export class TagsBuilder {
 		let p = cp.execFile(command, [params], { cwd: rootPath }, (err, stdout, stderr) => {
 			try {
 				if (err && (<any>err).code === 'ENOENT') {
-					vscode.window.showInformationMessage('The "global" command is not available. Make sure it is on PATH');
+					vscode.window.showInformationMessage('The ' + command + ' command is not available. Make sure it is on PATH');
                     return;
 				}
 				if (err) {

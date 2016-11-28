@@ -62,9 +62,8 @@ Standardise your Pascal code! The extension uses external tools _(engines)_ to f
 
 ## Code Navigation
 
-> _new in version 0.7.0_  
-
 * Go to Symbol
+> _new in version 0.7.0_ 
 * Go to Definition
 * Peek Definition
 * Find All References
@@ -73,11 +72,11 @@ Navigate to any language element (methods, attributes, classes, interfaces, and 
 
 > It uses GNU Global, a source code tagging system, which means that it has some limitations if you compare with an AST parsing.
 
-#### Installing and Configuring GNU Global
+### Installing and Configuring GNU Global
 
 1. You have to install 4 tools:
 
- * GNU GLobal 6.5 or higher (http://www.gnu.org/software/global/global.html) 
+ * GNU Global 6.5 or higher (http://www.gnu.org/software/global/global.html) 
  * Exuberant Tags 5.5 or higher (http://ctags.sourceforge.net/)
  * Python 2.7 or higher (https://www.python.org/)
  * Python Pygments (via `pip install Pygments`)
@@ -116,9 +115,9 @@ There is also:
 
 ## Code Navigation
 
-To enable **Code Navigation**, the extension depends on **GNU Global and Exuberant Tags** and for that, you must run `gtags` on the Root folder, so the tags are created. In order to make your life easier, two commands where added:
+To enable **Code Navigation**, the extension depends on **GNU Global and Exuberant Tags** and for that, you must run `gtags` on the Root folder, so the tags are created. In order to make life easier, two commands where added:
 
-* **Pascal: Generate/Reset Tags**: Use this to _create_ or _reset_ the tags in the current project. You just have to do it once. 
+* **Pascal: Generate Tags**: Use this to _create_ or _reset_ the tags in the current project. You just have to do it once. 
 * **Pascal: Update Tags**: Use this to _update_ the tags for current project. You should use this command to _update the references_ when any source code is updated.
 
 # Task Build
@@ -198,6 +197,8 @@ Update two tags:
 * **New** Go to Definition
 * **New** Peek Definition
 * **New** Find All References
+* **New Command:** Pascal: Generate Tags
+* **New Command:** Pascal: Update Tags
 
 ## Version 0.6.0
 
