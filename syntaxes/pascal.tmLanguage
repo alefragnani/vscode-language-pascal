@@ -90,13 +90,13 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>warn-token</string>
+					<string>string.regexp</string>
 				</dict>
 			</dict>
 			<key>end</key>
 			<string>\}</string>
 			<key>name</key>
-			<string>warn-token</string>
+			<string>string.regexp</string>
 		</dict>	
 
 		<dict>
@@ -127,7 +127,7 @@
 			<key>match</key>
 			<string>\b(?i:(Assert))\b</string>
 			<key>name</key>
-			<string>error-token</string>
+			<string>keyword.control</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -213,7 +213,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\{</string>
+			<string>\{(?!\$)</string>
 			<key>captures</key>
 			<dict>
 				<key>0</key>
