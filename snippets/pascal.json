@@ -318,9 +318,9 @@
   "region": {
   "prefix": "region",
   "body": [
-    "{$REGION '${1:MyRegion}'}",
+    "{\\$REGION '${1:MyRegion}'}",
     "\t$0",
-    "{$ENDREGION}"
+    "{\\$ENDREGION}"
   ],
   "description": "region"
   },
