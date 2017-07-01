@@ -1,3 +1,7 @@
+## Version 0.8.1
+
+* **Fix:** `$REGION` snippet not working because `$` sign (Thanks to @idleberg [PR #22](https://github.com/alefragnani/vscode-language-pascal/pull/22))
+
 ## Version 0.8.0
 
 * **Internal:** Grammar updated to support VSCode 1.9.0
