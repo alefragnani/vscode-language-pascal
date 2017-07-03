@@ -58,7 +58,7 @@ export function documentSymbols(filename: string): Promise<vscode.SymbolInformat
 		cp.execFile('gtags', ['--accept-dotfiles', '-f', listTXT], { cwd: vscode.workspace.rootPath }, (err, stdout, stderr) => {
 
 			if (err) {
-				vscode.window.showInformationMessage('The "gtags" command is not available. Make sure GLOBAL and CTAGS are on PATH');
+				console.log('The "gtags" command is not available. Make sure GLOBAL and CTAGS are on PATH');
 				reject('Error running gtags: ' + err);
 			}
 
@@ -67,7 +67,7 @@ export function documentSymbols(filename: string): Promise<vscode.SymbolInformat
 				let p = cp.execFile('global', ['-f', filename], { cwd: vscode.workspace.rootPath }, (err, stdout, stderr) => {
 					try {
 						if (err && (<any>err).code === 'ENOENT') {
-							vscode.window.showInformationMessage('The "global" command is not available. Make sure it is on PATH');
+							console.log('The "global" command is not available. Make sure it is on PATH');
 						}
 						if (err) return resolve(null);
 						let result = stdout.toString();

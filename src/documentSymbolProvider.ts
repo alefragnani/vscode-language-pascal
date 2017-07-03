@@ -57,7 +57,7 @@ export function documentSymbolLocations(filename: string): Promise<vscode.Symbol
 		let p = cp.execFile('global', ['-f', filename], { cwd: vscode.workspace.rootPath }, (err, stdout, stderr) => {
 			try {
 				if (err && (<any>err).code === 'ENOENT') {
-					vscode.window.showInformationMessage('The "global" command is not available. Make sure it is on PATH');
+					console.log('The "global" command is not available. Make sure it is on PATH');
 				}
 				if (err) return resolve(null);
 				let result = stdout.toString();
