@@ -1,3 +1,7 @@
+## Version 0.8.2
+
+* **Fix:** Better handling if _`global` is not available_, with a _Don't show again_ option (issue [#21](https://github.com/alefragnani/vscode-language-pascal/issues/21))
+
 ## Version 0.8.1
 
 * **Fix:** `$REGION` snippet not working because `$` sign (Thanks to @idleberg [PR #22](https://github.com/alefragnani/vscode-language-pascal/pull/22))
