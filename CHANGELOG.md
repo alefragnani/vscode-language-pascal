@@ -1,6 +1,7 @@
 ## Version 0.8.2
 
 * **Fix:** Better handling if _`global` is not available_, with a _Don't show again_ option (issue [#21](https://github.com/alefragnani/vscode-language-pascal/issues/21))
+* **Internal**: **TypeScript** and **VS Code engine** updated
 
 ## Version 0.8.1
 
