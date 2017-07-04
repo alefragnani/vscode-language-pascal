@@ -30,9 +30,13 @@ export function activate(context: vscode.ExtensionContext) {
     //console.log('Congratulations, your extension "pascal" is now active!');
 
     // language providers
-	context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider(['pascal'], new PascalDocumentSymbolProvider()));
-	context.subscriptions.push(vscode.languages.registerDefinitionProvider(['pascal'], new PascalDefinitionProvider()));
-	context.subscriptions.push(vscode.languages.registerReferenceProvider(['pascal'], new PascalReferenceProvider()));
+    TagsBuilder.checkGlobalAvailable(context).then((value) => {
+        if (value) {
+            context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider(['pascal'], new PascalDocumentSymbolProvider()));
+            context.subscriptions.push(vscode.languages.registerDefinitionProvider(['pascal'], new PascalDefinitionProvider()));
+            context.subscriptions.push(vscode.languages.registerReferenceProvider(['pascal'], new PascalReferenceProvider()));
+        }
+    });
 
     vscode.commands.registerCommand('pascal.generateTags', () => generateTags(false));
     vscode.commands.registerCommand('pascal.updateTags', () => generateTags(true));
