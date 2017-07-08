@@ -5,7 +5,7 @@ import cp = require('child_process');
 import path = require('path');
 import fs = require('fs');
 
-export function parseReferenceLocation(output: string): vscode.Definition {
+export function parseReferenceLocation(output: string): vscode.Location[] {
 
 	var items: vscode.Location[] = new Array<vscode.Location>();
 	output.split(/\r?\n/)
@@ -41,9 +41,9 @@ export function parseReferenceLocation(output: string): vscode.Definition {
 	return items;
 }
 
-export function referenceLocations(word: string): Promise<vscode.Definition> {
+export function referenceLocations(word: string): Promise<vscode.Location[]> {
 
-	return new Promise<vscode.Definition>((resolve, reject) => {
+	return new Promise<vscode.Location[]>((resolve, reject) => {
 
 		let p = cp.execFile('global', ['-rx', word], { cwd: vscode.workspace.rootPath }, (err, stdout, stderr) => {
 			try {
@@ -53,7 +53,7 @@ export function referenceLocations(word: string): Promise<vscode.Definition> {
 				if (err) return resolve(null);
 				let result = stdout.toString();
 				// console.log(result);
-				let locs = <vscode.Definition>parseReferenceLocation(result);
+				let locs = <vscode.Location[]>parseReferenceLocation(result);
 				return resolve(locs);
 			} catch (e) {
 				reject(e);
@@ -64,11 +64,13 @@ export function referenceLocations(word: string): Promise<vscode.Definition> {
 
 export class PascalReferenceProvider implements vscode.ReferenceProvider {
 
-	public provideReferences(document: vscode.TextDocument, position: vscode.Position, context: vscode.ReferenceContext, token: vscode.CancellationToken): vscode.Location[] | Thenable<vscode.Location[]> {
+        // provideReferences(document: TextDocument, position: Position, context: ReferenceContext, token: CancellationToken): ProviderResult<Location[]>;
+	public provideReferences(document: vscode.TextDocument, position: vscode.Position, context: vscode.ReferenceContext, token: vscode.CancellationToken): vscode.ProviderResult<vscode.Location[]> {
 		let fileName: string = document.fileName;
 		let word = document.getText(document.getWordRangeAtPosition(position)).split(/\r?\n/)[0];
 		return referenceLocations(word).then(locs => {
 			return locs;
 		});
+		// return null;
 	}
 }
