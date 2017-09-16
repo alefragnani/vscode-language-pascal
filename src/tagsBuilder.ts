@@ -42,6 +42,54 @@ export class TagsBuilder {
 		});
 	}
 
+    public generateTagsPromise(rootPath: string, update: boolean): Promise<string> {
+
+        return new Promise<string>((resolve, reject) => {
+
+            let command: string = update ? "global" : "gtags";
+            let params: string = update ? "--update" : "";
+
+            if (!TagsBuilder.tagsAvailable(path.join(rootPath, 'GTAGS'))) {
+                command = "gtags";
+                params = "";
+            }
+
+            let p = cp.execFile(command, [params], { cwd: rootPath }, (err, stdout, stderr) => {
+                try {
+                    if (err && (<any>err).code === 'ENOENT') {
+                        vscode.window.showInformationMessage('The ' + command + ' command is not available. Make sure it is on PATH');
+                        resolve('The ' + command + ' command is not available. Make sure it is on PATH');
+                        return;
+                    }
+                    if (err) {
+                        vscode.window.showInformationMessage('Some error occured: ' + err);
+                        resolve('Some error occured: ' + err);
+                        return;
+                    }
+                    if (stderr) {
+                        vscode.window.showInformationMessage('Some error occured: ' + stderr);
+                        resolve('Some error occured: ' + stderr);
+                        return;
+                    }
+
+                    vscode.window.showInformationMessage('The tags where updated');
+                    resolve("");
+                    return;
+                } catch (e) {
+                    vscode.window.showInformationMessage('Some error occured: ' + e);
+                    reject('Some error occured: ' + e);
+                    return;
+                }
+            });
+
+        });
+    }
+		
+
+	public static tagsAvailable(rootPath: string): boolean {
+		return fs.existsSync(path.join(rootPath, 'GTAGS'));
+	}
+		
 	public static checkGlobalAvailable(context: vscode.ExtensionContext): Promise<boolean> {
 
 		return new Promise<boolean>((resolve, reject) => {
