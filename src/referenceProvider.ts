@@ -6,45 +6,42 @@ import path = require('path');
 import fs = require('fs');
 import { AbstractProvider } from "./abstractProvider";
 
-export function parseReferenceLocation(output: string): vscode.Location[] {
-
-	var items: vscode.Location[] = new Array<vscode.Location>();
-	output.split(/\r?\n/)
-		.forEach(function (value, index, array) {
-
-			if (value != null && value != "") {
-
-				let values = value.split(/ +/);
-
-				// Create           2583 DelphiAST.pas      Result := FStack.Peek.AddChild(TSyntaxNode.Create(Typ));
-				let word = values.shift();
-				let line = parseInt(values.shift()) - 1;
-
-				let filePath: string;
-				let rest: string = values.join(' ');
-				let idxProc = rest.match(/(\w|\s)+.pas\s+/gi);
-
-				// console.log(idxProc);
-				// console.log(idxProc[0]);
-
-				filePath = rest.substr(0, rest.indexOf(idxProc[0]) + idxProc[0].length - 1)
-				filePath = path.join(vscode.workspace.rootPath, filePath);
-
-				let definition = new vscode.Location(
-					vscode.Uri.file(filePath), new vscode.Position(line, 0)
-				);
-
-				items.push(definition);
-			}
-
-		});
-
-	return items;
-}
-
 export class PascalReferenceProvider extends AbstractProvider implements vscode.ReferenceProvider {
 
-	public referenceLocations(word: string): Promise<vscode.Location[]> {
+	private parseReferenceLocation(output: string): vscode.Location[] {
+
+		var items: vscode.Location[] = new Array<vscode.Location>();
+		output.split(/\r?\n/)
+			.forEach(function (value, index, array) {
+
+				if (value != null && value != "") {
+
+					let values = value.split(/ +/);
+
+					// Create           2583 DelphiAST.pas      Result := FStack.Peek.AddChild(TSyntaxNode.Create(Typ));
+					let word = values.shift();
+					let line = parseInt(values.shift()) - 1;
+
+					let filePath: string;
+					let rest: string = values.join(' ');
+					let idxProc = rest.match(/(\w|\s)+.pas\s+/gi);
+
+					filePath = rest.substr(0, rest.indexOf(idxProc[ 0 ]) + idxProc[ 0 ].length - 1)
+					filePath = path.join(vscode.workspace.rootPath, filePath);
+
+					let definition = new vscode.Location(
+						vscode.Uri.file(filePath), new vscode.Position(line, 0)
+					);
+
+					items.push(definition);
+				}
+
+			});
+
+		return items;
+	}
+
+	private referenceLocations(word: string): Promise<vscode.Location[]> {
 
 		return new Promise<vscode.Location[]>((resolve, reject) => {
 
@@ -59,7 +56,7 @@ export class PascalReferenceProvider extends AbstractProvider implements vscode.
 								if (err) return resolve(null);
 								let result = stdout.toString();
 								// console.log(result);
-								let locs = <vscode.Location[]>parseReferenceLocation(result);
+								let locs = <vscode.Location[]>this.parseReferenceLocation(result);
 								return resolve(locs);
 							} catch (e) {
 								reject(e);
@@ -70,7 +67,6 @@ export class PascalReferenceProvider extends AbstractProvider implements vscode.
 		});
 	}
 
-        // provideReferences(document: TextDocument, position: Position, context: ReferenceContext, token: CancellationToken): ProviderResult<Location[]>;
 	public provideReferences(document: vscode.TextDocument, position: vscode.Position, context: vscode.ReferenceContext, token: vscode.CancellationToken): vscode.ProviderResult<vscode.Location[]> {
 		let fileName: string = document.fileName;
 		let word = document.getText(document.getWordRangeAtPosition(position)).split(/\r?\n/)[0];
