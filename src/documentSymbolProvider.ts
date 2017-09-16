@@ -4,6 +4,7 @@ import vscode = require('vscode');
 import cp = require('child_process');
 import path = require('path');
 import fs = require('fs');
+import { AbstractProvider } from "./abstractProvider";
 
 export function parseDocumentSymbolLocation(output: string): vscode.SymbolInformation[] {
 
@@ -49,34 +50,39 @@ export function parseDocumentSymbolLocation(output: string): vscode.SymbolInform
 	return items;
 }
 
-export function documentSymbolLocations(filename: string): Promise<vscode.SymbolInformation[]> {
+export class PascalDocumentSymbolProvider extends AbstractProvider implements vscode.DocumentSymbolProvider {
+
+	public documentSymbolLocations(filename: string): Promise<vscode.SymbolInformation[]> {
+		
+		return new Promise<vscode.SymbolInformation[]>((resolve, reject) => {
 	
-	return new Promise<vscode.SymbolInformation[]>((resolve, reject) => {
-
-		// discover
-		let p = cp.execFile('global', ['-f', filename], { cwd: vscode.workspace.rootPath }, (err, stdout, stderr) => {
-			try {
-				if (err && (<any>err).code === 'ENOENT') {
-					console.log('The "global" command is not available. Make sure it is on PATH');
+			this.generateTagsIfNeeded()
+			.then((value: boolean) => {
+				if (value) {
+					// discover
+					let p = cp.execFile('global', ['-f', filename], { cwd: vscode.workspace.rootPath }, (err, stdout, stderr) => {
+						try {
+							if (err && (<any>err).code === 'ENOENT') {
+								console.log('The "global" command is not available. Make sure it is on PATH');
+							}
+							if (err) return resolve(null);
+							let result = stdout.toString();
+							//console.log(result);
+							let decls = <vscode.SymbolInformation[]>parseDocumentSymbolLocation(result);
+							return resolve(decls);
+						} catch (e) {
+							reject(e);
+						}
+					});
 				}
-				if (err) return resolve(null);
-				let result = stdout.toString();
-				//console.log(result);
-				let decls = <vscode.SymbolInformation[]>parseDocumentSymbolLocation(result);
-				return resolve(decls);
-			} catch (e) {
-				reject(e);
-			}
+			});
 		});
-	});
-}
-
-export class PascalDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
+	}
 
 	public provideDocumentSymbols(document: vscode.TextDocument, token: vscode.CancellationToken): Thenable<vscode.SymbolInformation[]> {
-		
+
 		let fileName: string = document.fileName;
-		return documentSymbolLocations(fileName).then(decls => {
+		return this.documentSymbolLocations(fileName).then(decls => {
 			return decls;
 		});
 	}

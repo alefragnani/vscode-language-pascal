@@ -4,6 +4,7 @@ import vscode = require('vscode');
 import cp = require('child_process');
 import path = require('path');
 import fs = require('fs');
+import { AbstractProvider } from "./abstractProvider";
 
 export function parseDefinitionLocation(output: string): vscode.Definition {
 
@@ -42,33 +43,39 @@ export function parseDefinitionLocation(output: string): vscode.Definition {
 	return items;
 }
 
-export function definitionLocations(word: string): Promise<vscode.Definition> {
+export class PascalDefinitionProvider extends AbstractProvider implements vscode.DefinitionProvider {
 
-	return new Promise<vscode.Definition>((resolve, reject) => {
+	public definitionLocations(word: string): Promise<vscode.Definition> {
 
-		let p = cp.execFile('global', ['-x', word], { cwd: vscode.workspace.rootPath }, (err, stdout, stderr) => {
-			try {
-				if (err && (<any>err).code === 'ENOENT') {
-					console.log('The "global" command is not available. Make sure it is on PATH');
-				}
-				if (err) return resolve(null);
-				let result = stdout.toString();
-				// console.log(result);
-				let locs = <vscode.Definition>parseDefinitionLocation(result);
-				return resolve(locs);
-			} catch (e) {
-				reject(e);
-			}
+		return new Promise<vscode.Definition>((resolve, reject) => {
+
+			this.generateTagsIfNeeded()
+				.then((value: boolean) => {
+					if (value) {
+
+						let p = cp.execFile('global', [ '-x', word ], { cwd: vscode.workspace.rootPath }, (err, stdout, stderr) => {
+							try {
+								if (err && (<any>err).code === 'ENOENT') {
+									console.log('The "global" command is not available. Make sure it is on PATH');
+								}
+								if (err) return resolve(null);
+								let result = stdout.toString();
+								// console.log(result);
+								let locs = <vscode.Definition>parseDefinitionLocation(result);
+								return resolve(locs);
+							} catch (e) {
+								reject(e);
+							}
+						});
+					}
+				});
 		});
-	});
-}
-
-export class PascalDefinitionProvider implements vscode.DefinitionProvider {
+	}
 
 	public provideDefinition(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken): vscode.Definition | Thenable<vscode.Definition> {
 		let fileName: string = document.fileName;
 		let word = document.getText(document.getWordRangeAtPosition(position)).split(/\r?\n/)[0];
-		return definitionLocations(word).then(locs => {
+		return this.definitionLocations(word).then(locs => {
 			return locs;
 		});
 	}

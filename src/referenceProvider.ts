@@ -4,6 +4,7 @@ import vscode = require('vscode');
 import cp = require('child_process');
 import path = require('path');
 import fs = require('fs');
+import { AbstractProvider } from "./abstractProvider";
 
 export function parseReferenceLocation(output: string): vscode.Location[] {
 
@@ -41,36 +42,40 @@ export function parseReferenceLocation(output: string): vscode.Location[] {
 	return items;
 }
 
-export function referenceLocations(word: string): Promise<vscode.Location[]> {
+export class PascalReferenceProvider extends AbstractProvider implements vscode.ReferenceProvider {
 
-	return new Promise<vscode.Location[]>((resolve, reject) => {
+	public referenceLocations(word: string): Promise<vscode.Location[]> {
 
-		let p = cp.execFile('global', ['-rx', word], { cwd: vscode.workspace.rootPath }, (err, stdout, stderr) => {
-			try {
-				if (err && (<any>err).code === 'ENOENT') {
-					console.log('The "global" command is not available. Make sure it is on PATH');
-				}
-				if (err) return resolve(null);
-				let result = stdout.toString();
-				// console.log(result);
-				let locs = <vscode.Location[]>parseReferenceLocation(result);
-				return resolve(locs);
-			} catch (e) {
-				reject(e);
-			}
+		return new Promise<vscode.Location[]>((resolve, reject) => {
+
+			this.generateTagsIfNeeded()
+				.then((value: boolean) => {
+					if (value) {
+						let p = cp.execFile('global', [ '-rx', word ], { cwd: vscode.workspace.rootPath }, (err, stdout, stderr) => {
+							try {
+								if (err && (<any>err).code === 'ENOENT') {
+									console.log('The "global" command is not available. Make sure it is on PATH');
+								}
+								if (err) return resolve(null);
+								let result = stdout.toString();
+								// console.log(result);
+								let locs = <vscode.Location[]>parseReferenceLocation(result);
+								return resolve(locs);
+							} catch (e) {
+								reject(e);
+							}
+						});
+					}
+				});
 		});
-	});
-}
-
-export class PascalReferenceProvider implements vscode.ReferenceProvider {
+	}
 
         // provideReferences(document: TextDocument, position: Position, context: ReferenceContext, token: CancellationToken): ProviderResult<Location[]>;
 	public provideReferences(document: vscode.TextDocument, position: vscode.Position, context: vscode.ReferenceContext, token: vscode.CancellationToken): vscode.ProviderResult<vscode.Location[]> {
 		let fileName: string = document.fileName;
 		let word = document.getText(document.getWordRangeAtPosition(position)).split(/\r?\n/)[0];
-		return referenceLocations(word).then(locs => {
+		return this.referenceLocations(word).then(locs => {
 			return locs;
 		});
-		// return null;
 	}
 }
