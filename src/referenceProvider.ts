@@ -62,6 +62,8 @@ export class PascalReferenceProvider extends AbstractProvider implements vscode.
 								reject(e);
 							}
 						});
+					} else {
+						return resolve (null);
 					}
 				});
 		});

@@ -67,6 +67,8 @@ export class PascalDefinitionProvider extends AbstractProvider implements vscode
 								reject(e);
 							}
 						});
+					} else {
+						return resolve(null);
 					}
 				});
 		});

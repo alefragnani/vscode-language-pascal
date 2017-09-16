@@ -16,6 +16,12 @@ export class AbstractProvider {
                 return;
             }
 
+            let autoGenerate: boolean = vscode.workspace.getConfiguration("pascal").get("tags.autoGenerate", true);
+            if (!autoGenerate) {
+                resolve(false);
+                return;
+            }
+
             let tagBuilder: TagsBuilder = new TagsBuilder();
             tagBuilder.generateTags(vscode.workspace.rootPath, false)
                 .then((value: string) => {

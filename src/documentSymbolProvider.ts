@@ -73,6 +73,8 @@ export class PascalDocumentSymbolProvider extends AbstractProvider implements vs
 							reject(e);
 						}
 					});
+				} else {
+					return resolve (null);
 				}
 			});
 		});

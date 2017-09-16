@@ -118,6 +118,11 @@
                     "type": "number",
                     "default": 80,
                     "description": "Maximum amount of characters per line"
+                },
+                "pascal.tags.autoGenerate": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Controls if the extension should automatically generate tags when needed"
                 }
             }
         }
