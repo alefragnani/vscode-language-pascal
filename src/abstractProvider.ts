@@ -17,7 +17,7 @@ export class AbstractProvider {
             }
 
             let tagBuilder: TagsBuilder = new TagsBuilder();
-            tagBuilder.generateTagsPromise(vscode.workspace.rootPath, false)
+            tagBuilder.generateTags(vscode.workspace.rootPath, false)
                 .then((value: string) => {
                     resolve(value === "");
                     return;

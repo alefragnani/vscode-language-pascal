@@ -43,7 +43,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     function generateTags(update: boolean) {
         let tagBuilder: TagsBuilder = new TagsBuilder();
-        tagBuilder.generateTags(vscode.workspace.rootPath, update);
+        tagBuilder.generateTags(vscode.workspace.rootPath, update, true);
     }
 
     vscode.commands.registerCommand('pascal.editFormatterParameters', () => {
