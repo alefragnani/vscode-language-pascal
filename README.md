@@ -123,11 +123,13 @@ To enable **Code Navigation**, the extension depends on **GNU Global and Exubera
 
 > _New in version 0.9.0_
 
-* Controls if the extension should automatically generate tags when needed
+* Controls if the extension should automatically generate tags in projects opened for the first time
 
 ```
     "pascal.tags.autoGenerate": true
 ```
+
+> For huge projects, it may take some time to generate the tags. If you don't want that, just set `pascal.tags.autoGenerate: false` in that project.
 
 # Task Build
 

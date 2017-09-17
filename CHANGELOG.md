@@ -1,3 +1,7 @@
+## Version 0.9.1
+
+* **Fix:** Better description for `pascal.tags.autoGenerate` setting
+
 ## Version 0.9.0
 
 * **New:** Auto generate tags for Code Navigation (issue [#17](https://github.com/alefragnani/vscode-language-pascal/issues/17))
