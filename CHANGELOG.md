@@ -1,3 +1,7 @@
+## Version 0.9.0
+
+* **New:** Auto generate tags for Code Navigation (issue [#17](https://github.com/alefragnani/vscode-language-pascal/issues/17))
+
 ## Version 0.8.2
 
 * **Fix:** Better handling if _`global` is not available_, with a _Don't show again_ option (issue [#21](https://github.com/alefragnani/vscode-language-pascal/issues/21))

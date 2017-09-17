@@ -2,7 +2,7 @@
     "name": "pascal",
     "displayName": "Language Pascal",
     "description": "Pascal support for Visual Studio Code",
-    "version": "0.8.2",
+    "version": "0.9.0",
     "publisher": "alefragnani",
     "galleryBanner": {
         "color": "#4682B4",

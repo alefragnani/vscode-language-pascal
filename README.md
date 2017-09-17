@@ -63,7 +63,6 @@ Standardise your Pascal code! The extension uses external tools _(engines)_ to f
 ## Code Navigation
 
 * Go to Symbol
-> _new in version 0.7.0_ 
 * Go to Definition
 * Peek Definition
 * Find All References
@@ -119,6 +118,16 @@ To enable **Code Navigation**, the extension depends on **GNU Global and Exubera
 
 * **Pascal: Generate Tags**: Use this to _create_ or _reset_ the tags in the current project. You just have to do it once. 
 * **Pascal: Update Tags**: Use this to _update_ the tags for current project. You should use this command to _update the references_ when any source code is updated.
+
+### Available Settings
+
+> _New in version 0.9.0_
+
+* Controls if the extension should automatically generate tags when needed
+
+```
+    "pascal.tags.autoGenerate": true
+```
 
 # Task Build
 
