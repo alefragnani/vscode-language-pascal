@@ -8,7 +8,7 @@ import { AbstractProvider } from "./abstractProvider";
 
 export class PascalDefinitionProvider extends AbstractProvider implements vscode.DefinitionProvider {
 
-	private parseDefinitionLocation(output: string): vscode.Definition {
+	private parseDefinitionLocation(output: string, filename: string): vscode.Definition {
 
 		var items: vscode.Location[] = new Array<vscode.Location>();
 		output.split(/\r?\n/)
@@ -25,12 +25,12 @@ export class PascalDefinitionProvider extends AbstractProvider implements vscode
 					// together again get the filename (which may contains spaces and the previous shift wouldn't work)
 					let filePath: string;
 					if (values[ 2 ].indexOf(word + '(') == 0) {
-						filePath = path.join(vscode.workspace.rootPath, values.shift());
+						filePath = path.join(AbstractProvider.basePathForFilename(filename), values.shift());
 					} else {
 						let rest: string = values.join(' ');
 						let idxProc: number = rest.search(/(class\s+)?\b(procedure|function|constructor|destructor)\b/gi);
 						filePath = rest.substr(0, idxProc - 1);
-						filePath = path.join(vscode.workspace.rootPath, filePath);
+						filePath = path.join(AbstractProvider.basePathForFilename(filename), filePath);
 					}
 
 					let definition = new vscode.Location(
@@ -45,15 +45,15 @@ export class PascalDefinitionProvider extends AbstractProvider implements vscode
 		return items;
 	}
 
-	private definitionLocations(word: string): Promise<vscode.Definition> {
+	private definitionLocations(word: string, filename: string): Promise<vscode.Definition> {
 
 		return new Promise<vscode.Definition>((resolve, reject) => {
 
-			this.generateTagsIfNeeded()
+			this.generateTagsIfNeeded(filename)
 				.then((value: boolean) => {
 					if (value) {
 
-						let p = cp.execFile('global', [ '-x', word ], { cwd: vscode.workspace.rootPath }, (err, stdout, stderr) => {
+						let p = cp.execFile('global', [ '-x', word ], { cwd: AbstractProvider.basePathForFilename(filename) }, (err, stdout, stderr) => {
 							try {
 								if (err && (<any>err).code === 'ENOENT') {
 									console.log('The "global" command is not available. Make sure it is on PATH');
@@ -61,7 +61,7 @@ export class PascalDefinitionProvider extends AbstractProvider implements vscode
 								if (err) return resolve(null);
 								let result = stdout.toString();
 								// console.log(result);
-								let locs = <vscode.Definition>this.parseDefinitionLocation(result);
+								let locs = <vscode.Definition>this.parseDefinitionLocation(result, filename);
 								return resolve(locs);
 							} catch (e) {
 								reject(e);
@@ -77,7 +77,7 @@ export class PascalDefinitionProvider extends AbstractProvider implements vscode
 	public provideDefinition(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken): vscode.Definition | Thenable<vscode.Definition> {
 		let fileName: string = document.fileName;
 		let word = document.getText(document.getWordRangeAtPosition(position)).split(/\r?\n/)[0];
-		return this.definitionLocations(word).then(locs => {
+		return this.definitionLocations(word, fileName).then(locs => {
 			return locs;
 		});
 	}

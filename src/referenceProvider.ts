@@ -8,7 +8,7 @@ import { AbstractProvider } from "./abstractProvider";
 
 export class PascalReferenceProvider extends AbstractProvider implements vscode.ReferenceProvider {
 
-	private parseReferenceLocation(output: string): vscode.Location[] {
+	private parseReferenceLocation(output: string, filename: string): vscode.Location[] {
 
 		var items: vscode.Location[] = new Array<vscode.Location>();
 		output.split(/\r?\n/)
@@ -27,7 +27,7 @@ export class PascalReferenceProvider extends AbstractProvider implements vscode.
 					let idxProc = rest.match(/(\w|\s)+.pas\s+/gi);
 
 					filePath = rest.substr(0, rest.indexOf(idxProc[ 0 ]) + idxProc[ 0 ].length - 1)
-					filePath = path.join(vscode.workspace.rootPath, filePath);
+					filePath = path.join(AbstractProvider.basePathForFilename(filename), filePath);
 
 					let definition = new vscode.Location(
 						vscode.Uri.file(filePath), new vscode.Position(line, 0)
@@ -41,14 +41,14 @@ export class PascalReferenceProvider extends AbstractProvider implements vscode.
 		return items;
 	}
 
-	private referenceLocations(word: string): Promise<vscode.Location[]> {
+	private referenceLocations(word: string, filename: string): Promise<vscode.Location[]> {
 
 		return new Promise<vscode.Location[]>((resolve, reject) => {
 
-			this.generateTagsIfNeeded()
+			this.generateTagsIfNeeded(filename)
 				.then((value: boolean) => {
 					if (value) {
-						let p = cp.execFile('global', [ '-rx', word ], { cwd: vscode.workspace.rootPath }, (err, stdout, stderr) => {
+						let p = cp.execFile('global', [ '-rx', word ], { cwd: AbstractProvider.basePathForFilename(filename) }, (err, stdout, stderr) => {
 							try {
 								if (err && (<any>err).code === 'ENOENT') {
 									console.log('The "global" command is not available. Make sure it is on PATH');
@@ -56,7 +56,7 @@ export class PascalReferenceProvider extends AbstractProvider implements vscode.
 								if (err) return resolve(null);
 								let result = stdout.toString();
 								// console.log(result);
-								let locs = <vscode.Location[]>this.parseReferenceLocation(result);
+								let locs = <vscode.Location[]>this.parseReferenceLocation(result, filename);
 								return resolve(locs);
 							} catch (e) {
 								reject(e);
@@ -72,7 +72,7 @@ export class PascalReferenceProvider extends AbstractProvider implements vscode.
 	public provideReferences(document: vscode.TextDocument, position: vscode.Position, context: vscode.ReferenceContext, token: vscode.CancellationToken): vscode.ProviderResult<vscode.Location[]> {
 		let fileName: string = document.fileName;
 		let word = document.getText(document.getWordRangeAtPosition(position)).split(/\r?\n/)[0];
-		return this.referenceLocations(word).then(locs => {
+		return this.referenceLocations(word, fileName).then(locs => {
 			return locs;
 		});
 	}

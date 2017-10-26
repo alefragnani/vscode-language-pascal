@@ -8,20 +8,20 @@ var opener = require('opener');
 
 export class TagsBuilder {
 
-    public generateTags(rootPath: string, update: boolean, showMessage?: boolean): Promise<string> {
+    public generateTags(basePath: string, update: boolean, showMessage?: boolean): Promise<string> {
 
         return new Promise<string>((resolve, reject) => {
 
             let command: string = update ? "global" : "gtags";
             let params: string = update ? "--update" : "";
 
-            if (!TagsBuilder.tagsAvailable(path.join(rootPath, 'GTAGS'))) {
+            if (!TagsBuilder.tagsAvailable(path.join(basePath, 'GTAGS'))) {
                 command = "gtags";
                 params = "";
             }
 
 			let statusBar: vscode.Disposable = vscode.window.setStatusBarMessage("Generating tags...");
-            let p = cp.execFile(command, [params], { cwd: rootPath }, (err, stdout, stderr) => {
+            let p = cp.execFile(command, [params], { cwd: basePath }, (err, stdout, stderr) => {
                 try {
 					statusBar.dispose();
 
@@ -57,8 +57,8 @@ export class TagsBuilder {
     }
 		
 
-	public static tagsAvailable(rootPath: string): boolean {
-		return fs.existsSync(path.join(rootPath, 'GTAGS'));
+	public static tagsAvailable(basePath: string): boolean {
+		return fs.existsSync(path.join(basePath, 'GTAGS'));
 	}
 		
 	public static checkGlobalAvailable(context: vscode.ExtensionContext): Promise<boolean> {
