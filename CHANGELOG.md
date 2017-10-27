@@ -1,3 +1,7 @@
+## Version 0.10.0
+
+* **New:** Multi-root support (issue [#26](https://github.com/alefragnani/vscode-language-pascal/issues/26))
+
 ## Version 0.9.1
 
 * **Fix:** Better description for `pascal.tags.autoGenerate` setting
