@@ -42,8 +42,15 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand('pascal.updateTags', () => generateTags(true));
 
     function generateTags(update: boolean) {
+
+        if (!vscode.window.activeTextEditor) {
+            vscode.window.showInformationMessage("Open a file first to generate tags");
+            return;
+        } 
+
         let tagBuilder: TagsBuilder = new TagsBuilder();
-        tagBuilder.generateTags(vscode.workspace.rootPath, update, true);
+        let basePath: string = vscode.workspace.getWorkspaceFolder(vscode.window.activeTextEditor.document.uri).uri.fsPath;
+        tagBuilder.generateTags(basePath, update, true);
     }
 
     vscode.commands.registerCommand('pascal.editFormatterParameters', () => {

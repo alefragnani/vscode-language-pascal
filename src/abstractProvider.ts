@@ -7,11 +7,17 @@ import { TagsBuilder } from './tagsBuilder';
 
 export class AbstractProvider {
 
-    public generateTagsIfNeeded(): Promise<boolean> {
+    public static basePathForFilename(filename: string): string {
+        let uriFilename: vscode.Uri = vscode.Uri.file(filename);
+        let basePath: string = vscode.workspace.getWorkspaceFolder(uriFilename).uri.fsPath;
+        return basePath;
+    }
+
+    public generateTagsIfNeeded(filename): Promise<boolean> {
 
         return new Promise<boolean>((resolve, reject) => {
 
-            if (fs.existsSync(path.join(vscode.workspace.rootPath, "GTAGS"))) {
+            if (fs.existsSync(path.join(AbstractProvider.basePathForFilename(filename), "GTAGS"))) {
                 resolve(true);
                 return;
             }
@@ -23,7 +29,7 @@ export class AbstractProvider {
             }
 
             let tagBuilder: TagsBuilder = new TagsBuilder();
-            tagBuilder.generateTags(vscode.workspace.rootPath, false)
+            tagBuilder.generateTags(AbstractProvider.basePathForFilename(filename), false)
                 .then((value: string) => {
                     resolve(value === "");
                     return;

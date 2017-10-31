@@ -2,14 +2,14 @@
     "name": "pascal",
     "displayName": "Language Pascal",
     "description": "Pascal support for Visual Studio Code",
-    "version": "0.9.1",
+    "version": "0.10.0",
     "publisher": "alefragnani",
     "galleryBanner": {
         "color": "#4682B4",
         "theme": "dark"
     },
     "engines": {
-		"vscode": "^1.12.0"
+		"vscode": "^1.18.0"
     },
     "categories": [
         "Languages",
@@ -22,7 +22,8 @@
         "delphi",
         "freepascal",
         "lazarus",
-        "formatter"
+        "formatter",
+        "multi-root ready"
     ],
     "activationEvents": [
         "onLanguage:pascal",
@@ -138,6 +139,6 @@
     "devDependencies": {
 		"@types/node": "^6.0.40",
 		"typescript": "^2.3.2",
-		"vscode": "^1.1.0"
+		"vscode": "^1.1.6"
     }
 }

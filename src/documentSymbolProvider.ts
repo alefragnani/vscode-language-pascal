@@ -56,11 +56,11 @@ export class PascalDocumentSymbolProvider extends AbstractProvider implements vs
 		
 		return new Promise<vscode.SymbolInformation[]>((resolve, reject) => {
 	
-			this.generateTagsIfNeeded()
+			this.generateTagsIfNeeded(filename)
 			.then((value: boolean) => {
 				if (value) {
 					// discover
-					let p = cp.execFile('global', ['-f', filename], { cwd: vscode.workspace.rootPath }, (err, stdout, stderr) => {
+					let p = cp.execFile('global', ['-f', filename], { cwd: AbstractProvider.basePathForFilename(filename) }, (err, stdout, stderr) => {
 						try {
 							if (err && (<any>err).code === 'ENOENT') {
 								console.log('The "global" command is not available. Make sure it is on PATH');
