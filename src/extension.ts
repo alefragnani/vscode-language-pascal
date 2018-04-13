@@ -13,6 +13,11 @@ import { PascalDefinitionProvider } from './definitionProvider';
 import { PascalReferenceProvider } from './referenceProvider';
 import { TagsBuilder } from './tagsBuilder';
 
+const documentSelector = [
+    { language: 'pascal', scheme: 'file' },
+    { language: 'pascal', scheme: 'untitled' }
+];
+
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
@@ -32,9 +37,9 @@ export function activate(context: vscode.ExtensionContext) {
     // language providers
     TagsBuilder.checkGlobalAvailable(context).then((value) => {
         if (value) {
-            context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider(['pascal'], new PascalDocumentSymbolProvider()));
-            context.subscriptions.push(vscode.languages.registerDefinitionProvider(['pascal'], new PascalDefinitionProvider()));
-            context.subscriptions.push(vscode.languages.registerReferenceProvider(['pascal'], new PascalReferenceProvider()));
+            context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider(documentSelector, new PascalDocumentSymbolProvider()));
+            context.subscriptions.push(vscode.languages.registerDefinitionProvider(documentSelector, new PascalDefinitionProvider()));
+            context.subscriptions.push(vscode.languages.registerReferenceProvider(documentSelector, new PascalReferenceProvider()));
         }
     });
 
@@ -121,7 +126,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 
     // 
-    context.subscriptions.push(vscode.languages.registerDocumentFormattingEditProvider('pascal', {
+    context.subscriptions.push(vscode.languages.registerDocumentFormattingEditProvider(documentSelector, {
         provideDocumentFormattingEdits: (document, options) => {
 
             return new Promise((resolve, reject) => {
@@ -165,7 +170,7 @@ export function activate(context: vscode.ExtensionContext) {
         }
     }));
 
-    context.subscriptions.push(vscode.languages.registerDocumentRangeFormattingEditProvider('pascal', {
+    context.subscriptions.push(vscode.languages.registerDocumentRangeFormattingEditProvider(documentSelector, {
         provideDocumentRangeFormattingEdits: (document, range, options) => {
 
             return new Promise((resolve, reject) => {
