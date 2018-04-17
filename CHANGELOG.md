@@ -1,3 +1,7 @@
+## Version 0.11.0
+
+* **New:** Visual Studio Live Share support (thanks to @lostintangent [PR #28](https://github.com/alefragnani/vscode-language-pascal/pull/28))
+
 ## Version 0.10.0
 
 * **New:** Multi-root support (issue [#26](https://github.com/alefragnani/vscode-language-pascal/issues/26))
@@ -33,7 +37,7 @@
 
 ## Version 0.6.0
 
-* **New:** Added _Formatters_ category for Marketplace (kudos to @waderyan)
+* **New:** Added _Formatters_ category for Marketplace (thanks to @waderyan)
 
 ## Version 0.5.0
 
