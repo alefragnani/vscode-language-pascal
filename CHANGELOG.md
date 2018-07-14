@@ -1,76 +1,77 @@
-## Version 0.11.0
+## [0.11.0] - 2018-04-17
+### Added
+- Visual Studio Live Share support (thanks to @lostintangent [PR #28](https://github.com/alefragnani/vscode-language-pascal/pull/28))
 
-* **New:** Visual Studio Live Share support (thanks to @lostintangent [PR #28](https://github.com/alefragnani/vscode-language-pascal/pull/28))
+## [0.10.0] - 2017-10-26
+### Added
+- Multi-root support (issue [#26](https://github.com/alefragnani/vscode-language-pascal/issues/26))
 
-## Version 0.10.0
+## [0.9.1] - 2017-09-17
+### Fixed
+- Better description for `pascal.tags.autoGenerate` setting
 
-* **New:** Multi-root support (issue [#26](https://github.com/alefragnani/vscode-language-pascal/issues/26))
+## [0.9.0] - 2017-09-16
+### Added
+- Auto generate tags for Code Navigation (issue [#17](https://github.com/alefragnani/vscode-language-pascal/issues/17))
 
-## Version 0.9.1
+## [0.8.2] - 2017-07-03
+### Fixed
+- Better handling if _`global` is not available_, with a _Don't show again_ option (issue [#21](https://github.com/alefragnani/vscode-language-pascal/issues/21))
 
-* **Fix:** Better description for `pascal.tags.autoGenerate` setting
+### Changed
+- **TypeScript** and **VS Code engine** updated
 
-## Version 0.9.0
+## [0.8.1] - 2017-07-01
+### Fixed
+- `$REGION` snippet not working because `$` sign (Thanks to @idleberg [PR #22](https://github.com/alefragnani/vscode-language-pascal/pull/22))
 
-* **New:** Auto generate tags for Code Navigation (issue [#17](https://github.com/alefragnani/vscode-language-pascal/issues/17))
+## [0.8.0] - 2017-02-14
+### Changed
+- Grammar updated to support VSCode 1.9.0
 
-## Version 0.8.2
+## [0.7.0] - 2016-11-27
+### Added
+- Support `Go to Definition` command
+- Support `Peek Definition` command
+- Support `Find All References` command
+* New Command: `Pascal: Generate Tags`
+* New Command: `Pascal: Update Tags`
 
-* **Fix:** Better handling if _`global` is not available_, with a _Don't show again_ option (issue [#21](https://github.com/alefragnani/vscode-language-pascal/issues/21))
-* **Internal**: **TypeScript** and **VS Code engine** updated
+## [0.6.0] - 2016-10-27
+### Added
+- Added _Formatters_ category for Marketplace (thanks to @waderyan)
 
-## Version 0.8.1
+## [0.5.0] - 2016-08-20
+### Added
+- Updated Syntax definitions (basic types, hexadecimal values, operators, flow control and others)
 
-* **Fix:** `$REGION` snippet not working because `$` sign (Thanks to @idleberg [PR #22](https://github.com/alefragnani/vscode-language-pascal/pull/22))
+## [0.4.1] - 2016-07-21
+### Fixed
+- Toggle Line/Block Comment not working (issue [#8](https://github.com/alefragnani/vscode-language-pascal/issues/8))
 
-## Version 0.8.0
+## [0.4.0] - 2016-05-29
+### Added
+- Support `Go to Symbol` command
 
-* **Internal:** Grammar updated to support VSCode 1.9.0
+## [0.3.1] - 2016-04-12
+### Fixed
+- Formatter settings not available (issue [#1](https://github.com/alefragnani/vscode-language-pascal/issues/1))
 
-## Version 0.7.0
+## [0.3.0] - 2016-04-10
+### Added
+- Formatter support
 
-* **New:** Go to Definition
-* **New:** Peek Definition
-* **New:** Find All References
-* **New Command:** Pascal: Generate Tags
-* **New Command:** Pascal: Update Tags
-
-## Version 0.6.0
-
-* **New:** Added _Formatters_ category for Marketplace (thanks to @waderyan)
-
-## Version 0.5.0
-
-* **New:** Updated Syntax definitions (basic types, hexadecimal values, operators, flow control and others)
-
-## Version 0.4.1
-
-* **Fix:** Toggle Line/Block Comment not working (issue [#8](https://github.com/alefragnani/vscode-language-pascal/issues/8))
-
-## Version 0.4.0
-
-* **New:** Go to Symbol
-
-## Version 0.3.1
-
-* **Fix:** Formatter settings not available (issue [#1](https://github.com/alefragnani/vscode-language-pascal/issues/1))
-
-## Version 0.3.0
-
-* **New:** Formatter added
-
-## Version 0.2.0
-
+## [0.2.0] - 2016-01-16
+### Added
 * License updated
 
-## Version 0.1.1
+## [0.1.1] - 2015-11-17
+### Fixed
+- Icon added for Marketplace
 
-* Icon added for Marketplace
+## [0.1.0] - 2016-11-16
+### Added
+- Update to official guidelines
 
-## Version 0.1.0
-
-* Update to official guidelines
-
-## Version 0.0.1
-
-* Initial release
+## [0.0.1] - 2015-10-13
+- Initial release
