@@ -1,3 +1,8 @@
+## [0.12.0] - 2018-07-14
+### Added
+- Support `.lpr` files (thanks to @BeRo1985 [PR #30](https://github.com/alefragnani/vscode-language-pascal/pull/30))
+- New Version Numbering based on `semver`
+
 ## [0.11.0] - 2018-04-17
 ### Added
 - Visual Studio Live Share support (thanks to @lostintangent [PR #28](https://github.com/alefragnani/vscode-language-pascal/pull/28))
