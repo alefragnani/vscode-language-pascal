@@ -17,23 +17,32 @@ export class AbstractProvider {
 
         return new Promise<boolean>((resolve, reject) => {
 
-            if (fs.existsSync(path.join(AbstractProvider.basePathForFilename(filename), "GTAGS"))) {
-                resolve(true);
-                return;
-            }
-
-            let autoGenerate: boolean = vscode.workspace.getConfiguration("pascal").get("tags.autoGenerate", true);
-            if (!autoGenerate) {
-                resolve(false);
-                return;
-            }
-
-            let tagBuilder: TagsBuilder = new TagsBuilder();
-            tagBuilder.generateTags(AbstractProvider.basePathForFilename(filename), false)
-                .then((value: string) => {
-                    resolve(value === "");
+            if (vscode.workspace.getConfiguration("pascal", null).get("workspaceSymbols.enabled", true)) {
+                if (fs.existsSync(path.join(AbstractProvider.basePathForFilename(filename), "GTAGS"))) {
+                    resolve(true);
                     return;
-                });
+                }
+
+                let autoGenerate: boolean = vscode.workspace.getConfiguration("pascal").get("tags.autoGenerate", true);
+                if (!autoGenerate) {
+                    resolve(false);
+                    return;
+                }
+
+                let tagBuilder: TagsBuilder = new TagsBuilder();
+                tagBuilder.generateTags(AbstractProvider.basePathForFilename(filename), false)
+                    .then((value: string) => {
+                        resolve(value === "");
+                        return;
+                    });
+            } else {
+                let tagBuilder: TagsBuilder = new TagsBuilder();
+                tagBuilder.generateTagsForFile(filename)
+                    .then((value: string) => {
+                        resolve(value === "");
+                        return;
+                    });
+            }
         });
     }
 }

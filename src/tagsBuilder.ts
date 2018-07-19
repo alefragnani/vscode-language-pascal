@@ -4,6 +4,7 @@ import cp = require('child_process');
 import vscode = require('vscode');
 import path = require('path');
 import fs = require('fs');
+import { AbstractProvider } from "./abstractProvider";
 var opener = require('opener');
 
 export class TagsBuilder {
@@ -56,6 +57,43 @@ export class TagsBuilder {
         });
     }
 		
+    public generateTagsForFile(fileName: string): Promise<string> {
+
+        return new Promise<string>((resolve, reject) => {
+
+			let basePath: string = AbstractProvider.basePathForFilename(fileName);
+			let listTXT: string = path.join(basePath, 'GLIST');
+			fs.writeFileSync(listTXT, fileName);
+
+			let p = cp.execFile('gtags', ["--accept-dotfiles", "-f", listTXT], { cwd: basePath }, (err, stdout, stderr) => {
+                try {
+                    if (err && (<any>err).code === 'ENOENT') {
+                        vscode.window.showInformationMessage('The \"global\" command is not available. Make sure it is on PATH');
+                        resolve('The \"global\" command is not available. Make sure it is on PATH');
+                        return;
+                    }
+                    if (err) {
+                        vscode.window.showInformationMessage('Some error occured: ' + err);
+                        resolve('Some error occured: ' + err);
+                        return;
+                    }
+                    if (stderr) {
+                        vscode.window.showInformationMessage('Some error occured: ' + stderr);
+                        resolve('Some error occured: ' + stderr);
+                        return;
+                    }
+
+                    resolve("");
+                    return;
+                } catch (e) {
+                    vscode.window.showInformationMessage('Some error occured: ' + e);
+                    reject('Some error occured: ' + e);
+                    return;
+                }
+            });
+
+        });
+    }
 
 	public static tagsAvailable(basePath: string): boolean {
 		return fs.existsSync(path.join(basePath, 'GTAGS'));

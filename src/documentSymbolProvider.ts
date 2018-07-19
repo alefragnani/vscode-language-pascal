@@ -82,7 +82,28 @@ export class PascalDocumentSymbolProvider extends AbstractProvider implements vs
 
 	public provideDocumentSymbols(document: vscode.TextDocument, token: vscode.CancellationToken): Thenable<vscode.SymbolInformation[]> {
 
-		let fileName: string = document.fileName;
+		let fileName: string;
+
+		// dirty for local
+		if (document.isDirty) {
+			let range: vscode.Range = new vscode.Range(
+				0, 0,
+				document.lineCount,
+				document.lineAt(document.lineCount - 1).range.end.character
+			);
+
+			let textToFormat = document.getText(range);
+			let tempFile: string = path.join(vscode.workspace.rootPath, '.vscode/GTEMP.pas');
+
+			if (!fs.existsSync(path.join(vscode.workspace.rootPath, '.vscode'))) {
+				fs.mkdirSync(path.join(vscode.workspace.rootPath, '.vscode'));
+			}
+			fs.writeFileSync(tempFile, textToFormat);
+			fileName = tempFile;
+		} else {
+			fileName = document.fileName;
+		}
+
 		return this.documentSymbolLocations(fileName).then(decls => {
 			return decls;
 		});
