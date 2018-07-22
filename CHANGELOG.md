@@ -1,3 +1,8 @@
+## [6.3.0] - TBD
+### Added
+- New Project Name (now simply **_Pascal_**)
+- New Publishing Model
+
 ## [0.12.0 - 6.2.0] - 2018-07-14
 ### Added
 - Support `.lpr` files (thanks to @BeRo1985 [PR #30](https://github.com/alefragnani/vscode-language-pascal/pull/30))
