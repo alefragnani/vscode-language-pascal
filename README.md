@@ -1,6 +1,6 @@
 <p align="center">
   <br />
-  <a title="Learn more about Language Pascal" href="http://github.com/alefragnani/vscode-language-pascal"><img src="images/vscode-pascal-logo-readme.png" alt="Pascal Logo" width="70%" /></a>
+  <a title="Learn more about Pascal" href="http://github.com/alefragnani/vscode-language-pascal"><img src="images/vscode-pascal-logo-readme.png" alt="Pascal Logo" width="70%" /></a>
 </p>
 
 # What's new in Pascal 6
@@ -12,13 +12,13 @@
 
 **Pascal** is an open source extension created for **Visual Studio Code**. While being free and open source, if you find it useful, please consider [supporting it](#support-pascal)
 
-It adds support for the **Pascal** Language and its dialects like **Delphi** and **FreePascal/Lazarus**. 
+It adds support for the **Pascal** language and its dialects like **Delphi** and **FreePascal**. 
 
 Here are some of the features that **Pascal** provides:
 
 * **Syntax highlighting** for files, forms and projects
 * A huge set of **Snippets**
-* Support for two different **Code Formatters**
+* Support for different **Code Formatters**
 * Source code **navigation** 
 
 # Features
@@ -129,8 +129,6 @@ To enable **Code Navigation**, the extension depends on **GNU Global and Exubera
 * **Pascal: Update Tags**: Use this to _update_ the tags for current project. You should use this command to _update the references_ when any source code is updated.
 
 ### Available Settings
-
-> _New in version 0.9.0_
 
 * Controls if the extension should automatically generate tags in projects opened for the first time
 
