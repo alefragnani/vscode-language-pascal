@@ -1,47 +1,56 @@
+<p align="center">
+  <br />
+  <a title="Learn more about Pascal" href="http://github.com/alefragnani/vscode-language-pascal"><img src="images/vscode-pascal-logo-readme.png" alt="Pascal Logo" width="70%" /></a>
+</p>
+
+# What's new in Pascal 6
+
+* Visual Studio Live Share support
+* Multi-root Support
+
 # Pascal for Visual Studio Code
 
-This extension adds support for the Pascal Language to Visual Studio Code. It works with Delphi and FreePascal/Lazarus and supports:
+**Pascal** is an open source extension created for **Visual Studio Code**. While being free and open source, if you find it useful, please consider [supporting it](#support-pascal)
 
-* Colorization
-* Snippets
-* Format Code
-* Task Build
-* Code Navigation
-	* Go to Symbol
-	* Go to Definition
-	* Peek Definition
-	* Find All References
+It adds support for the **Pascal** language and its dialects like **Delphi** and **FreePascal**. 
 
-# Installation
+Here are some of the features that **Pascal** provides:
 
-Press `F1` in VSCode, type `ext install` and then look for `Language Pascal`.
+* **Syntax highlighting** for files, forms and projects
+* A huge set of **Snippets**
+* Support for different **Code Formatters**
+* Source code **navigation** 
 
-# Usage
+# Features
 
-## Colorization
+## Coding with style
 
-Full syntax highlight for Pascal
+### Syntax Highlighting
+
+**Pascal** supports full syntax highlighting for **Delphi** and **FreePascal**
 
 ![syntax](images/vscode-pascal-syntax.png)
 
-## Snippets
+### Snippets
 
-Almost 40 snippets available:
+Almost 40 snippets are available
 
 ![snippets](images/vscode-pascal-snippets.png)
 
-## Format Code
+### Format Code
 
-Standardise your Pascal code! The extension uses external tools _(engines)_ to format the code, so you must install them prior to use the `Format Document` and `Format Selection` commands.
+Standardise your **Pascal** code! 
+
+It uses external tools _(engines)_ to format the code, so you must install them prior to use the `Format Document` and `Format Selection` commands.
 
 * **Jedi Code Format:** http://jedicodeformat.sourceforge.net/ (Windows only)
 * **FreePascal PToP:** http://wiki.freepascal.org/PTop (Windows, Linux and Mac OS X)
 
 > If you intend to format _pieces of selected texts_ instead of _the entire file_, you should use **FreePascal PToP**, because the **Jedi Code Format** only works for entire files. 
 
-### Available settings
+#### Available settings
 
-* Choose the engine to be used _(required)_
+* Choose the formatter engine to be used _(required)_
 ```
     // ptop means FreePascal PToP
     "pascal.formatter.engine": "ptop"
@@ -120,8 +129,6 @@ To enable **Code Navigation**, the extension depends on **GNU Global and Exubera
 * **Pascal: Update Tags**: Use this to _update_ the tags for current project. You should use this command to _update the references_ when any source code is updated.
 
 ### Available Settings
-
-> _New in version 0.9.0_
 
 * Controls if the extension should automatically generate tags in projects opened for the first time
 
@@ -204,10 +211,23 @@ Update two tags:
     }
 ```
 
+## Support Pascal
+
+While **Pascal** is free and open source, if you find it useful, please consider supporting it.
+
+I've been building **Pascal** since VS Code internal beta days, and while I enjoy developing it, I would like to be able to give more attention to its growth.
+
+<table align="center" width="30%" border="0">
+  <tr>
+    <td>
+      <a title="Paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EP57F3B6FXKTU&lc=US&item_name=Alessandro%20Fragnani&item_number=vscode%20extensions&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif"/></a>
+    </td>
+    <td>
+      <a title="Paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EP57F3B6FXKTU&lc=BR&item_name=Alessandro%20Fragnani&item_number=vscode%20extensions&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><img src="https://www.paypalobjects.com/pt_BR/i/btn/btn_donate_SM.gif"/></a>
+    </td>
+  </tr>
+</table>
+
 # License
 
 [MIT](LICENSE.md) &copy; Alessandro Fragnani
-
----
-
-[![Paypal Donations](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EP57F3B6FXKTU&lc=US&item_name=Alessandro%20Fragnani&item_number=vscode%20extensions&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted) a :coffee: if you enjoy using this extension :thumbsup:
