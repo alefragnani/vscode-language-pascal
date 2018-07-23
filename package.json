@@ -129,6 +129,7 @@
                 "pascal.workspaceSymbols.enabled": {
                     "type": "boolean",
                     "default": true,
+                    "scope": "resource",
                     "description": "Choose whether the code navigation should support full workspace o"
                 }
             }
