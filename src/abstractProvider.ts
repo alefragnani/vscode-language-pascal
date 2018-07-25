@@ -9,15 +9,20 @@ export class AbstractProvider {
 
     public static basePathForFilename(filename: string): string {
         let uriFilename: vscode.Uri = vscode.Uri.file(filename);
-        let basePath: string = vscode.workspace.getWorkspaceFolder(uriFilename).uri.fsPath;
-        return basePath;
+        if (vscode.workspace.workspaceFolders) {
+            return vscode.workspace.getWorkspaceFolder(uriFilename).uri.fsPath;
+        } else {
+            return path.dirname(filename);             
+        }
+
     }
 
     public generateTagsIfNeeded(filename): Promise<boolean> {
 
         return new Promise<boolean>((resolve, reject) => {
 
-            if (vscode.workspace.getConfiguration("pascal", null).get("workspaceSymbols.enabled", true)) {
+            let uri: vscode.Uri = vscode.Uri.file(filename);
+            if (vscode.workspace.getConfiguration("pascal", uri).get("workspaceSymbols.enabled", true)) {
                 if (fs.existsSync(path.join(AbstractProvider.basePathForFilename(filename), "GTAGS"))) {
                     resolve(true);
                     return;
