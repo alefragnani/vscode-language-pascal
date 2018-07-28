@@ -130,7 +130,7 @@
                     "type": "string",
                     "default": "workspace",
                     "scope": "resource",
-                    "description": "Choose whether the code navigation should support full workspace o",
+                    "description": "Select how the code navigation should work",
                     "enum": [
                         "workspace",
                         "file"
