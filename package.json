@@ -90,7 +90,7 @@
         ],
         "configuration": {
             "type": "object",
-            "title": "Pascal Formatter Configuration",
+            "title": "Pascal",
             "properties": {
                 "pascal.formatter.engine": {
                     "type": "string",
