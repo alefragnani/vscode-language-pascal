@@ -90,7 +90,7 @@
         ],
         "configuration": {
             "type": "object",
-            "title": "Pascal Formatter Configuration",
+            "title": "Pascal",
             "properties": {
                 "pascal.formatter.engine": {
                     "type": "string",
@@ -125,6 +125,16 @@
                     "type": "boolean",
                     "default": true,
                     "description": "Controls if the extension should automatically generate tags in projects opened for the first time"
+                },
+                "pascal.codeNavigation": {
+                    "type": "string",
+                    "default": "workspace",
+                    "scope": "resource",
+                    "description": "Select how the code navigation should work",
+                    "enum": [
+                        "workspace",
+                        "file"
+                    ]
                 }
             }
         }
