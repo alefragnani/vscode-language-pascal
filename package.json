@@ -126,11 +126,15 @@
                     "default": true,
                     "description": "Controls if the extension should automatically generate tags in projects opened for the first time"
                 },
-                "pascal.workspaceSymbols.enabled": {
-                    "type": "boolean",
-                    "default": true,
+                "pascal.codeNavigation": {
+                    "type": "string",
+                    "default": "workspace",
                     "scope": "resource",
-                    "description": "Choose whether the code navigation should support full workspace o"
+                    "description": "Choose whether the code navigation should support full workspace o",
+                    "enum": [
+                        "workspace",
+                        "file"
+                    ]
                 }
             }
         }
