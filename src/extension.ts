@@ -49,7 +49,8 @@ export function activate(context: vscode.ExtensionContext) {
                 canRegisterOtherProviders = false;
             }
             if (isSingleWorkspace) {
-                canRegisterOtherProviders = (vscode.workspace.getConfiguration("pascal", vscode.window.activeTextEditor.document.uri).get("workspaceSymbols.enabled", true));
+                canRegisterOtherProviders = (vscode.workspace.getConfiguration("pascal", 
+                    vscode.window.activeTextEditor.document.uri).get("codeNavigation", "workspace") === "workspace");
             } 
             if (isMultirootWorkspace) {
                 canRegisterOtherProviders = true; 

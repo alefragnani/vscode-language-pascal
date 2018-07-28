@@ -85,7 +85,7 @@ export class PascalDocumentSymbolProvider extends AbstractProvider implements vs
 		let fileName: string;
 
 		// dirty for local
-		if (document.isDirty) {
+		if ((vscode.workspace.getConfiguration("pascal", null).get("codeNavigation", "file")) && document.isDirty) {
 			let range: vscode.Range = new vscode.Range(
 				0, 0,
 				document.lineCount,

@@ -22,7 +22,7 @@ export class AbstractProvider {
         return new Promise<boolean>((resolve, reject) => {
 
             let uri: vscode.Uri = vscode.Uri.file(filename);
-            if (vscode.workspace.getConfiguration("pascal", uri).get("workspaceSymbols.enabled", true)) {
+            if (vscode.workspace.getConfiguration("pascal", uri).get("codeNavigation", "workspace") === "workspace") {
                 if (fs.existsSync(path.join(AbstractProvider.basePathForFilename(filename), "GTAGS"))) {
                     resolve(true);
                     return;
