@@ -1,6 +1,7 @@
-## [6.3.0] - TBD
+## [6.3.0] - 2018-07-28
 ### Added
-- New Project Name (now simply **_Pascal_**)
+- New Project Name (now just **_Pascal_**)
+- Improve code navigation (issue [#32](https://github.com/alefragnani/vscode-language-pascal/issues/32))
 - New Publishing Model
 
 ## [0.12.0 - 6.2.0] - 2018-07-14
