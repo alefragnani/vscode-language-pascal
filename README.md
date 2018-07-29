@@ -5,8 +5,9 @@
 
 # What's new in Pascal 6
 
-* Visual Studio Live Share support
 * Multi-root Support
+* Visual Studio Live Share support 
+* Better Code Navigation
 
 # Pascal for Visual Studio Code
 
@@ -50,33 +51,33 @@ It uses external tools _(engines)_ to format the code, so you must install them 
 
 #### Available settings
 
-* Choose the formatter engine to be used _(required)_
-```
-    // ptop means FreePascal PToP
+You can choose which formatter engine to use _(required)_:
+
+* `ptop`: FreePascal PToP
+* `jcf`: Jedi Code Formatter
+
+```json
     "pascal.formatter.engine": "ptop"
-    
-    // jcf means Jedi Code Format 
-    "pascal.formatter.engine": "jcf"
 ```
 
 * Indicates the engine app path _(required)_
-```
+```json
     "pascal.formatter.enginePath": "C:\\FPC\\2.6.4\\bin\\i386-win32\\ptop.exe" 
 ```
 
 * Indicates the configuration file for the selected engine _(optional)_
-```
+```json
     "pascal.formatter.engineParameters": "C:\\FPC\\2.6.4\\bin\\i386-win32\\default.cfg"
 ```
 
 ## Code Navigation
 
+Navigate to any language element (methods, attributes, classes, interfaces, and so on) inside Pascal files. It supports native VS Code commands like:
+
 * Go to Symbol
 * Go to Definition
 * Peek Definition
 * Find All References
-
-Navigate to any language element (methods, attributes, classes, interfaces, and so on) inside Pascal files.
 
 > It uses GNU Global, a source code tagging system, which means that it has some limitations if you compare with an AST parsing.
 
@@ -130,19 +131,33 @@ To enable **Code Navigation**, the extension depends on **GNU Global and Exubera
 
 ### Available Settings
 
+Controls how the code navigation should work. Specially useful if you work with huge projects
+
+* `workspace`: Full featured code navigation
+* `file`: Limited to `Go to Symbol in File` command
+
+```json
+    "pascal.codeNavigation": "workspace"
+``` 
+
 * Controls if the extension should automatically generate tags in projects opened for the first time
 
-```
+```json
     "pascal.tags.autoGenerate": true
 ```
 
-> For huge projects, it may take some time to generate the tags. If you don't want that, just set `pascal.tags.autoGenerate: false` in that project.
+> For huge projects, its recommended to use:
+
+```json
+    "pascal.codeNavigation": "file",
+    "pascal.tags.autoGenerate": false
+```
 
 # Task Build
 
 Use this **Task Examples**, so you can:
 
-* Compile Delphi and FreePascal Projects:
+* Compile **Delphi** and **FreePascal** projects:
 * Navigate to _Errors/Warnings/Hints_, using the native _View / Errors and Warnings_ command
 
 ![compile](images/vscode-pascal-compile.png) 
