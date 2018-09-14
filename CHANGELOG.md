@@ -1,3 +1,7 @@
+## [6.4.0] - 2018-09-14
+### Added
+- Patreon button
+
 ## [6.3.0] - 2018-07-28
 ### Added
 - New Project Name (now just **_Pascal_**)
