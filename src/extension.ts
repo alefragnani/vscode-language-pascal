@@ -12,6 +12,7 @@ import { PascalDocumentSymbolProvider } from './documentSymbolProvider';
 import { PascalDefinitionProvider } from './definitionProvider';
 import { PascalReferenceProvider } from './referenceProvider';
 import { TagsBuilder } from './tagsBuilder';
+import { whatsNewUri, PageProvider } from "./pageProvider";
 
 const documentSelector = [
     { language: 'pascal', scheme: 'file' },
@@ -62,6 +63,15 @@ export function activate(context: vscode.ExtensionContext) {
                 context.subscriptions.push(vscode.languages.registerReferenceProvider(documentSelector, new PascalReferenceProvider()));
             }
         }
+    });
+
+    let provider = new PageProvider(context);
+    let registration = vscode.workspace.registerTextDocumentContentProvider('pascal', provider);
+    vscode.commands.registerCommand('pascal.whatsNew', () => {
+		return vscode.commands.executeCommand('vscode.previewHtml', whatsNewUri, vscode.ViewColumn.Active, 'What\'s New in Pascal ').then((success) => {
+		}, (reason) => {
+			vscode.window.showErrorMessage(reason);
+		});
     });
 
     vscode.commands.registerCommand('pascal.generateTags', () => generateTags(false));

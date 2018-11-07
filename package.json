@@ -86,6 +86,10 @@
             {
                 "command": "pascal.updateTags",
                 "title": "Pascal: Update Tags"
+            },
+            {
+                "command": "pascal.whatsNew",
+                "title": "Pascal: What's New"
             }
         ],
         "configuration": {
