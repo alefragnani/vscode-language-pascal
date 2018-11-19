@@ -64,7 +64,7 @@ h2 {
   font-size: 1.5em;
   font-weight: 200;
   line-height: normal;
-  margin: 1em 0 0.3em 0;
+  /* margin: 1em 0 0.3em 0; */
   white-space: nowrap; }
 
 h3 {
@@ -78,7 +78,8 @@ header {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  /*margin-bottom: 1em;*/ }
+  justify-content: center;
+  margin-bottom: 1em; }
 
 input, select, button {
   font-family: var(--font-family);
@@ -215,8 +216,8 @@ ul {
     margin: 0.75em 0; }
 
 .changelog {
-  /* border-radius: 5em; */
-  margin: 2em 4em 2em 2em; }
+  /* border-radius: 5em; 
+  margin: 2em 4em 2em 2em; */}
   .vscode-light .changelog {
     background-color: var(--vscode-editor-background);
     /* box-shadow: inset 0 0 6px 0px rgba(0, 0, 0, 0.05); */
@@ -299,7 +300,7 @@ ul {
 
 .changelog__scroller {
   flex: 100% 0 0;
-  margin: 1.5em 0 0 0;
+  /* margin: 1.5em 0 0 0; */
   max-height: 400px;
   overflow-y: auto; }
   /* .vscode-dark .changelog__scroller {
@@ -312,13 +313,19 @@ ul {
   text-align: center; }
 
 .changelog__version {
-  background-color: var(--vscode-activityBarBadge-background);
+  background-color: yellow; /* var(--vscode-activityBarBadge-background);*/
   /* border-bottom: 2px solid #0bb892; */
   border-radius: 3px;
-  color: var(--vscode-activityBarBadge-foreground);
+  /* color: var(--vscode-activityBarBadge-foreground); */
   margin: 0 0.25em;
   padding: 2px 10px;
   text-align: center;
+  
+  color: black;
+  border-color: blue;
+  border-width: 2px;
+  font-weight: 600;
+
   vertical-align: bottom; }
 
 .command {
@@ -362,10 +369,10 @@ ul {
 
 .header__blurb {
   color: var(--color--75);
-  flex: 55% 2 1;
+  /* flex: 55% 2 1; */
   font-size: 1.2em;
   font-weight: 200;
-  margin: -1em 0 0 2em;
+  margin: 1em 0 1em 1em;
   min-width: 345px; }
   @media all and (max-width: 880px) {
     .header__blurb {
@@ -540,7 +547,7 @@ ul {
 
 .section-group__sidebar {
   align-self: flex-start;
-  margin: -1em 0 0 3em;
+  margin: 0 0 0 3em;
   position: sticky;
   top: 0; }
   .section-group__sidebar li {
@@ -634,7 +641,7 @@ ul {
     background-color: var(--background-color) !important; }
 
 .sidebar-group {
-  margin-top: 1em; }
+  /*margin-top: 1em; */}
 
 .bold {
   font-weight: 600; }
