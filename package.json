@@ -27,7 +27,8 @@
     ],
     "activationEvents": [
         "onLanguage:pascal",
-        "onCommand:pascal.editFormatterParameters"
+        "onCommand:pascal.editFormatterParameters",
+        "onCommand:pascal.whatsNew"
     ],
     "main": "./out/src/extension",
     "icon": "images/icon.png",
