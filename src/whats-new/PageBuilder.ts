@@ -1,6 +1,6 @@
 import { Uri } from "vscode";
 import * as fs from "fs";
-import { ChangeLogItem, ChangeLogKind, Sponsor } from "./WhatsNewContentProvider";
+import { ChangeLogItem, ChangeLogKind, Sponsor } from "./ContentProvider";
 
 export class WhatsNewPageBuilder {
 

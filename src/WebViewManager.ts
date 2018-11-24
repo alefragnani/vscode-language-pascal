@@ -1,4 +1,4 @@
-import { ContentProvider } from "./WhatsNewContentProvider";
+import { ContentProvider } from "./whats-new/ContentProvider";
 
 export interface WebViewManager {
     registerContentProvider(extensionName: string, contentProvider: ContentProvider): WebViewManager;

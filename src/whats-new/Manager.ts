@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 import path = require("path");
-import { WhatsNewPageBuilder } from "./WhatsNewPageBuilder";
-import { ContentProvider } from "./WhatsNewContentProvider";
+import { WhatsNewPageBuilder } from "./PageBuilder";
+import { ContentProvider } from "./ContentProvider";
 
 export class WhatsNewManager {
 

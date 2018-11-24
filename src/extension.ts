@@ -12,10 +12,8 @@ import { PascalDocumentSymbolProvider } from './documentSymbolProvider';
 import { PascalDefinitionProvider } from './definitionProvider';
 import { PascalReferenceProvider } from './referenceProvider';
 import { TagsBuilder } from './tagsBuilder';
-import { whatsNewUri, PageProvider } from "./pageProvider";
-import { WhatsNewManager } from './WhatsNewManager';
-import { WhatsNewReplacements } from "./WhatsNewContentProvider";
-import { WhatsNewPascalContentProvider } from './WhatsNewPascalContentProvider';
+import { WhatsNewManager } from './whats-new/Manager';
+import { WhatsNewPascalContentProvider } from './whats-new/PascalContentProvider';
 
 const documentSelector = [
     { language: 'pascal', scheme: 'file' },
@@ -69,7 +67,7 @@ export function activate(context: vscode.ExtensionContext) {
     });
 
     let provider = new WhatsNewPascalContentProvider();
-    let viewer = new WhatsNewManager(context).registerContentProvider("pascal", provider);
+    let viewer = new WhatsNewManager(context).registerContentProvider("Pascal", provider);
     viewer.showPageInActivation();
 
 

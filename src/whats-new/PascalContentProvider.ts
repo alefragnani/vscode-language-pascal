@@ -1,4 +1,4 @@
-import { ChangeLogItem, ChangeLogKind, Sponsor, ContentProvider } from "./WhatsNewContentProvider";
+import { ChangeLogItem, ChangeLogKind, Sponsor, ContentProvider } from "./ContentProvider";
 
 export class WhatsNewPascalContentProvider implements ContentProvider {
 

@@ -14,12 +14,6 @@ export interface Sponsor {
     extra: string;
 }
 
-export interface WhatsNewReplacements {
-    headerMessage: string;
-    changeLog: ChangeLogItem[];
-    sponsors: Sponsor[];
-}
-
 export interface ContentProvider {
     provideHeader(): string;
     provideChangeLog(): ChangeLogItem[];
