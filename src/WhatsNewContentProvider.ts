@@ -1,5 +1,3 @@
-'use strict';
-
 export enum ChangeLogKind { NEW = "NEW", CHANGED = "CHANGED", FIXED = "FIXED" };
 
 export interface ChangeLogItem {
@@ -20,4 +18,10 @@ export interface WhatsNewReplacements {
     headerMessage: string;
     changeLog: ChangeLogItem[];
     sponsors: Sponsor[];
+}
+
+export interface ContentProvider {
+    provideHeader(): string;
+    provideChangeLog(): ChangeLogItem[];
+    provideSponsors(): Sponsor[];
 }

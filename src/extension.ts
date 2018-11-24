@@ -13,9 +13,9 @@ import { PascalDefinitionProvider } from './definitionProvider';
 import { PascalReferenceProvider } from './referenceProvider';
 import { TagsBuilder } from './tagsBuilder';
 import { whatsNewUri, PageProvider } from "./pageProvider";
-import { WhatsNew } from './WhatsNew';
-import { WhatsNewReplacements } from "./WhatsNewReplacements";
-import { WhatsNewPascal } from './WhatsNewPascal';
+import { WhatsNewManager } from './WhatsNewManager';
+import { WhatsNewReplacements } from "./WhatsNewContentProvider";
+import { WhatsNewPascalContentProvider } from './WhatsNewPascalContentProvider';
 
 const documentSelector = [
     { language: 'pascal', scheme: 'file' },
@@ -68,10 +68,15 @@ export function activate(context: vscode.ExtensionContext) {
         }
     });
 
-    let whatsNew: WhatsNew = new WhatsNewPascal(context);
-    whatsNew.showPageInActivation();
+    let provider = new WhatsNewPascalContentProvider();
+    let viewer = new WhatsNewManager(context).registerContentProvider("pascal", provider);
+    viewer.showPageInActivation();
 
-    context.subscriptions.push(vscode.commands.registerCommand('pascal.whatsNew', () => whatsNew.showPage()));
+
+    // let whatsNew: WhatsNew = new WhatsNewPascal(context);
+    // whatsNew.showPageInActivation();
+
+    context.subscriptions.push(vscode.commands.registerCommand('pascal.whatsNew', () => viewer.showPage()));
 
     vscode.commands.registerCommand('pascal.generateTags', () => generateTags(false));
     vscode.commands.registerCommand('pascal.updateTags', () => generateTags(true));

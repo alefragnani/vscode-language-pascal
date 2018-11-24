@@ -1,10 +1,8 @@
-'use strict';
-
 import { Uri } from "vscode";
 import * as fs from "fs";
-import { ChangeLogItem, ChangeLogKind, Sponsor } from "./WhatsNewReplacements";
+import { ChangeLogItem, ChangeLogKind, Sponsor } from "./WhatsNewContentProvider";
 
-export class WhatsNewHTML {
+export class WhatsNewPageBuilder {
 
     private htmlFile: string;
 
@@ -28,22 +26,22 @@ export class WhatsNewHTML {
         this.htmlFile = fs.readFileSync(htmlFile).toString();
     }
 
-    updateScript(scriptUri: Uri): WhatsNewHTML {
+    updateScript(scriptUri: Uri): WhatsNewPageBuilder {
         this.htmlFile = this.htmlFile.replace("${scriptUri}", scriptUri.toString());
         return this;
     }
 
-    updateLogo(logoUri: Uri): WhatsNewHTML {
+    updateLogo(logoUri: Uri): WhatsNewPageBuilder {
         this.htmlFile = this.htmlFile.replace("${logoUri}", logoUri.toString());
         return this;
     }
 
-    updateHeader(headerMessage: string): WhatsNewHTML {
+    updateHeader(headerMessage: string): WhatsNewPageBuilder {
         this.htmlFile = this.htmlFile.replace("${headerMessage}", headerMessage);
         return this;
     }
 
-    updateChangeLog(changeLog: ChangeLogItem[]): WhatsNewHTML {
+    updateChangeLog(changeLog: ChangeLogItem[]): WhatsNewPageBuilder {
         let changeLogString: string = "";
 
         for (const cl of changeLog) {
@@ -57,7 +55,7 @@ export class WhatsNewHTML {
         this.htmlFile = this.htmlFile.replace("${changeLog}", changeLogString);
         return this;
     }
-    updateSponsors(sponsors: Sponsor[]): WhatsNewHTML {
+    updateSponsors(sponsors: Sponsor[]): WhatsNewPageBuilder {
         let sponsorsString: string = "";
 
         for (const sp of sponsors) {
@@ -77,8 +75,8 @@ export class WhatsNewHTML {
         return this.htmlFile.toString();
     }
 
-    public static WhatsNewHTML(htmlFile: string): WhatsNewHTML {
-        return new WhatsNewHTML(htmlFile);
+    public static newBuilder(htmlFile: string): WhatsNewPageBuilder {
+        return new WhatsNewPageBuilder(htmlFile);
     }
 
 }

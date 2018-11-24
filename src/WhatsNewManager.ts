@@ -1,24 +1,25 @@
-'use strict';
-
 import * as vscode from "vscode";
-import fs = require('fs');
 import path = require("path");
-import { WhatsNewHTML } from "./WhatsNewHTML";
-import { WhatsNewReplacements } from "./WhatsNewReplacements";
+import { WhatsNewPageBuilder } from "./WhatsNewPageBuilder";
+import { ContentProvider } from "./WhatsNewContentProvider";
 
-export class WhatsNew {
+export class WhatsNewManager {
 
     private extensionNameLowercase: string;
-    public extensionName: string;
-    public installedVersion: string;
-    public context: vscode.ExtensionContext;
-
-    public replacements: WhatsNewReplacements; 
+    private extensionName: string;
+    private context: vscode.ExtensionContext;
+    private contentProvider: ContentProvider;
     
-    constructor(extensionName: string, context: vscode.ExtensionContext) {
-        this.extensionName = extensionName;
-        this.extensionNameLowercase = extensionName.toLowerCase();
+    constructor(context: vscode.ExtensionContext) {
         this.context = context;
+    }
+    
+    registerContentProvider(extensionName: string, contentProvider: ContentProvider): WhatsNewManager {
+        this.extensionName = extensionName
+        this.extensionNameLowercase = extensionName.toLowerCase();
+        this.contentProvider = contentProvider;
+
+        return this;
     }
 
     showPageInActivation() {
@@ -33,11 +34,7 @@ export class WhatsNew {
     /**
      * showPage
      */
-    showPage(currentVersion?: string) {
-        
-        if (currentVersion) {
-            this.context.globalState.update(`${this.extensionNameLowercase}.version`, currentVersion);
-        }
+    showPage() {
 
         // Create and show panel
         const panel = vscode.window.createWebviewPanel(`${this.extensionNameLowercase}.whatsNew`, 
@@ -63,16 +60,20 @@ export class WhatsNew {
             return;
         }
 
-        this.showPage(currentVersion);
+        if (currentVersion) {
+            this.context.globalState.update(`${this.extensionNameLowercase}.version`, currentVersion);
+        }
+
+        this.showPage();
     }
 
     getWebviewContentLocal(uri: vscode.Uri, scriptUri: vscode.Uri, logoUri: vscode.Uri): string {
-        return WhatsNewHTML.WhatsNewHTML(uri.fsPath)
+        return WhatsNewPageBuilder.newBuilder(uri.fsPath)
             .updateScript(scriptUri)
             .updateLogo(logoUri)
-            .updateHeader(this.replacements.headerMessage)
-            .updateChangeLog(this.replacements.changeLog)
-            .updateSponsors(this.replacements.sponsors)
+            .updateHeader(this.contentProvider.provideHeader())
+            .updateChangeLog(this.contentProvider.provideChangeLog())
+            .updateSponsors(this.contentProvider.provideSponsors())
             .build();
     }
  }
