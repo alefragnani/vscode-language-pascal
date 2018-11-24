@@ -9,7 +9,7 @@
         "theme": "dark"
     },
     "engines": {
-        "vscode": "^1.18.0"
+        "vscode": "^1.23.0"
     },
     "categories": [
         "Programming Languages",
@@ -28,7 +28,8 @@
     "activationEvents": [
         "onLanguage:pascal",
         "onCommand:pascal.editFormatterParameters",
-        "onCommand:pascal.whatsNew"
+        "onCommand:pascal.whatsNew",
+        "*"
     ],
     "main": "./out/src/extension",
     "icon": "images/icon.png",
@@ -155,6 +156,6 @@
     "devDependencies": {
         "@types/node": "^6.0.40",
         "typescript": "^2.3.2",
-        "vscode": "^1.1.6"
+        "vscode": "^1.1.21"
     }
 }
