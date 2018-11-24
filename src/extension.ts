@@ -67,7 +67,7 @@ export function activate(context: vscode.ExtensionContext) {
     });
 
     let provider = new WhatsNewPascalContentProvider();
-    let viewer = new WhatsNewManager(context).registerContentProvider("Pascal", provider);
+    let viewer = new WhatsNewManager(context).registerContentProvider("pascal", provider);
     viewer.showPageInActivation();
 
 

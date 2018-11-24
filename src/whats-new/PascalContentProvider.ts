@@ -1,11 +1,12 @@
-import { ChangeLogItem, ChangeLogKind, Sponsor, ContentProvider } from "./ContentProvider";
+import { ChangeLogItem, ChangeLogKind, Sponsor, ContentProvider, Header, Image } from "./ContentProvider";
 
 export class WhatsNewPascalContentProvider implements ContentProvider {
 
-    provideHeader(): string {
-        return `Edit your <b>Delphi</b> and <b>FreePascal</b> files with full
+    provideHeader(logoUrl: string): Header {
+        return <Header>{logo: <Image> {src: logoUrl, height: 50, width: 50}, 
+            message: `Edit your <b>Delphi</b> and <b>FreePascal</b> files with full
             <b>Syntax Highlighting</b> for files, forms and projects, with a huge set of <b>Snippets</b>, 
-            <b>Code Formatters</b> and <b>Source Code Navigation</b>`;
+            <b>Code Formatters</b> and <b>Source Code Navigation</b>`};
     }
 
     provideChangeLog(): ChangeLogItem[] {

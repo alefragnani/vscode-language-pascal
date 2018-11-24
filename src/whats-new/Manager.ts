@@ -5,10 +5,13 @@ import { ContentProvider } from "./ContentProvider";
 
 export class WhatsNewManager {
 
-    private extensionNameLowercase: string;
     private extensionName: string;
+    // private extensionDisplayName: string;
+    // private extensionVersion: string;
     private context: vscode.ExtensionContext;
     private contentProvider: ContentProvider;
+
+    private extension: vscode.Extension<any>;
     
     constructor(context: vscode.ExtensionContext) {
         this.context = context;
@@ -16,43 +19,43 @@ export class WhatsNewManager {
     
     registerContentProvider(extensionName: string, contentProvider: ContentProvider): WhatsNewManager {
         this.extensionName = extensionName
-        this.extensionNameLowercase = extensionName.toLowerCase();
+        // this.extensionName = extensionName.toLowerCase();
         this.contentProvider = contentProvider;
 
         return this;
     }
 
     showPageInActivation() {
-        const previousExtensionVersion = this.context.globalState.get<string>(`${this.extensionNameLowercase}.version`);
+        // load data from extension manifest
+        this.extension = vscode.extensions.getExtension(`alefragnani.${this.extensionName}`)!;
+        // this.extensionVersion = this.extension.packageJSON.version;
+        // this.extensionDisplayName = this.extension.packageJSON.displayName;
 
-        const extension = vscode.extensions.getExtension(`alefragnani.${this.extensionNameLowercase}`)!;
-        const actualExtensionVersion = extension.packageJSON.version;
-        console.log(`${this.extensionNameLowercase} Version: ${actualExtensionVersion}`);
-        this.showPageIfVersionDiffers(actualExtensionVersion, previousExtensionVersion);
+        const previousExtensionVersion = this.context.globalState.get<string>(`${this.extensionName}.version`);
+
+        console.log(`${this.extensionName} (${this. extension.packageJSON.displayName}) - Version: ${this.extension.packageJSON.version}`);
+        this.showPageIfVersionDiffers(this.extension.packageJSON.version, previousExtensionVersion);
     }
 
-    /**
-     * showPage
-     */
     showPage() {
 
         // Create and show panel
-        const panel = vscode.window.createWebviewPanel(`${this.extensionNameLowercase}.whatsNew`, 
-            `What's New in ${this.extensionName}`, vscode.ViewColumn.One, { enableScripts: true });
+        const panel = vscode.window.createWebviewPanel(`${this.extensionName}.whatsNew`, 
+            `What's New in ${this.extension.packageJSON.displayName}`, vscode.ViewColumn.One, { enableScripts: true });
 
         // Get path to resource on disk
         const onDiskPath = vscode.Uri.file(path.join(this.context.extensionPath, 'ui', 'whats-new.html'));
-        const catGifSrc = onDiskPath.with({ scheme: 'vscode-resource' });
+        const pageUri = onDiskPath.with({ scheme: 'vscode-resource' });
 
         // Local path to main script run in the webview
-        const scriptPathOnDisk = vscode.Uri.file(path.join(this.context.extensionPath, 'ui', 'main.css'));
-        const scriptUri = scriptPathOnDisk.with({ scheme: 'vscode-resource' });        
+        const cssPathOnDisk = vscode.Uri.file(path.join(this.context.extensionPath, 'ui', 'main.css'));
+        const cssUri = cssPathOnDisk.with({ scheme: 'vscode-resource' });        
 
         // Local path to main script run in the webview
-        const logoPathOnDisk = vscode.Uri.file(path.join(this.context.extensionPath, 'images', `vscode-${this.extensionNameLowercase}-logo-readme.png`));
+        const logoPathOnDisk = vscode.Uri.file(path.join(this.context.extensionPath, 'images', `vscode-${this.extensionName}-logo-readme.png`));
         const logoUri = logoPathOnDisk.with({ scheme: 'vscode-resource' });  
         
-        panel.webview.html = this.getWebviewContentLocal(catGifSrc, scriptUri, logoUri);
+        panel.webview.html = this.getWebviewContentLocal(pageUri.fsPath, cssUri.toString(), logoUri.toString());
     }
 
     showPageIfVersionDiffers(currentVersion: string, previousVersion: string) {
@@ -61,17 +64,22 @@ export class WhatsNewManager {
         }
 
         if (currentVersion) {
-            this.context.globalState.update(`${this.extensionNameLowercase}.version`, currentVersion);
+            this.context.globalState.update(`${this.extensionName}.version`, currentVersion);
         }
 
         this.showPage();
     }
 
-    getWebviewContentLocal(uri: vscode.Uri, scriptUri: vscode.Uri, logoUri: vscode.Uri): string {
-        return WhatsNewPageBuilder.newBuilder(uri.fsPath)
-            .updateScript(scriptUri)
-            .updateLogo(logoUri)
-            .updateHeader(this.contentProvider.provideHeader())
+    getWebviewContentLocal(htmlFile: string, cssUrl: string, logoUrl: string): string {
+        return WhatsNewPageBuilder.newBuilder(htmlFile)
+            .updateExtensionDisplayName(this.extension.packageJSON.displayName)
+            .updateExtensionName(this.extensionName)
+            .updateExtensionVersion(this.extension.packageJSON.version)
+            .updateRepositoryUrl(this.extension.packageJSON.repository.url.slice(0, this.extension.packageJSON.repository.url.length - 4))
+            .updateRepositoryIssues(this.extension.packageJSON.bugs.url)
+            .updateRepositoryHomepage(this.extension.packageJSON.homepage)
+            .updateCSS(cssUrl)
+            .updateHeader(this.contentProvider.provideHeader(logoUrl))
             .updateChangeLog(this.contentProvider.provideChangeLog())
             .updateSponsors(this.contentProvider.provideSponsors())
             .build();

@@ -1,3 +1,17 @@
+// common
+export interface Image {
+    src: string;
+    width: number;
+    height: number;
+}
+
+// header
+export interface Header {
+    logo: Image;
+    message: string;
+}
+
+// changelog
 export enum ChangeLogKind { NEW = "NEW", CHANGED = "CHANGED", FIXED = "FIXED" };
 
 export interface ChangeLogItem {
@@ -5,6 +19,7 @@ export interface ChangeLogItem {
     message: string;
 }
 
+// sponsor
 export interface Sponsor {
     title: string;
     link: string;
@@ -15,7 +30,7 @@ export interface Sponsor {
 }
 
 export interface ContentProvider {
-    provideHeader(): string;
+    provideHeader(logoUrl: string): Header;
     provideChangeLog(): ChangeLogItem[];
     provideSponsors(): Sponsor[];
 }

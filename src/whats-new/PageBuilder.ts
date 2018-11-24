@@ -1,6 +1,6 @@
 import { Uri } from "vscode";
 import * as fs from "fs";
-import { ChangeLogItem, ChangeLogKind, Sponsor } from "./ContentProvider";
+import { ChangeLogItem, ChangeLogKind, Sponsor, Header } from "./ContentProvider";
 
 export class WhatsNewPageBuilder {
 
@@ -26,18 +26,46 @@ export class WhatsNewPageBuilder {
         this.htmlFile = fs.readFileSync(htmlFile).toString();
     }
 
-    updateScript(scriptUri: Uri): WhatsNewPageBuilder {
-        this.htmlFile = this.htmlFile.replace("${scriptUri}", scriptUri.toString());
+    updateExtensionDisplayName(extensionDisplayName: string) {
+        this.htmlFile = this.htmlFile.replace(/\$\{extensionDisplayName\}/g, extensionDisplayName);
         return this;
     }
 
-    updateLogo(logoUri: Uri): WhatsNewPageBuilder {
-        this.htmlFile = this.htmlFile.replace("${logoUri}", logoUri.toString());
+    updateExtensionName(extensionName: string) {
+        this.htmlFile = this.htmlFile.replace(/\$\{extensionName\}/g, extensionName);
         return this;
     }
 
-    updateHeader(headerMessage: string): WhatsNewPageBuilder {
-        this.htmlFile = this.htmlFile.replace("${headerMessage}", headerMessage);
+    updateExtensionVersion(extensionVersion: string) {
+        this.htmlFile = this.htmlFile.replace("${extensionVersion}", extensionVersion);
+        return this;
+    }
+
+    updateRepositoryUrl(repositoryUrl: string) {
+        this.htmlFile = this.htmlFile.replace(/\$\{repositoryUrl\}/g, repositoryUrl);
+        return this;
+    }
+
+    updateRepositoryIssues(repositoryIssues: string) {
+        this.htmlFile = this.htmlFile.replace("${repositoryIssues}", repositoryIssues);
+        return this;
+    }
+
+    updateRepositoryHomepage(repositoryHomepage: string) {
+        this.htmlFile = this.htmlFile.replace("${repositoryHomepage}", repositoryHomepage);
+        return this;
+    }
+
+    updateCSS(cssUrl: string): WhatsNewPageBuilder {
+        this.htmlFile = this.htmlFile.replace("${cssUrl}", cssUrl);
+        return this;
+    }
+
+    updateHeader(header: Header): WhatsNewPageBuilder {
+        this.htmlFile = this.htmlFile.replace("${headerLogo}", header.logo.src);
+        this.htmlFile = this.htmlFile.replace("${headerWidth}", header.logo.width.toString());
+        this.htmlFile = this.htmlFile.replace("${headerHeight}", header.logo.height.toString());
+        this.htmlFile = this.htmlFile.replace("${headerMessage}", header.message);
         return this;
     }
 
