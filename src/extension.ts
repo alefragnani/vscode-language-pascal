@@ -13,6 +13,9 @@ import { PascalDefinitionProvider } from './definitionProvider';
 import { PascalReferenceProvider } from './referenceProvider';
 import { TagsBuilder } from './tagsBuilder';
 import { whatsNewUri, PageProvider } from "./pageProvider";
+import { WhatsNew } from './WhatsNew';
+import { WhatsNewReplacements } from "./WhatsNewReplacements";
+import { WhatsNewPascal } from './WhatsNewPascal';
 
 const documentSelector = [
     { language: 'pascal', scheme: 'file' },
@@ -65,15 +68,16 @@ export function activate(context: vscode.ExtensionContext) {
         }
     });
 
+    let whatsNew: WhatsNew = new WhatsNewPascal(context);
+    whatsNew.showPageInActivation();
 
-    // check version (previous)
-    const previousPascalVersion = context.globalState.get<string>("pascal.version");
-
-    // (atual)
-    const pascalExtension = vscode.extensions.getExtension("alefragnani.pascal")!;
-    const pascalVersion = pascalExtension.packageJSON.version;
-    console.log(`Pascal Version: ${pascalVersion}`);
-    showWhatsNewPage(pascalVersion, previousPascalVersion);
+    // // check version (previous)
+    // const previousPascalVersion = context.globalState.get<string>("pascal.version");
+    // // (atual)
+    // const pascalExtension = vscode.extensions.getExtension("alefragnani.pascal")!;
+    // const pascalVersion = pascalExtension.packageJSON.version;
+    // console.log(`Pascal Version: ${pascalVersion}`);
+    // showWhatsNewPage(pascalVersion, previousPascalVersion);
 
 
     let provider = new PageProvider(context);
@@ -85,40 +89,41 @@ export function activate(context: vscode.ExtensionContext) {
 		});
     });
 
-    function showWhatsNewPage(currentVersion?: string, previousVersion?: string) {
+    // function showWhatsNewPage(currentVersion?: string, previousVersion?: string) {
 
-        if ((previousVersion === currentVersion) && (currentVersion !== undefined)) {
-            return;
-        }
+    //     if ((previousVersion === currentVersion) && (currentVersion !== undefined)) {
+    //         return;
+    //     }
 
-        if (currentVersion) {
-            context.globalState.update("pascal.version", currentVersion);
-        }
+    //     if (currentVersion) {
+    //         context.globalState.update("pascal.version", currentVersion);
+    //     }
 
 
-        // Create and show panel
-        const panel = vscode.window.createWebviewPanel('pascal.whatsNew', "What's New", vscode.ViewColumn.One, { enableScripts: true });
+    //     // Create and show panel
+    //     const panel = vscode.window.createWebviewPanel('pascal.whatsNew', "What's New", vscode.ViewColumn.One, { enableScripts: true });
 
-        // // // And set its HTML content
-        // panel.webview.html = getWebviewContent();
+    //     // // // And set its HTML content
+    //     // panel.webview.html = getWebviewContent();
 
-        // Get path to resource on disk
-        const onDiskPath = vscode.Uri.file(path.join(context.extensionPath, 'ui', 'whats-new.html'));
-        const catGifSrc = onDiskPath.with({ scheme: 'vscode-resource' });
+    //     // Get path to resource on disk
+    //     const onDiskPath = vscode.Uri.file(path.join(context.extensionPath, 'ui', 'whats-new.html'));
+    //     const catGifSrc = onDiskPath.with({ scheme: 'vscode-resource' });
 
-        // Local path to main script run in the webview
-        const scriptPathOnDisk = vscode.Uri.file(path.join(context.extensionPath, 'ui', 'main.css'));
-        const scriptUri = scriptPathOnDisk.with({ scheme: 'vscode-resource' });        
+    //     // Local path to main script run in the webview
+    //     const scriptPathOnDisk = vscode.Uri.file(path.join(context.extensionPath, 'ui', 'main.css'));
+    //     const scriptUri = scriptPathOnDisk.with({ scheme: 'vscode-resource' });        
 
-        // Local path to main script run in the webview
-        const logoPathOnDisk = vscode.Uri.file(path.join(context.extensionPath, 'images', 'vscode-pascal-logo-readme.png'));
-        const logoUri = logoPathOnDisk.with({ scheme: 'vscode-resource' });  
+    //     // Local path to main script run in the webview
+    //     const logoPathOnDisk = vscode.Uri.file(path.join(context.extensionPath, 'images', 'vscode-pascal-logo-readme.png'));
+    //     const logoUri = logoPathOnDisk.with({ scheme: 'vscode-resource' });  
         
-        panel.webview.html = getWebviewContentLocal(catGifSrc, scriptUri, logoUri);
+    //     panel.webview.html = getWebviewContentLocal(catGifSrc, scriptUri, logoUri);
     
-    }
+    // }
 
-    context.subscriptions.push(vscode.commands.registerCommand('pascal.whatsNew', () => showWhatsNewPage()));
+    context.subscriptions.push(vscode.commands.registerCommand('pascal.whatsNew', () => whatsNew.showPage()));
+    // context.subscriptions.push(vscode.commands.registerCommand('pascal.whatsNew', () => showWhatsNewPage()));
        
 
     // function getWebviewContent() {
