@@ -24,7 +24,6 @@ export class WhatsNew {
     showPageInActivation() {
         const previousExtensionVersion = this.context.globalState.get<string>(`${this.extensionNameLowercase}.version`);
 
-        // (atual)
         const extension = vscode.extensions.getExtension(`alefragnani.${this.extensionNameLowercase}`)!;
         const actualExtensionVersion = extension.packageJSON.version;
         console.log(`${this.extensionNameLowercase} Version: ${actualExtensionVersion}`);
@@ -35,6 +34,7 @@ export class WhatsNew {
      * showPage
      */
     showPage(currentVersion?: string) {
+        
         if (currentVersion) {
             this.context.globalState.update(`${this.extensionNameLowercase}.version`, currentVersion);
         }
@@ -42,9 +42,6 @@ export class WhatsNew {
         // Create and show panel
         const panel = vscode.window.createWebviewPanel(`${this.extensionNameLowercase}.whatsNew`, 
             `What's New in ${this.extensionName}`, vscode.ViewColumn.One, { enableScripts: true });
-
-        // // // And set its HTML content
-        // panel.webview.html = getWebviewContent();
 
         // Get path to resource on disk
         const onDiskPath = vscode.Uri.file(path.join(this.context.extensionPath, 'ui', 'whats-new.html'));
@@ -70,17 +67,6 @@ export class WhatsNew {
     }
 
     getWebviewContentLocal(uri: vscode.Uri, scriptUri: vscode.Uri, logoUri: vscode.Uri): string {
-
-        // basic components (css)
-
-        // logo
-
-        // header message
-
-        // changelog
-
-        // 
-
         return WhatsNewHTML.WhatsNewHTML(uri.fsPath)
             .updateScript(scriptUri)
             .updateLogo(logoUri)
@@ -88,22 +74,5 @@ export class WhatsNew {
             .updateChangeLog(this.replacements.changeLog)
             .updateSponsors(this.replacements.sponsors)
             .build();
-            // .updateChangeLog(this.changeLog)
-            // .updateSponsors(this.sponsors)
-
-        // return fs.readFileSync(uri.fsPath).toString().replace("${scriptUri}", scriptUri.toString()).replace("${logoUri}", 
-        //     logoUri.toString());
     }
-
-    // replaceHeader(message: string): string {
-    //     return "";
-    // }
-
-    // replaceChangeLog(type: string, description: string): string {
-    //     return ""
-    // }
-
-    // replaceSponsors(): string {
-    //     return ""
-    // }
  }

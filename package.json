@@ -90,23 +90,10 @@
                 "title": "Pascal: Update Tags"
             },
             {
-                "command": "pascal.whatsNewPreviewHTML",
-                "title": "Pascal: What's New (Preview HTML)"
-
-            },
-            {
                 "command": "pascal.whatsNew",
                 "title": "Pascal: What's New"
             }
         ],
-        "menus": {
-            "commandPalette": [
-                {
-                    "command": "pascal.whatsNewPreviewHTML",
-                    "when": "false"
-                }
-            ]
-        },
         "configuration": {
             "type": "object",
             "title": "Pascal",
