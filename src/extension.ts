@@ -12,7 +12,7 @@ import { PascalDocumentSymbolProvider } from './documentSymbolProvider';
 import { PascalDefinitionProvider } from './definitionProvider';
 import { PascalReferenceProvider } from './referenceProvider';
 import { TagsBuilder } from './tagsBuilder';
-import { WhatsNewManager } from './whats-new/Manager';
+import { WhatsNewManager } from '../vscode-whats-new/src/Manager';
 import { WhatsNewPascalContentProvider } from './whats-new/PascalContentProvider';
 
 const documentSelector = [

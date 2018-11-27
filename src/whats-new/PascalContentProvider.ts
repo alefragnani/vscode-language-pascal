@@ -1,4 +1,4 @@
-import { ChangeLogItem, ChangeLogKind, Sponsor, ContentProvider, Header, Image } from "./ContentProvider";
+import { ChangeLogItem, ChangeLogKind, Sponsor, ContentProvider, Header, Image } from "../../vscode-whats-new/src/ContentProvider";
 
 export class WhatsNewPascalContentProvider implements ContentProvider {
 
