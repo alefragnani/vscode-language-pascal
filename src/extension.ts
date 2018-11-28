@@ -69,11 +69,6 @@ export function activate(context: vscode.ExtensionContext) {
     let provider = new WhatsNewPascalContentProvider();
     let viewer = new WhatsNewManager(context).registerContentProvider("pascal", provider);
     viewer.showPageInActivation();
-
-
-    // let whatsNew: WhatsNew = new WhatsNewPascal(context);
-    // whatsNew.showPageInActivation();
-
     context.subscriptions.push(vscode.commands.registerCommand('pascal.whatsNew', () => viewer.showPage()));
 
     vscode.commands.registerCommand('pascal.generateTags', () => generateTags(false));
