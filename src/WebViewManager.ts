@@ -1,4 +1,4 @@
-import { ContentProvider } from "./whats-new/ContentProvider";
+import { ContentProvider } from "../vscode-whats-new/src/ContentProvider";
 
 export interface WebViewManager {
     registerContentProvider(extensionName: string, contentProvider: ContentProvider): WebViewManager;

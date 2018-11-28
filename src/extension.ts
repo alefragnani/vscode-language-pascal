@@ -12,7 +12,7 @@ import { PascalDocumentSymbolProvider } from './documentSymbolProvider';
 import { PascalDefinitionProvider } from './definitionProvider';
 import { PascalReferenceProvider } from './referenceProvider';
 import { TagsBuilder } from './tagsBuilder';
-import { WhatsNewManager } from './whats-new/Manager';
+import { WhatsNewManager } from '../vscode-whats-new/src/Manager';
 import { WhatsNewPascalContentProvider } from './whats-new/PascalContentProvider';
 
 const documentSelector = [
@@ -69,11 +69,6 @@ export function activate(context: vscode.ExtensionContext) {
     let provider = new WhatsNewPascalContentProvider();
     let viewer = new WhatsNewManager(context).registerContentProvider("pascal", provider);
     viewer.showPageInActivation();
-
-
-    // let whatsNew: WhatsNew = new WhatsNewPascal(context);
-    // whatsNew.showPageInActivation();
-
     context.subscriptions.push(vscode.commands.registerCommand('pascal.whatsNew', () => viewer.showPage()));
 
     vscode.commands.registerCommand('pascal.generateTags', () => generateTags(false));
