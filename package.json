@@ -28,6 +28,8 @@
     "activationEvents": [
         "onLanguage:pascal",
         "onCommand:pascal.editFormatterParameters",
+        "onCommand:pascal.generateTags",
+        "onCommand:pascal.updateTags",
         "onCommand:pascal.whatsNew",
         "*"
     ],
