@@ -2,14 +2,14 @@
     "name": "pascal",
     "displayName": "Pascal",
     "description": "Pascal language support for Visual Studio Code",
-    "version": "6.4.0",
+    "version": "7.0.0",
     "publisher": "alefragnani",
     "galleryBanner": {
         "color": "#4682B4",
         "theme": "dark"
     },
     "engines": {
-        "vscode": "^1.18.0"
+        "vscode": "^1.23.0"
     },
     "categories": [
         "Programming Languages",
@@ -27,7 +27,11 @@
     ],
     "activationEvents": [
         "onLanguage:pascal",
-        "onCommand:pascal.editFormatterParameters"
+        "onCommand:pascal.editFormatterParameters",
+        "onCommand:pascal.generateTags",
+        "onCommand:pascal.updateTags",
+        "onCommand:pascal.whatsNew",
+        "*"
     ],
     "main": "./out/src/extension",
     "icon": "images/icon.png",
@@ -86,6 +90,10 @@
             {
                 "command": "pascal.updateTags",
                 "title": "Pascal: Update Tags"
+            },
+            {
+                "command": "pascal.whatsNew",
+                "title": "Pascal: What's New"
             }
         ],
         "configuration": {
@@ -149,7 +157,7 @@
     },
     "devDependencies": {
         "@types/node": "^6.0.40",
-        "typescript": "^2.3.2",
-        "vscode": "^1.1.6"
+        "typescript": "^3.1.6",
+        "vscode": "^1.1.21"
     }
 }

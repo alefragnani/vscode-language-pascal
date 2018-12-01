@@ -1,3 +1,7 @@
+## [7.0.0] - 2018-12-01
+### Added
+- What's New
+
 ## [6.4.0] - 2018-09-14
 ### Added
 - Patreon button
