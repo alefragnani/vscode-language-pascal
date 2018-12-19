@@ -9,9 +9,25 @@
 * Visual Studio Live Share support 
 * Better Code Navigation
 
-# Pascal for Visual Studio Code
+## Support
 
-**Pascal** is an open source extension created for **Visual Studio Code**. While being free and open source, if you find it useful, please consider [supporting it](#support-pascal)
+**Pascal** is an open source extension created for **Visual Studio Code**. While being free and open source, if you find it useful, please consider supporting it
+
+<table align="center" width="60%" border="0">
+  <tr>
+    <td>
+      <a title="Paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EP57F3B6FXKTU&lc=US&item_name=Alessandro%20Fragnani&item_number=vscode%20extensions&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif"/></a>
+    </td>
+    <td>
+      <a title="Paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EP57F3B6FXKTU&lc=BR&item_name=Alessandro%20Fragnani&item_number=vscode%20extensions&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><img src="https://www.paypalobjects.com/pt_BR/i/btn/btn_donate_SM.gif"/></a>
+    </td>
+    <td>
+      <a title="Patreon" href="https://www.patreon.com/alefragnani"><img src="https://raw.githubusercontent.com/alefragnani/oss-resources/master/images/button-become-a-patron-rounded-small.png"/></a>
+    </td>
+  </tr>
+</table>
+
+# Pascal
 
 It adds support for the **Pascal** language and its dialects like **Delphi** and **FreePascal**. 
 
@@ -19,7 +35,7 @@ Here are some of the features that **Pascal** provides:
 
 * **Syntax highlighting** for files, forms and projects
 * A huge set of **Snippets**
-* Support for different **Code Formatters**
+* Support for different **Code Formatters** 
 * Source code **navigation** 
 
 # Features
@@ -225,26 +241,6 @@ Update two tags:
 		}
     }
 ```
-
-## Support Pascal
-
-While **Pascal** is free and open source, if you find it useful, please consider supporting it.
-
-I've been building **Pascal** since VS Code internal beta days, and while I enjoy developing it, I would like to be able to give more attention to its growth.
-
-<table align="center" width="60%" border="0">
-  <tr>
-    <td>
-      <a title="Paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EP57F3B6FXKTU&lc=US&item_name=Alessandro%20Fragnani&item_number=vscode%20extensions&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif"/></a>
-    </td>
-    <td>
-      <a title="Paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EP57F3B6FXKTU&lc=BR&item_name=Alessandro%20Fragnani&item_number=vscode%20extensions&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><img src="https://www.paypalobjects.com/pt_BR/i/btn/btn_donate_SM.gif"/></a>
-    </td>
-    <td>
-      <a title="Patreon" href="https://www.patreon.com/alefragnani"><img src="https://raw.githubusercontent.com/alefragnani/oss-resources/master/images/button-become-a-patron-rounded-small.png"/></a>
-    </td>
-  </tr>
-</table>
 
 # License
 
