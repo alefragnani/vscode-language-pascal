@@ -14,7 +14,6 @@
     "categories": [
         "Programming Languages",
         "Snippets",
-        "Formatters",
         "Other"
     ],
     "keywords": [
@@ -22,12 +21,10 @@
         "delphi",
         "freepascal",
         "lazarus",
-        "formatter",
         "multi-root ready"
     ],
     "activationEvents": [
         "onLanguage:pascal",
-        "onCommand:pascal.editFormatterParameters",
         "onCommand:pascal.generateTags",
         "onCommand:pascal.updateTags",
         "onCommand:pascal.whatsNew",
@@ -80,10 +77,6 @@
         ],
         "commands": [
             {
-                "command": "pascal.editFormatterParameters",
-                "title": "Pascal: Edit Formatter Parameters"
-            },
-            {
                 "command": "pascal.generateTags",
                 "title": "Pascal: Generate Tags"
             },
@@ -100,25 +93,6 @@
             "type": "object",
             "title": "Pascal",
             "properties": {
-                "pascal.formatter.engine": {
-                    "type": "string",
-                    "default": "",
-                    "description": "Choose the Formatter engine to be used",
-                    "enum": [
-                        "jcf",
-                        "ptop"
-                    ]
-                },
-                "pascal.formatter.enginePath": {
-                    "type": "string",
-                    "default": "",
-                    "description": "Indicates the Formatter app path"
-                },
-                "pascal.formatter.engineParameters": {
-                    "type": "string",
-                    "default": "",
-                    "description": "Indicates the configuration file for the selected engine"
-                },
                 "pascal.format.indent": {
                     "type": "number",
                     "default": 2,
@@ -153,7 +127,7 @@
         "postinstall": "node ./node_modules/vscode/bin/install"
     },
     "dependencies": {
-        "opener": "1.4.3"
+        "opener": "^1.5.1"
     },
     "devDependencies": {
         "@types/node": "^6.0.40",
