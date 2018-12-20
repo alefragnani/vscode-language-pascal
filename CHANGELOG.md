@@ -1,3 +1,7 @@
+## [7.1.0] - 2018-12-20
+### Changed
+- The **Formatter** was extracted to its own extension ([Pascal Formatter](https://github.com/alefragnani/vscode-pascal-formatter))
+
 ## [7.0.0] - 2018-12-01
 ### Added
 - What's New
