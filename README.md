@@ -8,6 +8,7 @@
 * Multi-root Support
 * Visual Studio Live Share support 
 * Better Code Navigation
+* The **Formatter** was extracted to its own extension ([Pascal Formatter](https://github.com/alefragnani/vscode-pascal-formatter))
 
 ## Support
 
@@ -35,7 +36,7 @@ Here are some of the features that **Pascal** provides:
 
 * **Syntax highlighting** for files, forms and projects
 * A huge set of **Snippets**
-* Support for different **Code Formatters** 
+* Support for different **Code Formatters** (via [Pascal Formatter](https://github.com/alefragnani/vscode-pascal-formatter))
 * Source code **navigation** 
 
 # Features
@@ -56,35 +57,7 @@ Almost 40 snippets are available
 
 ### Format Code
 
-Standardise your **Pascal** code! 
-
-It uses external tools _(engines)_ to format the code, so you must install them prior to use the `Format Document` and `Format Selection` commands.
-
-* **Jedi Code Format:** http://jedicodeformat.sourceforge.net/ (Windows only)
-* **FreePascal PToP:** http://wiki.freepascal.org/PTop (Windows, Linux and Mac OS X)
-
-> If you intend to format _pieces of selected texts_ instead of _the entire file_, you should use **FreePascal PToP**, because the **Jedi Code Format** only works for entire files. 
-
-#### Available settings
-
-You can choose which formatter engine to use _(required)_:
-
-* `ptop`: FreePascal PToP
-* `jcf`: Jedi Code Formatter
-
-```json
-    "pascal.formatter.engine": "ptop"
-```
-
-* Indicates the engine app path _(required)_
-```json
-    "pascal.formatter.enginePath": "C:\\FPC\\2.6.4\\bin\\i386-win32\\ptop.exe" 
-```
-
-* Indicates the configuration file for the selected engine _(optional)_
-```json
-    "pascal.formatter.engineParameters": "C:\\FPC\\2.6.4\\bin\\i386-win32\\default.cfg"
-```
+Check out [Pascal Formatter](https://github.com/alefragnani/vscode-pascal-formatter#features) documentation.
 
 ## Code Navigation
 
@@ -130,13 +103,7 @@ Navigate to any language element (methods, attributes, classes, interfaces, and 
 
 ## Code Formatter
 
-The extension seamlessly integrates with the `Format Document` and `Format Selection` commands **Visual Studio Code**.
-
-![format-code](images/vscode-pascal-format-code.gif)
-
-There is also:
-
-* **Pascal: Edit Formatter Parameters** Opens/Generate the _parameters file_ for the selected engine
+Check out [Pascal Formatter](https://github.com/alefragnani/vscode-pascal-formatter#available-commands) documentation.
 
 ## Code Navigation
 

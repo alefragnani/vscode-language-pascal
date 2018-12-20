@@ -19,10 +19,13 @@ export class WhatsNewPascalContentProvider implements ContentProvider {
         changeLog.push({kind: ChangeLogKind.NEW, message: "<b>Multi-root</b> support"});
         changeLog.push({kind: ChangeLogKind.NEW, message: "Visual Studio <b>Live Share</b> support"});
         changeLog.push({kind: ChangeLogKind.CHANGED, message: "Better <b>Code Navigation</b>"});
+        changeLog.push({kind: ChangeLogKind.CHANGED, message: `The <b>Formatter</b> was extracted to its own 
+            extension (<a title=\"Open Pascal Formatter\" href=\"https://github.com/alefragnani/vscode-pascal-formatter/\">
+            Pascal Formatter</a>)`});
         changeLog.push({kind: ChangeLogKind.FIXED, message: `Support <i>.lpr</i> files (Thanks to @BeRo1985 
             - <a title=\"Open PR #30\" href=\"https://github.com/alefragnani/vscode-language-pascal/pulls/30\">
             PR #30</a>)</b>`});
-            return changeLog;
+        return changeLog;
     }
 
     provideSponsors(): Sponsor[] {
