@@ -1,3 +1,11 @@
+## [7.1.2] - 2019-01-05
+### Fixed
+- Remove remaining format settings (now on Formatter) (issue [#40](https://github.com/alefragnani/vscode-language-pascal/issues/40))
+
+## [7.1.1] - 2018-12-20
+### Fixed
+- Missing **Pascal Formatter** as dependent extension
+
 ## [7.1.0] - 2018-12-20
 ### Changed
 - The **Formatter** was extracted to its own extension ([Pascal Formatter](https://github.com/alefragnani/vscode-pascal-formatter))
