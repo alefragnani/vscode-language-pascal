@@ -5,9 +5,9 @@
 
 # What's new in Pascal 7
 
-* Multi-root Support
-* Visual Studio Live Share support 
-* Better Code Navigation
+* Adds **Multi-root** support
+* Adds **Visual Studio Live Share** support 
+* Improvements in **Code Navigation**
 * The **Formatter** was extracted to its own extension ([Pascal Formatter](https://github.com/alefragnani/vscode-pascal-formatter))
 
 ## Support
