@@ -22,9 +22,12 @@ export class WhatsNewPascalContentProvider implements ContentProvider {
         changeLog.push({kind: ChangeLogKind.CHANGED, message: `The <b>Formatter</b> was extracted to its own 
             extension (<a title=\"Open Pascal Formatter\" href=\"https://github.com/alefragnani/vscode-pascal-formatter/\">
             Pascal Formatter</a>)`});
+        changeLog.push({kind: ChangeLogKind.FIXED, message: `Final cursor position on some Snippets 
+            (<a title=\"Issue #41\" href=\"https://github.com/alefragnani/vscode-language-pascal/issues/41\">
+            Issue #41</a>)`});
         changeLog.push({kind: ChangeLogKind.FIXED, message: `Support <i>.lpr</i> files (Thanks to @BeRo1985 
-            - <a title=\"Open PR #30\" href=\"https://github.com/alefragnani/vscode-language-pascal/pulls/30\">
-            PR #30</a>)</b>`});
+            - <a title=\"Open PR #30\" href=\"https://github.com/alefragnani/vscode-language-pascal/pull/30\">
+            PR #30</a>)`});
         return changeLog;
     }
 
