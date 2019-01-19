@@ -8,6 +8,7 @@
 * Adds **Multi-root** support
 * Adds **Visual Studio Live Share** support 
 * Improvements in **Code Navigation**
+* Update grammar based on Monaco Language PR
 * The **Formatter** was extracted to its own extension ([Pascal Formatter](https://github.com/alefragnani/vscode-pascal-formatter))
 
 ## Support

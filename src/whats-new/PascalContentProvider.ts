@@ -19,6 +19,9 @@ export class WhatsNewPascalContentProvider implements ContentProvider {
         changeLog.push({kind: ChangeLogKind.NEW, message: "Adds <b>Multi-root</b> support"});
         changeLog.push({kind: ChangeLogKind.NEW, message: "Adds <b>Visual Studio Live Share</b> support"});
         changeLog.push({kind: ChangeLogKind.CHANGED, message: "Improvements in <b>Code Navigation</b>"});
+        changeLog.push({kind: ChangeLogKind.CHANGED, message: `Update grammar based on Monaco Language PR 
+            (<a title=\"Issue #43\" href=\"https://github.com/alefragnani/vscode-language-pascal/issues/43\">
+            Issue #43</a>)`});
         changeLog.push({kind: ChangeLogKind.CHANGED, message: `The <b>Formatter</b> was extracted to its own 
             extension (<a title=\"Open Pascal Formatter\" href=\"https://github.com/alefragnani/vscode-pascal-formatter/\">
             Pascal Formatter</a>)`});

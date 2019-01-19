@@ -1,4 +1,7 @@
 ## [7.2.0] - 2019-01-??
+### Changed
+- Update grammar based on Monaco Language PR (issue [#43](https://github.com/alefragnani/vscode-language-pascal/issues/43))
+
 ### Fixed
 - Final cursor position on some Snippets (issue [#41](https://github.com/alefragnani/vscode-language-pascal/issues/41))
 
