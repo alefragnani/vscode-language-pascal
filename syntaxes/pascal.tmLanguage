@@ -227,6 +227,12 @@
 				</dict>
 			</array>
 		</dict>
+		<dict>
+			<key>match</key>
+			<string>\#\d+</string>
+			<key>name</key>
+			<string>string.other.pascal</string>
+		</dict>
 	</array>
 	<key>scopeName</key>
 	<string>source.pascal</string>
