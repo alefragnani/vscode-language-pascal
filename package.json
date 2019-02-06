@@ -28,7 +28,14 @@
         "onCommand:pascal.generateTags",
         "onCommand:pascal.updateTags",
         "onCommand:pascal.whatsNew",
-        "*"
+        "workspaceContains:**/*.pas",
+        "workspaceContains:**/*.p",
+        "workspaceContains:**/*.dfm",
+        "workspaceContains:**/*.dpr",
+        "workspaceContains:**/*.dpk",
+        "workspaceContains:**/*.lfm",
+        "workspaceContains:**/*.dpr",
+        "workspaceContains:**/*.lpr"
     ],
     "main": "./out/src/extension",
     "icon": "images/icon.png",
