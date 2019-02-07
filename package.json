@@ -9,7 +9,7 @@
         "theme": "dark"
     },
     "engines": {
-        "vscode": "^1.23.0"
+        "vscode": "^1.31.0"
     },
     "categories": [
         "Programming Languages",
@@ -116,15 +116,12 @@
         "compile": "tsc -watch -p ./",
         "postinstall": "node ./node_modules/vscode/bin/install"
     },
-    "dependencies": {
-        "opener": "^1.5.1"
-    },
     "extensionDependencies": [
         "alefragnani.pascal-formatter"
     ],
     "devDependencies": {
         "@types/node": "^6.0.40",
         "typescript": "^3.1.6",
-        "vscode": "^1.1.22"
+        "vscode": "^1.1.28"
     }
 }
