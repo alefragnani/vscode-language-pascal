@@ -107,7 +107,7 @@
 		</dict>	
 		<dict>
 			<key>match</key>
-			<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\b</string>
+			<string>\b(\d+)|(\d*\.\d+([eE][\-+]?\d+)?)\b</string>
 			<key>name</key>
 			<string>constant.numeric.pascal</string>
 		</dict>
@@ -115,7 +115,7 @@
 			<key>match</key>
 			<string>\$[0-9a-fA-F]{1,16}\b</string>
 			<key>name</key>
-			<string>constant.numeric.pascal</string>
+			<string>constant.numeric.hex.pascal</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -128,39 +128,6 @@
 			<string>\b(?i:(Assert))\b</string>
 			<key>name</key>
 			<string>keyword.control</string>
-		</dict>
-		<dict>
-			<key>begin</key>
-			<string>(^[ \t]+)?(?=--)</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.whitespace.comment.leading.pascal</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>(?!\G)</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>--</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.pascal</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>\n</string>
-					<key>name</key>
-					<string>comment.line.double-dash.pascal.one</string>
-				</dict>
-			</array>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -229,43 +196,6 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>"</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.string.begin.pascal</string>
-				</dict>
-			</dict>
-			<key>comment</key>
-			<string>Double quoted strings are an extension and (generally) support C-style escape sequences.</string>
-			<key>end</key>
-			<string>"</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.string.end.pascal</string>
-				</dict>
-			</dict>
-			<key>name</key>
-			<string>string.quoted.double.pascal</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>\\.</string>
-					<key>name</key>
-					<string>constant.character.escape.pascal</string>
-				</dict>
-			</array>
-		</dict>
-		<dict>
-			<key>applyEndPatternLast</key>
-			<integer>1</integer>
-			<key>begin</key>
 			<string>'</string>
 			<key>beginCaptures</key>
 			<dict>
@@ -296,6 +226,12 @@
 					<string>constant.character.escape.apostrophe.pascal</string>
 				</dict>
 			</array>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\#\d+</string>
+			<key>name</key>
+			<string>string.other.pascal</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
