@@ -3,7 +3,7 @@
   "prefix": "begin",
   "body": [
     "begin",
-    "\t$1",
+    "\t$0",
     "end;"
   ],
   "description": "Begin end"
