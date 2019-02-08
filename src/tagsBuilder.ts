@@ -10,7 +10,6 @@ import vscode = require('vscode');
 import path = require('path');
 import fs = require('fs');
 import { AbstractProvider } from "./abstractProvider";
-var opener = require('opener');
 
 export class TagsBuilder {
 
@@ -144,7 +143,7 @@ export class TagsBuilder {
 							}
 
 							if (option.title === "More Info") {
-								opener("https://github.com/alefragnani/vscode-language-pascal#code-navigation");
+								vscode.env.openExternal(vscode.Uri.parse("https://github.com/alefragnani/vscode-language-pascal#code-navigation"));
 								return resolve(false);
 							}
 
