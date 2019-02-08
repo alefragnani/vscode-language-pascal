@@ -1,3 +1,6 @@
 [submodule "vscode-whats-new"]
 	path = vscode-whats-new
 	url = https://github.com/alefragnani/vscode-whats-new.git
+[submodule "vscode-language-pascal-providers"]
+	path = vscode-language-pascal-providers
+	url = https://github.com/alefragnani/vscode-language-pascal-providers.git
