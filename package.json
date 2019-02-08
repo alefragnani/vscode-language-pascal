@@ -30,7 +30,7 @@
         "onCommand:pascal.whatsNew",
         "*"
     ],
-    "main": "./out/src/extension",
+    "main": "./dist/extension",
     "icon": "images/icon.png",
     "license": "SEE LICENSE IN LICENSE.md",
     "homepage": "https://github.com/alefragnani/vscode-language-pascal/blob/master/README.md",
@@ -112,8 +112,9 @@
         }
     },
     "scripts": {
-        "vscode:prepublish": "tsc -p ./",
-        "compile": "tsc -watch -p ./",
+        "vscode:prepublish": "webpack --mode production",
+        "webpack": "webpack --mode development",
+        "webpack-dev": "webpack --mode development --watch",
         "postinstall": "node ./node_modules/vscode/bin/install"
     },
     "extensionDependencies": [
@@ -122,6 +123,9 @@
     "devDependencies": {
         "@types/node": "^6.0.40",
         "typescript": "^3.1.6",
-        "vscode": "^1.1.28"
+        "vscode": "^1.1.28",
+        "webpack": "^4.19.1",
+        "webpack-cli": "^3.1.0",
+        "ts-loader": "^4.4.2"
     }
 }
