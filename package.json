@@ -112,6 +112,8 @@
         }
     },
     "scripts": {
+        "build": "webpack --mode development",
+        "watch": "webpack --watch --mode development --info-verbosity verbose",
         "vscode:prepublish": "webpack --mode production",
         "webpack": "webpack --mode development",
         "webpack-dev": "webpack --mode development --watch",
@@ -127,6 +129,7 @@
         "vscode": "^1.1.28",
         "webpack": "^4.19.1",
         "webpack-cli": "^3.1.0",
-        "ts-loader": "^4.4.2"
+        "ts-loader": "^4.4.2",
+        "terser-webpack-plugin": "^1.2.1"
     }
 }
