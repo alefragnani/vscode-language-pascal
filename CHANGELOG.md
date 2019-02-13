@@ -1,4 +1,7 @@
-## [7.2.0] - 2019-01-??
+## [8.0.0] - 2019-02-13
+### Added
+- Use new VSCode API - Open Resource in Browser (issue [#46](https://github.com/alefragnani/vscode-language-pascal/issues/46))
+
 ### Changed
 - Update grammar based on Monaco Language PR (issue [#43](https://github.com/alefragnani/vscode-language-pascal/issues/43))
 
