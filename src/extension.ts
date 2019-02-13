@@ -9,10 +9,10 @@ import path = require('path');
 import cp = require('child_process');
 
 // language providers
-import { PascalDocumentSymbolProvider } from './documentSymbolProvider';
-import { PascalDefinitionProvider } from './definitionProvider';
-import { PascalReferenceProvider } from './referenceProvider';
-import { TagsBuilder } from './tagsBuilder';
+import { PascalDocumentSymbolProvider } from '../vscode-language-pascal-providers/src/documentSymbolProvider';
+import { PascalDefinitionProvider } from '../vscode-language-pascal-providers/src/definitionProvider';
+import { PascalReferenceProvider } from '../vscode-language-pascal-providers/src/referenceProvider';
+import { TagsBuilder } from '../vscode-language-pascal-providers/src/tagsBuilder';
 import { WhatsNewManager } from '../vscode-whats-new/src/Manager';
 import { WhatsNewPascalContentProvider } from './whats-new/PascalContentProvider';
 
