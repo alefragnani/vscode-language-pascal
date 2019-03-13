@@ -1,3 +1,7 @@
+## [8.0.1] - 2019-03-13
+### Fixed
+- What's New page broken in VS Code 1.32 due to CSS API changes
+
 ## [8.0.0] - 2019-02-13
 ### Added
 - Use new VSCode API - Open Resource in Browser (issue [#46](https://github.com/alefragnani/vscode-language-pascal/issues/46))
