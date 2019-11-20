@@ -31,6 +31,9 @@ export class WhatsNewPascalContentProvider implements ContentProvider {
         changeLog.push({kind: ChangeLogKind.FIXED, message: `Support <i>.lpr</i> files (Thanks to @BeRo1985 
             - <a title=\"Open PR #30\" href=\"https://github.com/alefragnani/vscode-language-pascal/pull/30\">
             PR #30</a>)`});
+        changeLog.push({kind: ChangeLogKind.FIXED, message: `Close parentheses missing for function and procedure snippets (Thanks to @SpaceEEC 
+            - <a title=\"Open PR #51\" href=\"https://github.com/alefragnani/vscode-language-pascal/pull/51\">
+            PR #51</a>)`});
         return changeLog;
     }
 

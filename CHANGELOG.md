@@ -1,3 +1,9 @@
+## [8.0.3] - 2019-11-19
+### Fixed
+- Close parentheses missing for function and procedure snippets (thanks to @SpaceEEC [PR #51](https://github.com/alefragnani/vscode-language-pascal/pull/51))
+- Security Alert: mixin-deep (thanks to @dependabot ;-) [PR #53](https://github.com/alefragnani/vscode-language-pascal/pull/53))
+- Security Alert: diff
+
 ## [8.0.1] - 2019-05-28
 ### Fixed
 - Security Alert: tar
