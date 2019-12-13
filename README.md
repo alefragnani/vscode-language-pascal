@@ -186,28 +186,46 @@ Update two tags:
 * `YOUR_FREEPASCAL_PROJECT_OR_FILE`: The project/file being built.
 
 ```
-    {
-		"version": "0.1.0",
-		"windows": {
-			"command": "FPC_BIN_PATH"
-		},
-		"linux": {
-			"command": "FPC_BIN_PATH"
-		},
-		"isShellCommand": true,
-		"showOutput": "always",
-		"args": ["YOUR_FREEPASCAL_PROJECT_OR_FILE"],
-		"problemMatcher": {
-			"owner": "external",
-			"pattern": {
-				"regexp": "^([\\w]+\\.(p|pp|pas))\\((\\d+)\\,(\\d+)\\)\\s(Fatal|Error|Warning|Note):(.*)",
-				"file": 1,
-				"line": 3,
-				"column": 4,
-				"message": 6
-			}
-		}
-    }
+
+{
+   "version": "0.2.0",
+   "tasks": [
+      {
+         "label": "Pascal",
+         "type": "shell",
+         "windows": {
+            "command": "FPC_BIN_PATH"
+         },
+         "linux": {
+            "command": "FPC_BIN_PATH"
+         },
+         "presentation": {
+            "reveal": "always",
+            "panel": "new"
+         },
+         "args": [
+            {
+               "value": "YOUR_FREEPASCAL_PROJECT_OR_FILE",
+               "quoting": "escape"
+            }
+         ],
+         "problemMatcher": {
+            "owner": "external",
+            "pattern": {
+               "regexp": "^([\\w]+\\.(p|pp|pas))\\((\\d+)\\,(\\d+)\\)\\s(Fatal|Error|Warning|Note):(.*)",
+               "file": 1,
+               "line": 3,
+               "column": 4,
+               "message": 6
+            }
+         },
+         "group": {
+            "kind": "build",
+            "isDefault": true
+         }
+      }
+   ]
+}
 ```
 
 # License
