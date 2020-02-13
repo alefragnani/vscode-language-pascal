@@ -158,24 +158,42 @@ Update two tags:
 * `YOUR_DELPHI_PROJECT.DPR`: The project being built.
 
 ```
-    {
-		"version": "0.1.0",
-		"windows": {
-			"command": "DCC32.EXE_PATH"
-		},
-		"isShellCommand": true,
-		"showOutput": "always",
-		"args": ["YOUR_DELPHI_PROJECT.DPR"],
-		"problemMatcher": {
-			"owner": "external",
-			"pattern": {
-				"regexp": "^([\\w]+\\.(pas|dpr|dpk))\\((\\d+)\\)\\s(Fatal|Error|Warning|Hint):(.*)",
-				"file": 1,
-				"line": 3,
-				"message": 5
-			}
-		}
-    }
+   "version": "2.0.0",
+   "tasks": [
+      {
+         "label": "Pascal",
+         "type": "shell",
+         "windows": {
+            "command": "DCC32.EXE_PATH"
+         },
+         "linux": {
+            "command": "FPC_BIN_PATH"
+         },
+         "presentation": {
+            "reveal": "always",
+            "panel": "new"
+         },
+         "args": [
+            {
+               "value": ""YOUR_DELPHI_PROJECT.DPR"",
+               "quoting": "escape"
+            }
+         ],
+         "problemMatcher": {
+            "owner": "external",
+            "pattern": {
+               "regexp": "^([\\w]+\\.(pas|dpr|dpk))\\((\\d+)\\)\\s(Fatal|Error|Warning|Hint):(.*)",
+               "file": 1,
+               "line": 3,
+               "message": 5
+            }
+         },
+         "group": {
+            "kind": "build",
+            "isDefault": true
+         }
+      }
+   ]
 ```
 
 #### FreePascal
