@@ -9,7 +9,7 @@
         "theme": "dark"
     },
     "engines": {
-        "vscode": "^1.37.0"
+        "vscode": "^1.41.0"
     },
     "categories": [
         "Programming Languages",
@@ -117,16 +117,15 @@
         "vscode:prepublish": "webpack --mode production",
         "webpack": "webpack --mode development",
         "webpack-dev": "webpack --mode development --watch",
-        "compile": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install"
+        "compile": "tsc -watch -p ./"
     },
     "extensionDependencies": [
         "alefragnani.pascal-formatter"
     ],
     "devDependencies": {
         "@types/node": "^6.0.40",
+        "@types/vscode": "^1.41.0",
         "typescript": "^3.1.6",
-        "vscode": "^1.1.36",
         "webpack": "^4.19.1",
         "webpack-cli": "^3.1.0",
         "ts-loader": "^4.4.2",
