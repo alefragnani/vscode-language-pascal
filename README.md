@@ -188,7 +188,7 @@ Update two tags:
 ```
 
 {
-   "version": "0.2.0",
+   "version": "2.0.0",
    "tasks": [
       {
          "label": "Pascal",
