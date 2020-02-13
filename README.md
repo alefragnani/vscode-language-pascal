@@ -182,9 +182,9 @@ Update two tags:
          "problemMatcher": {
             "owner": "external",
             "pattern": {
-               "regexp": "^([\\w]+\\.(pas|dpr|dpk))\\((\\d+)\\)\\s(Fatal|Error|Warning|Hint):(.*)",
+               "regexp": "^(.*.(pas|dpr|dpk))\\((\\d+)\\)\\s(Fatal|Error|Warning|Hint):(.*)",
                "file": 1,
-               "line": 3,
+               "location": 3,
                "message": 5
             }
          },
