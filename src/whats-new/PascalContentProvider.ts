@@ -18,6 +18,9 @@ export class WhatsNewPascalContentProvider implements ContentProvider {
         let changeLog: ChangeLogItem[] = [];
         changeLog.push({kind: ChangeLogKind.NEW, message: "Adds <b>Multi-root</b> support"});
         changeLog.push({kind: ChangeLogKind.NEW, message: "Adds <b>Visual Studio Live Share</b> support"});
+        changeLog.push({kind: ChangeLogKind.CHANGED, message: ` Task samples upgraded to v2 (Thanks to @Creativelaides 
+            - <a title=\"Open PR #54\" href=\"https://github.com/alefragnani/vscode-language-pascal/pull/54\">
+            PR #54</a>)`});
         changeLog.push({kind: ChangeLogKind.CHANGED, message: "Improvements in <b>Code Navigation</b>"});
         changeLog.push({kind: ChangeLogKind.CHANGED, message: `Update grammar based on Monaco Language PR 
             (<a title=\"Issue #43\" href=\"https://github.com/alefragnani/vscode-language-pascal/issues/43\">

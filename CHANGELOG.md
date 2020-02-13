@@ -1,3 +1,10 @@
+## [9.0.0] - 2020-02-14
+### Changed
+- Task samples upgraded to v2 (thanks to @Creativelaides [PR #54](https://github.com/alefragnani/vscode-language-pascal/pull/54))
+
+### Internal
+- Support VS Code package split
+
 ## [8.0.3] - 2019-11-19
 ### Fixed
 - Close parentheses missing for function and procedure snippets (thanks to @SpaceEEC [PR #51](https://github.com/alefragnani/vscode-language-pascal/pull/51))
