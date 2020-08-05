@@ -4,17 +4,14 @@
 *--------------------------------------------------------------------------------------------*/
 
 import * as vscode from 'vscode';
-import fs = require('fs');
-import path = require('path');
-import cp = require('child_process');
 
 // language providers
 import { PascalDocumentSymbolProvider } from '../vscode-language-pascal-providers/src/documentSymbolProvider';
 import { PascalDefinitionProvider } from '../vscode-language-pascal-providers/src/definitionProvider';
 import { PascalReferenceProvider } from '../vscode-language-pascal-providers/src/referenceProvider';
 import { TagsBuilder } from '../vscode-language-pascal-providers/src/tagsBuilder';
-import { WhatsNewManager } from '../vscode-whats-new/src/Manager';
-import { WhatsNewPascalContentProvider } from './whats-new/PascalContentProvider';
+import { Container } from '../vscode-language-pascal-providers/src/container';
+import { registerWhatsNew } from './whats-new/commands';
 
 const documentSelector = [
     { language: 'pascal', scheme: 'file' },
@@ -24,6 +21,8 @@ const documentSelector = [
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
+
+    Container.context = context;
     
     // language providers
     TagsBuilder.checkGlobalAvailable(context).then((value) => {
@@ -55,10 +54,7 @@ export function activate(context: vscode.ExtensionContext) {
         }
     });
 
-    let provider = new WhatsNewPascalContentProvider();
-    let viewer = new WhatsNewManager(context).registerContentProvider("pascal", provider);
-    viewer.showPageInActivation();
-    context.subscriptions.push(vscode.commands.registerCommand('pascal.whatsNew', () => viewer.showPage()));
+    registerWhatsNew();
 
     vscode.commands.registerCommand('pascal.generateTags', () => generateTags(false));
     vscode.commands.registerCommand('pascal.updateTags', () => generateTags(true));
