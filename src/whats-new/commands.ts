@@ -13,4 +13,5 @@ export function registerWhatsNew() {
     let viewer = new WhatsNewManager(Container.context).registerContentProvider("pascal", provider);
     viewer.showPageInActivation();
     Container.context.subscriptions.push(commands.registerCommand('pascal.whatsNew', () => viewer.showPage()));
+    Container.context.subscriptions.push(commands.registerCommand('_pascal.whatsNewContextMenu', () => viewer.showPage()));
 }

@@ -87,8 +87,27 @@
             {
                 "command": "pascal.whatsNew",
                 "title": "Pascal: What's New"
+            },
+            {
+                "command": "_pascal.whatsNewContextMenu",
+                "title": "What's New"
             }
         ],
+        "menus": {
+            "commandPalette": [
+                {
+					"command": "_pascal.whatsNewContextMenu",
+					"when": "false"
+				}
+            ],
+			"extension/context": [
+				{
+					"command": "_pascal.whatsNewContextMenu",
+					"group": "pascal",
+					"when": "extension == alefragnani.pascal && extensionStatus == installed"
+				}
+			]
+        },
         "configuration": {
             "type": "object",
             "title": "Pascal",
