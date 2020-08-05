@@ -17,6 +17,16 @@ export class WhatsNewPascalContentProvider implements ContentProvider {
     provideChangeLog(): ChangeLogItem[] {
         let changeLog: ChangeLogItem[] = [];
 
+        changeLog.push({ kind: ChangeLogKind.VERSION, detail: { releaseNumber: "9.1.0", releaseDate: "August 2020" } });
+        changeLog.push({
+            kind: ChangeLogKind.INTERNAL,
+            detail: {
+                message: "Support Extension View Context Menu",
+                id: 56,
+                kind: IssueKind.Issue
+            }
+        });
+
         changeLog.push({ kind: ChangeLogKind.VERSION, detail: { releaseNumber: "9.0.0", releaseDate: "February 2020" } });
         changeLog.push({
             kind: ChangeLogKind.CHANGED,

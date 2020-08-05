@@ -1,3 +1,7 @@
+## [9.1.0] - 2020-08-05
+### Internal
+- Support Extension View Context Menu (issue [#56](https://github.com/alefragnani/vscode-language-pascal/issues/56))
+
 ## [9.0.0] - 2020-02-14
 ### Changed
 - Task samples upgraded to v2 (thanks to @Creativelaides [PR #54](https://github.com/alefragnani/vscode-language-pascal/pull/54))
