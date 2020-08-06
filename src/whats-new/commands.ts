@@ -9,8 +9,8 @@ import { WhatsNewManager } from "../../vscode-whats-new/src/Manager";
 import { WhatsNewPascalContentProvider } from "./contentProvider";
 
 export function registerWhatsNew() {
-    let provider = new WhatsNewPascalContentProvider();
-    let viewer = new WhatsNewManager(Container.context).registerContentProvider("pascal", provider);
+    const provider = new WhatsNewPascalContentProvider();
+    const viewer = new WhatsNewManager(Container.context).registerContentProvider("pascal", provider);
     viewer.showPageInActivation();
     Container.context.subscriptions.push(commands.registerCommand('pascal.whatsNew', () => viewer.showPage()));
     Container.context.subscriptions.push(commands.registerCommand('_pascal.whatsNewContextMenu', () => viewer.showPage()));
