@@ -26,6 +26,32 @@ export class WhatsNewPascalContentProvider implements ContentProvider {
                 kind: IssueKind.Issue
             }
         });
+        changeLog.push({
+            kind: ChangeLogKind.INTERNAL,
+            detail: {
+                message: "Migrate from TSLint to ESLint",
+                id: 63,
+                kind: IssueKind.Issue
+            }
+        });
+        changeLog.push({
+            kind: ChangeLogKind.FIXED,
+            detail: {
+                message: "Security Alert: elliptic",
+                id: 64,
+                kind: IssueKind.PR,
+                kudos: "dependabot"
+            }
+        });
+        changeLog.push({
+            kind: ChangeLogKind.FIXED,
+            detail: {
+                message: "Security Alert: acorn",
+                id: 58,
+                kind: IssueKind.PR,
+                kudos: "dependabot"
+            }
+        });
 
         changeLog.push({ kind: ChangeLogKind.VERSION, detail: { releaseNumber: "9.0.0", releaseDate: "February 2020" } });
         changeLog.push({
