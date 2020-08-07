@@ -15,7 +15,7 @@ export class WhatsNewPascalContentProvider implements ContentProvider {
     }
 
     provideChangeLog(): ChangeLogItem[] {
-        let changeLog: ChangeLogItem[] = [];
+        const changeLog: ChangeLogItem[] = [];
 
         changeLog.push({ kind: ChangeLogKind.VERSION, detail: { releaseNumber: "9.1.0", releaseDate: "August 2020" } });
         changeLog.push({
@@ -24,6 +24,32 @@ export class WhatsNewPascalContentProvider implements ContentProvider {
                 message: "Support Extension View Context Menu",
                 id: 56,
                 kind: IssueKind.Issue
+            }
+        });
+        changeLog.push({
+            kind: ChangeLogKind.INTERNAL,
+            detail: {
+                message: "Migrate from TSLint to ESLint",
+                id: 63,
+                kind: IssueKind.Issue
+            }
+        });
+        changeLog.push({
+            kind: ChangeLogKind.FIXED,
+            detail: {
+                message: "Security Alert: elliptic",
+                id: 64,
+                kind: IssueKind.PR,
+                kudos: "dependabot"
+            }
+        });
+        changeLog.push({
+            kind: ChangeLogKind.FIXED,
+            detail: {
+                message: "Security Alert: acorn",
+                id: 58,
+                kind: IssueKind.PR,
+                kudos: "dependabot"
             }
         });
 
@@ -96,7 +122,7 @@ export class WhatsNewPascalContentProvider implements ContentProvider {
     }
 
     provideSponsors(): Sponsor[] {
-        let sponsors: Sponsor[] = [];
+        const sponsors: Sponsor[] = [];
         return sponsors
     }
    

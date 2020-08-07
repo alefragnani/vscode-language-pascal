@@ -29,11 +29,11 @@ export function activate(context: vscode.ExtensionContext) {
         if (value) {
             context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider(documentSelector, new PascalDocumentSymbolProvider()));
 
-            const hasNoWorkspace: boolean = !vscode.workspace.workspaceFolders;
+            const hasNoWorkspace = !vscode.workspace.workspaceFolders;
             const isSingleWorkspace: boolean = vscode.workspace.workspaceFolders && vscode.workspace.workspaceFolders.length === 1;
             const isMultirootWorkspace: boolean = vscode.workspace.workspaceFolders && vscode.workspace.workspaceFolders.length > 1;
 
-            let canRegisterOtherProviders: boolean =    false;
+            let canRegisterOtherProviders =    false;
 
             if (hasNoWorkspace) {
                 canRegisterOtherProviders = false;
@@ -66,8 +66,8 @@ export function activate(context: vscode.ExtensionContext) {
             return;
         } 
 
-        let tagBuilder: TagsBuilder = new TagsBuilder();
-        let basePath: string = vscode.workspace.getWorkspaceFolder(vscode.window.activeTextEditor.document.uri).uri.fsPath;
+        const tagBuilder: TagsBuilder = new TagsBuilder();
+        const basePath: string = vscode.workspace.getWorkspaceFolder(vscode.window.activeTextEditor.document.uri).uri.fsPath;
         tagBuilder.generateTags(basePath, update, true);
     }
 

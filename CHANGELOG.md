@@ -1,6 +1,11 @@
 ## [9.1.0] - 2020-08-05
 ### Internal
 - Support Extension View Context Menu (issue [#56](https://github.com/alefragnani/vscode-language-pascal/issues/56))
+- Migrate from TSLint to ESLint  (issue [#63](https://github.com/alefragnani/vscode-language-pascal/issues/63))
+
+### Fixed
+- Security Alert: elliptic (dependabot [PR #64](https://github.com/alefragnani/vscode-language-pascal/pull/64))
+- Security Alert: acorn (dependabot [PR #58](https://github.com/alefragnani/vscode-language-pascal/pull/58))
 
 ## [9.0.0] - 2020-02-14
 ### Changed
