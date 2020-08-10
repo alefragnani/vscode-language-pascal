@@ -142,7 +142,7 @@
         "webpack": "webpack --mode development",
         "webpack-dev": "webpack --mode development --watch",
         "compile": "tsc -watch -p ./",
-        "lint": "eslint -c .eslintrc.js --ext .ts src vscode-language-pascal-providers vscode-whats-new"
+        "lint": "eslint -c package.json --ext .ts src vscode-language-pascal-providers vscode-whats-new"
     },
     "extensionDependencies": [
         "alefragnani.pascal-formatter"
