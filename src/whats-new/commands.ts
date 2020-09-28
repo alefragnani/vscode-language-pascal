@@ -4,7 +4,7 @@
 *--------------------------------------------------------------------------------------------*/
 
 import { commands } from "vscode";
-import { Container } from "../../vscode-language-pascal-providers/src/container";
+import { Container } from "../container";
 import { WhatsNewManager } from "../../vscode-whats-new/src/Manager";
 import { WhatsNewPascalContentProvider } from "./contentProvider";
 
