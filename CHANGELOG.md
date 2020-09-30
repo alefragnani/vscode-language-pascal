@@ -1,3 +1,9 @@
+## [9.2.0] - 2020-10-??
+### Internal
+- Reopen providers repo (issue [#67](https://github.com/alefragnani/vscode-language-pascal/issues/67))
+### Fixed
+- `Find References` command not working (issue [#68](https://github.com/alefragnani/vscode-language-pascal/issues/68))
+
 ## [9.1.0] - 2020-08-05
 ### Internal
 - Support Extension View Context Menu (issue [#56](https://github.com/alefragnani/vscode-language-pascal/issues/56))
