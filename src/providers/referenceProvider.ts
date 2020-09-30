@@ -21,7 +21,7 @@ export class PascalReferenceProvider extends AbstractProvider implements vscode.
 
 				if (value !== null && value !== "") {
 
-					const values = value.split(/ +/);
+					const values = value.split(/ +/).slice(1);
 
 					// Create           2583 DelphiAST.pas      Result := FStack.Peek.AddChild(TSyntaxNode.Create(Typ));
 					const line = parseInt(values.shift()) - 1;
