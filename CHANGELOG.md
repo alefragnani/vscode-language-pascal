@@ -1,4 +1,4 @@
-## [9.2.0] - 2020-10-??
+## [9.2.0] - 2020-10-01
 ### Internal
 - Reopen providers repo (issue [#67](https://github.com/alefragnani/vscode-language-pascal/issues/67))
 ### Fixed
