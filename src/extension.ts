@@ -6,11 +6,11 @@
 import * as vscode from 'vscode';
 
 // language providers
-import { PascalDocumentSymbolProvider } from '../vscode-language-pascal-providers/src/documentSymbolProvider';
-import { PascalDefinitionProvider } from '../vscode-language-pascal-providers/src/definitionProvider';
-import { PascalReferenceProvider } from '../vscode-language-pascal-providers/src/referenceProvider';
-import { TagsBuilder } from '../vscode-language-pascal-providers/src/tagsBuilder';
-import { Container } from '../vscode-language-pascal-providers/src/container';
+import { PascalDocumentSymbolProvider } from './providers/documentSymbolProvider';
+import { PascalDefinitionProvider } from './providers/definitionProvider';
+import { PascalReferenceProvider } from './providers/referenceProvider';
+import { TagsBuilder } from './providers/tagsBuilder';
+import { Container } from './container';
 import { registerWhatsNew } from './whats-new/commands';
 
 const documentSelector = [
