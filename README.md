@@ -1,3 +1,7 @@
+[![](https://vsmarketplacebadge.apphb.com/version-short/alefragnani.pascal.svg)](https://marketplace.visualstudio.com/items?itemName=alefragnani.pascal)
+[![](https://vsmarketplacebadge.apphb.com/downloads-short/alefragnani.pascal.svg)](https://marketplace.visualstudio.com/items?itemName=alefragnani.pascal)
+[![](https://vsmarketplacebadge.apphb.com/rating-short/alefragnani.pascal.svg)](https://marketplace.visualstudio.com/items?itemName=alefragnani.pascal)
+
 <p align="center">
   <br />
   <a title="Learn more about Pascal" href="http://github.com/alefragnani/vscode-language-pascal"><img src="https://raw.githubusercontent.com/alefragnani/vscode-language-pascal/master/images/vscode-pascal-logo-readme.png" alt="Pascal Logo" width="70%" /></a>
