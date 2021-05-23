@@ -26,42 +26,48 @@ export function activate(context: vscode.ExtensionContext) {
     
     registerWhatsNew();
 
-    if (!vscode.workspace.isTrusted) {
-        return;
+    vscode.workspace.onDidGrantWorkspaceTrust(() => {
+        registerCodeNavigation();
+    })
+
+    if (vscode.workspace.isTrusted) {
+        registerCodeNavigation();
     }    
     
-    // language providers (requires workspace trust)
-    TagsBuilder.checkGlobalAvailable(context).then((value) => {
-        if (value) {
-            context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider(documentSelector, new PascalDocumentSymbolProvider()));
-            
-            const hasNoWorkspace = !vscode.workspace.workspaceFolders;
-            const isSingleWorkspace: boolean = vscode.workspace.workspaceFolders && vscode.workspace.workspaceFolders.length === 1;
-            const isMultirootWorkspace: boolean = vscode.workspace.workspaceFolders && vscode.workspace.workspaceFolders.length > 1;
-            
-            let canRegisterOtherProviders =    false;
-            
-            if (hasNoWorkspace) {
-                canRegisterOtherProviders = false;
+    function registerCodeNavigation() {
+        // language providers (requires workspace trust)
+        TagsBuilder.checkGlobalAvailable(context).then((value) => {
+            if (value) {
+                context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider(documentSelector, new PascalDocumentSymbolProvider()));
+                
+                const hasNoWorkspace = !vscode.workspace.workspaceFolders;
+                const isSingleWorkspace: boolean = vscode.workspace.workspaceFolders && vscode.workspace.workspaceFolders.length === 1;
+                const isMultirootWorkspace: boolean = vscode.workspace.workspaceFolders && vscode.workspace.workspaceFolders.length > 1;
+                
+                let canRegisterOtherProviders =    false;
+                
+                if (hasNoWorkspace) {
+                    canRegisterOtherProviders = false;
+                }
+                if (isSingleWorkspace) {
+                    canRegisterOtherProviders = (vscode.workspace.getConfiguration("pascal", 
+                    vscode.window.activeTextEditor.document.uri).get("codeNavigation", "workspace") === "workspace");
+                } 
+                if (isMultirootWorkspace) {
+                    canRegisterOtherProviders = true; 
+                } 
+                
+                // does not register DEFINITION or REFERENCES if the user decides for "file based"
+                if (canRegisterOtherProviders) {
+                    context.subscriptions.push(vscode.languages.registerDefinitionProvider(documentSelector, new PascalDefinitionProvider()));
+                    context.subscriptions.push(vscode.languages.registerReferenceProvider(documentSelector, new PascalReferenceProvider()));
+                }
             }
-            if (isSingleWorkspace) {
-                canRegisterOtherProviders = (vscode.workspace.getConfiguration("pascal", 
-                vscode.window.activeTextEditor.document.uri).get("codeNavigation", "workspace") === "workspace");
-            } 
-            if (isMultirootWorkspace) {
-                canRegisterOtherProviders = true; 
-            } 
-            
-            // does not register DEFINITION or REFERENCES if the user decides for "file based"
-            if (canRegisterOtherProviders) {
-                context.subscriptions.push(vscode.languages.registerDefinitionProvider(documentSelector, new PascalDefinitionProvider()));
-                context.subscriptions.push(vscode.languages.registerReferenceProvider(documentSelector, new PascalReferenceProvider()));
-            }
-        }
-    });
+        });
 
-    vscode.commands.registerCommand('pascal.generateTags', () => generateTags(false));
-    vscode.commands.registerCommand('pascal.updateTags', () => generateTags(true));
+        vscode.commands.registerCommand('pascal.generateTags', () => generateTags(false));
+        vscode.commands.registerCommand('pascal.updateTags', () => generateTags(true));
+    }
 
     function generateTags(update: boolean) {
 
