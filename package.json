@@ -156,6 +156,9 @@
         "compile": "tsc -watch -p ./",
         "lint": "eslint -c package.json --ext .ts src vscode-language-pascal-providers vscode-whats-new"
     },
+    "extensionDependencies": [
+        "alefragnani.pascal-formatter"
+    ],
     "devDependencies": {
         "@types/node": "^10.14.17",
         "@types/vscode": "^1.56.0",
