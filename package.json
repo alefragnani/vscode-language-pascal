@@ -9,7 +9,7 @@
         "theme": "dark"
     },
     "engines": {
-        "vscode": "^1.41.0"
+        "vscode": "^1.56.0"
     },
     "categories": [
         "Programming Languages",
@@ -30,6 +30,16 @@
         "onCommand:pascal.whatsNew",
         "*"
     ],
+    "capabilities": {
+        "untrustedWorkspaces": {
+            "supported": "limited",
+            "description": "Trust is required to be able to use code navigation features in this workspace.",
+            "restrictedConfigurations": [
+                "pascal.tags.autoGenerate",
+                "pascal.codeNavigation"
+            ]
+        }
+    },
     "main": "./dist/extension",
     "icon": "images/icon.png",
     "license": "SEE LICENSE IN LICENSE.md",
@@ -78,11 +88,13 @@
         "commands": [
             {
                 "command": "pascal.generateTags",
-                "title": "Pascal: Generate Tags"
+                "title": "Pascal: Generate Tags",
+                "enablement": "isWorkspaceTrusted"
             },
             {
                 "command": "pascal.updateTags",
-                "title": "Pascal: Update Tags"
+                "title": "Pascal: Update Tags",
+                "enablement": "isWorkspaceTrusted"
             },
             {
                 "command": "pascal.whatsNew",
@@ -130,11 +142,11 @@
             }
         }
     },
-	"eslintConfig": {
-		"extends": [
-			"vscode-ext"
-		]
-	},
+    "eslintConfig": {
+        "extends": [
+            "vscode-ext"
+        ]
+    },
     "scripts": {
         "build": "webpack --mode development",
         "watch": "webpack --watch --mode development --info-verbosity verbose",
@@ -144,12 +156,9 @@
         "compile": "tsc -watch -p ./",
         "lint": "eslint -c package.json --ext .ts src vscode-language-pascal-providers vscode-whats-new"
     },
-    "extensionDependencies": [
-        "alefragnani.pascal-formatter"
-    ],
     "devDependencies": {
-        "@types/node": "^6.0.40",
-        "@types/vscode": "^1.41.0",
+        "@types/node": "^10.14.17",
+        "@types/vscode": "^1.56.0",
         "@typescript-eslint/eslint-plugin": "^3.8.0",
         "@typescript-eslint/parser": "^3.8.0",
         "eslint": "^7.6.0",
