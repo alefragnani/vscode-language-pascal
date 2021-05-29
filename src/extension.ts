@@ -17,11 +17,8 @@ export function activate(context: vscode.ExtensionContext) {
     Container.context = context;
     
     registerWhatsNew();
-
-    if (vscode.workspace.isTrusted) {
-        registerProviders();
-        registerCommands();
-    }    
+    registerProviders();
+    registerCommands();
 
     vscode.workspace.onDidGrantWorkspaceTrust(() => {
         registerProviders();
