@@ -5,9 +5,14 @@
 
 import { commands, window, workspace } from "vscode";
 import { TagsBuilder } from "./providers/tagsBuilder";
+import { isVirtualWorkspace } from "./remote";
 
 export function registerCommands() {
     
+    if (!workspace.isTrusted || isVirtualWorkspace) {
+        return;
+    }
+
     function generateTags(update: boolean) {
 
         if (!window.activeTextEditor) {

@@ -31,6 +31,10 @@
         "*"
     ],
     "capabilities": {
+        "virtualWorkspaces": {
+            "supported": "limited",
+            "description": "In virtual workspaces, code navigation features are not supported."
+        },
         "untrustedWorkspaces": {
             "supported": "limited",
             "description": "Trust is required to be able to use code navigation features in this workspace.",

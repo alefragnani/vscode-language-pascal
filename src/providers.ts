@@ -9,6 +9,7 @@ import { PascalDefinitionProvider } from "./providers/definitionProvider";
 import { PascalDocumentSymbolProvider } from "./providers/documentSymbolProvider";
 import { PascalReferenceProvider } from "./providers/referenceProvider";
 import { TagsBuilder } from "./providers/tagsBuilder";
+import { isVirtualWorkspace } from "./remote";
 
 const documentSelector = [
     { language: 'pascal', scheme: 'file' },
@@ -17,7 +18,7 @@ const documentSelector = [
 
 export function registerProviders() {
     
-    if (!workspace.isTrusted) {
+    if (!workspace.isTrusted || isVirtualWorkspace) {
         return;
     }
 
