@@ -17,6 +17,33 @@ export class WhatsNewPascalContentProvider implements ContentProvider {
     provideChangeLog(): ChangeLogItem[] {
         const changeLog: ChangeLogItem[] = [];
 
+        changeLog.push({ kind: ChangeLogKind.VERSION, detail: { releaseNumber: "9.3.0", releaseDate: "May 2021" } });
+        changeLog.push({
+            kind: ChangeLogKind.NEW,
+            detail: {
+                message: "Support <b>Workspace Trust</b>",
+                id: 80,
+                kind: IssueKind.Issue
+            }
+        });
+        changeLog.push({
+            kind: ChangeLogKind.NEW,
+            detail: {
+                message: "Support <b>Virtual Workspaces</b>",
+                id: 79,
+                kind: IssueKind.Issue
+            }
+        });
+        changeLog.push({
+            kind: ChangeLogKind.INTERNAL,
+            detail: {
+                message: "Security Alert: lodash",
+                id: 78,
+                kind: IssueKind.PR,
+                kudos: "dependabot"
+            }
+        });
+
         changeLog.push({ kind: ChangeLogKind.VERSION, detail: { releaseNumber: "9.2.0", releaseDate: "October 2020" } });
         changeLog.push({
             kind: ChangeLogKind.INTERNAL,
@@ -86,52 +113,6 @@ export class WhatsNewPascalContentProvider implements ContentProvider {
             detail: {
                 message: "Support VS Code package split",
                 id: 55,
-                kind: IssueKind.Issue
-            }
-        });
-
-        changeLog.push({ kind: ChangeLogKind.VERSION, detail: { releaseNumber: "8.0.3", releaseDate: "May 2019" } });
-        changeLog.push({
-            kind: ChangeLogKind.FIXED,
-            detail: {
-                message: "Close parentheses missing for function and procedure snippets",
-                id: 51,
-                kind: IssueKind.PR,
-                kudos: "@SpaceEEC"
-            }
-        });
-        changeLog.push({
-            kind: ChangeLogKind.FIXED,
-            detail: {
-                message: "Security Alert: mixin-deep",
-                id: 53,
-                kind: IssueKind.PR,
-                kudos: "dependabot"
-            }
-        });
-
-        changeLog.push({ kind: ChangeLogKind.VERSION, detail: { releaseNumber: "8.0.0", releaseDate: "February 2019" } });
-        changeLog.push({
-            kind: ChangeLogKind.NEW,
-            detail: {
-                message: "Use new VSCode API - Open Resource in Browser",
-                id: 46,
-                kind: IssueKind.Issue
-            }
-        });
-        changeLog.push({
-            kind: ChangeLogKind.CHANGED,
-            detail: {
-                message: "Update grammar based on Monaco Language PR",
-                id: 43,
-                kind: IssueKind.Issue
-            }
-        });
-        changeLog.push({
-            kind: ChangeLogKind.FIXED,
-            detail: {
-                message: "Final cursor position on some Snippets",
-                id: 41,
                 kind: IssueKind.Issue
             }
         });

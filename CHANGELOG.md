@@ -1,6 +1,15 @@
+## [9.3.0] - 2021-06-01
+### Added
+- Support **Workspace Trust** (issue [#80](https://github.com/alefragnani/vscode-language-pascal/issues/80))
+- Support **Virtual Workspaces** (issue [#79](https://github.com/alefragnani/vscode-language-pascal/issues/79))
+
+### Internal
+- Security Alert: lodash (dependabot [PR #78](https://github.com/alefragnani/vscode-language-pascal/pull/78))
+
 ## [9.2.0] - 2020-10-01
 ### Internal
 - Reopen providers repo (issue [#67](https://github.com/alefragnani/vscode-language-pascal/issues/67))
+
 ### Fixed
 - `Find References` command not working (issue [#68](https://github.com/alefragnani/vscode-language-pascal/issues/68))
 

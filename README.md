@@ -7,12 +7,11 @@
   <a title="Learn more about Pascal" href="http://github.com/alefragnani/vscode-language-pascal"><img src="https://raw.githubusercontent.com/alefragnani/vscode-language-pascal/master/images/vscode-pascal-logo-readme.png" alt="Pascal Logo" width="70%" /></a>
 </p>
 
-# What's new in Pascal 9.2
+# What's new in Pascal 9.3
 
+* Adds **Virtual Workspaces** support
+* Adds **Workspace Trust** support
 * Adds **Multi-root** support
-* Adds **Visual Studio Live Share** support 
-* Improvements in **Code Navigation**
-* Update grammar based on Monaco Language PR
 * The **Formatter** was extracted to its own extension ([Pascal Formatter](https://github.com/alefragnani/vscode-pascal-formatter))
 
 ## Support
