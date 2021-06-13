@@ -6,11 +6,13 @@
 import { commands } from "vscode";
 import { Container } from "../container";
 import { WhatsNewManager } from "../../vscode-whats-new/src/Manager";
-import { WhatsNewPascalContentProvider } from "./contentProvider";
+import { PascalSocialMediaProvider, PascalContentProvider } from "./contentProvider";
 
 export function registerWhatsNew() {
-    const provider = new WhatsNewPascalContentProvider();
-    const viewer = new WhatsNewManager(Container.context).registerContentProvider("pascal", provider);
+    const provider = new PascalContentProvider();
+    const viewer = new WhatsNewManager(Container.context)
+        .registerContentProvider("alefragnani", "pascal", provider)
+        .registerSocialMediaProvider(new PascalSocialMediaProvider());
     viewer.showPageInActivation();
     Container.context.subscriptions.push(commands.registerCommand('pascal.whatsNew', () => viewer.showPage()));
     Container.context.subscriptions.push(commands.registerCommand('_pascal.whatsNewContextMenu', () => viewer.showPage()));
