@@ -7,7 +7,7 @@
   <a title="Learn more about Pascal" href="http://github.com/alefragnani/vscode-language-pascal"><img src="https://raw.githubusercontent.com/alefragnani/vscode-language-pascal/master/images/vscode-pascal-logo-readme.png" alt="Pascal Logo" width="70%" /></a>
 </p>
 
-# What's new in Pascal 9.3
+# What's new in Pascal 9.4
 
 * Adds **Virtual Workspaces** support
 * Adds **Workspace Trust** support

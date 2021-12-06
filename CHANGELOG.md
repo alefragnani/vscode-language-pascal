@@ -1,3 +1,8 @@
+## [9.4.0] - 2021-12-10
+### Internal
+* Add CONTRIBUTING documentation (issue [#95](https://github.com/alefragnani/vscode-language-pascal/issues/95))
+* Update dependencies (issue [#98](https://github.com/alefragnani/vscode-language-pascal/issues/98))
+
 ## [9.3.0] - 2021-06-01
 ### Added
 - Support **Workspace Trust** (issue [#80](https://github.com/alefragnani/vscode-language-pascal/issues/80))
