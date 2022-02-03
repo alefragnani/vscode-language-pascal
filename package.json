@@ -30,6 +30,7 @@
         "onCommand:pascal.whatsNew",
         "onCommand:_pascal.installDelphiThemes",
         "onCommand:_pascal.installDelphiKeymap",
+        "onCommand:_pascal.installPascalFormatter",
         "*"
     ],
     "capabilities": {
@@ -113,17 +114,33 @@
             },
             {
                 "command": "_pascal.installDelphiThemes",
-                "title": "Pascal: Delphi Like"
+                "title": "Pascal: Install Delphi Themes"
             },
             {
                 "command": "_pascal.installDelphiKeymap",
-                "title": "Pascal: Delphi Keymap"
+                "title": "Pascal: Install Delphi Keymap"
+            },
+            {
+                "command": "_pascal.installPascalFormatter",
+                "title": "Pascal: Install Pascal Formatter"
             }
         ],
         "menus": {
             "commandPalette": [
                 {
                     "command": "_pascal.whatsNewContextMenu",
+                    "when": "false"
+                },
+                {
+                    "command": "_pascal.installDelphiThemes",
+                    "when": "false"
+                },
+                {
+                    "command": "_pascal.installDelphiKeymap",
+                    "when": "false"
+                },
+                {
+                    "command": "_pascal.installPascalFormatter",
                     "when": "false"
                 }
             ],
@@ -165,7 +182,7 @@
                     {
                         "id": "syntaxHighlighting",
                         "title": "Syntax Highlighting",
-                        "description": "It supports full syntax highlighting for **Delphi** and **FreePascal**",
+                        "description": "Enjoy full syntax highlighting for **Delphi** and **FreePascal** source files",
                         "media": {
                             "image": "images/vscode-pascal-syntax.png",
                             "altText": "Syntax Highlighting"
@@ -183,7 +200,7 @@
                     {
                         "id": "formatter",
                         "title": "Formatter",
-                        "description": "The extension uses the [Pascal Formatter](https://github.com/alefragnani/vscode-pascal-formatter#features) extension, which is automatically installed",
+                        "description": "The extension uses the [Pascal Formatter](command:_pascal.installPascalFormatter) extension, which is automatically installed",
                         "media": {
                             "image": "images/vscode-pascal-snippets.png",
                             "altText": "Snippets"

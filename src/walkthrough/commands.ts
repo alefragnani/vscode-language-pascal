@@ -13,4 +13,5 @@ export function registerWalkthroughCommands() {
 
     commands.registerCommand('_pascal.installDelphiThemes', () => openExtensions(["alefragnani.delphi-themes"]));
     commands.registerCommand('_pascal.installDelphiKeymap', () => openExtensions(["alefragnani.delphi-keybindings"]));
+    commands.registerCommand('_pascal.installPascalFormatter', () => openExtensions(["alefragnani.pascal-formatter"]));
 }
