@@ -28,7 +28,8 @@
         "onCommand:pascal.generateTags",
         "onCommand:pascal.updateTags",
         "onCommand:pascal.whatsNew",
-        "onCommand:_pascal.delphiLike",
+        "onCommand:_pascal.installDelphiThemes",
+        "onCommand:_pascal.installDelphiKeymap",
         "*"
     ],
     "capabilities": {
@@ -111,8 +112,12 @@
                 "title": "What's New"
             },
             {
-                "command": "_pascal.delphiLike",
+                "command": "_pascal.installDelphiThemes",
                 "title": "Pascal: Delphi Like"
+            },
+            {
+                "command": "_pascal.installDelphiKeymap",
+                "title": "Pascal: Delphi Keymap"
             }
         ],
         "menus": {
@@ -195,8 +200,9 @@
                     {
                         "id": "delphiLike",
                         "title": "Delphi look and feel",
-                        "description": "Make VS Code look and feel like Delphi. Use classic Delphi Themes and take advantage of your muscle memory with Delphi Keybindings\n[Install Delphi Extensions](command:_pascal.delphiLike)",
+                        "description": "Make VS Code look and feel like Delphi. Use classic Delphi Themes and take advantage of your muscle memory with Delphi Keybindings\n[Install Delphi Themes](command:_pascal.installDelphiThemes)\n[Install Delphi Keymap](command:_pascal.installDelphiKeymap)",
                         "media": { "image": "walkthrough/delphi-themes-classic.png", "altText": "Delphi Classic Theme" }
+
                     }
                 ]
             }
