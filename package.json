@@ -28,6 +28,7 @@
         "onCommand:pascal.generateTags",
         "onCommand:pascal.updateTags",
         "onCommand:pascal.whatsNew",
+        "onCommand:_pascal.delphiLike",
         "*"
     ],
     "capabilities": {
@@ -108,6 +109,10 @@
             {
                 "command": "_pascal.whatsNewContextMenu",
                 "title": "What's New"
+            },
+            {
+                "command": "_pascal.delphiLike",
+                "title": "Pascal: Delphi Like"
             }
         ],
         "menus": {
@@ -145,7 +150,57 @@
                     ]
                 }
             }
-        }
+        },
+        "walkthroughs": [
+            {
+                "id": "pascalWelcome",
+                "title": "Get Started with Pascal Development",
+                "description": "Your first steps to set up powerful Pascal tools in a lightweight, performant editor!",
+                "steps": [
+                    {
+                        "id": "syntaxHighlighting",
+                        "title": "Syntax Highlighting",
+                        "description": "It supports full syntax highlighting for **Delphi** and **FreePascal**",
+                        "media": {
+                            "image": "images/vscode-pascal-syntax.png",
+                            "altText": "Syntax Highlighting"
+                        }
+                    },
+                    {
+                        "id": "snippets",
+                        "title": "Snippets",
+                        "description": "The extension provides almost 40 snippets, for a wide range of scenarios",
+                        "media": {
+                            "image": "images/vscode-pascal-snippets.png",
+                            "altText": "Snippets"
+                        }
+                    },
+                    {
+                        "id": "formatter",
+                        "title": "Formatter",
+                        "description": "The extension uses the [Pascal Formatter](https://github.com/alefragnani/vscode-pascal-formatter#features) extension, which is automatically installed",
+                        "media": {
+                            "image": "images/vscode-pascal-snippets.png",
+                            "altText": "Snippets"
+                        }
+                    },
+                    {
+                        "id": "codeNavigation",
+                        "title": "Code Navigation",
+                        "description": "The **Pascal** extension requires GNU GLobal to navigate to any language element (methods, attributes, classes, interfaces, and so on)",
+                        "media": {
+                            "markdown": "walkthrough/codeNavigation.md"
+                        }
+                    },
+                    {
+                        "id": "delphiLike",
+                        "title": "Delphi look and feel",
+                        "description": "Make VS Code look and feel like Delphi. Use classic Delphi Themes and take advantage of your muscle memory with Delphi Keybindings\n[Install Delphi Extensions](command:_pascal.delphiLike)",
+                        "media": { "image": "walkthrough/delphi-themes-classic.png", "altText": "Delphi Classic Theme" }
+                    }
+                ]
+            }
+          ]
     },
     "eslintConfig": {
         "extends": [
