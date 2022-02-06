@@ -9,7 +9,7 @@ function openExtensions(ids: string[]) {
     commands.executeCommand("workbench.extensions.action.showExtensionsWithIds", ids);
 }
 
-export function registerWalkthroughCommands() {
+export function registerWalkthrough() {
 
     commands.registerCommand('_pascal.installDelphiThemes', () => openExtensions(["alefragnani.delphi-themes"]));
     commands.registerCommand('_pascal.installDelphiKeymap', () => openExtensions(["alefragnani.delphi-keybindings"]));
