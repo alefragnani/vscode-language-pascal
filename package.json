@@ -202,7 +202,7 @@
                         "title": "Formatter",
                         "description": "The extension uses the [Pascal Formatter](command:_pascal.installPascalFormatter) extension, which is automatically installed",
                         "media": {
-                            "image": "images/vscode-pascal-snippets.png",
+                            "image": "walkthrough/vscode-pascal-format-code.gif",
                             "altText": "Snippets"
                         }
                     },
