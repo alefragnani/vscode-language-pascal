@@ -28,6 +28,9 @@
         "onCommand:pascal.generateTags",
         "onCommand:pascal.updateTags",
         "onCommand:pascal.whatsNew",
+        "onCommand:_pascal.installDelphiThemes",
+        "onCommand:_pascal.installDelphiKeymap",
+        "onCommand:_pascal.installPascalFormatter",
         "*"
     ],
     "capabilities": {
@@ -108,12 +111,36 @@
             {
                 "command": "_pascal.whatsNewContextMenu",
                 "title": "What's New"
+            },
+            {
+                "command": "_pascal.installDelphiThemes",
+                "title": "Pascal: Install Delphi Themes"
+            },
+            {
+                "command": "_pascal.installDelphiKeymap",
+                "title": "Pascal: Install Delphi Keymap"
+            },
+            {
+                "command": "_pascal.installPascalFormatter",
+                "title": "Pascal: Install Pascal Formatter"
             }
         ],
         "menus": {
             "commandPalette": [
                 {
                     "command": "_pascal.whatsNewContextMenu",
+                    "when": "false"
+                },
+                {
+                    "command": "_pascal.installDelphiThemes",
+                    "when": "false"
+                },
+                {
+                    "command": "_pascal.installDelphiKeymap",
+                    "when": "false"
+                },
+                {
+                    "command": "_pascal.installPascalFormatter",
                     "when": "false"
                 }
             ],
@@ -145,7 +172,58 @@
                     ]
                 }
             }
-        }
+        },
+        "walkthroughs": [
+            {
+                "id": "pascalWelcome",
+                "title": "Get Started with Pascal Development",
+                "description": "Your first steps to set up powerful Pascal tools in a lightweight, performant editor!",
+                "steps": [
+                    {
+                        "id": "syntaxHighlighting",
+                        "title": "Syntax Highlighting",
+                        "description": "Enjoy full syntax highlighting for **Delphi** and **FreePascal** source files",
+                        "media": {
+                            "image": "images/vscode-pascal-syntax.png",
+                            "altText": "Syntax Highlighting"
+                        }
+                    },
+                    {
+                        "id": "snippets",
+                        "title": "Snippets",
+                        "description": "The extension provides almost 40 snippets, for a wide range of scenarios",
+                        "media": {
+                            "image": "images/vscode-pascal-snippets.png",
+                            "altText": "Snippets"
+                        }
+                    },
+                    {
+                        "id": "formatter",
+                        "title": "Formatter",
+                        "description": "The extension uses the [Pascal Formatter](command:_pascal.installPascalFormatter) extension, which is automatically installed",
+                        "media": {
+                            "image": "walkthrough/vscode-pascal-format-code.gif",
+                            "altText": "Snippets"
+                        }
+                    },
+                    {
+                        "id": "codeNavigation",
+                        "title": "Code Navigation",
+                        "description": "The **Pascal** extension requires GNU GLobal to navigate to any language element (methods, attributes, classes, interfaces, and so on)",
+                        "media": {
+                            "markdown": "walkthrough/codeNavigation.md"
+                        }
+                    },
+                    {
+                        "id": "delphiLike",
+                        "title": "Delphi look and feel",
+                        "description": "Make VS Code look and feel like Delphi. Use classic Delphi Themes and take advantage of your muscle memory with Delphi Keybindings\n[Install Delphi Themes](command:_pascal.installDelphiThemes)\n[Install Delphi Keymap](command:_pascal.installDelphiKeymap)",
+                        "media": { "image": "walkthrough/delphi-themes-classic.png", "altText": "Delphi Classic Theme" }
+
+                    }
+                ]
+            }
+          ]
     },
     "eslintConfig": {
         "extends": [

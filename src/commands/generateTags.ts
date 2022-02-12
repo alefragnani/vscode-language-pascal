@@ -4,10 +4,10 @@
 *--------------------------------------------------------------------------------------------*/
 
 import { commands, window, workspace } from "vscode";
-import { TagsBuilder } from "./providers/tagsBuilder";
-import { isVirtualWorkspace } from "./remote";
+import { TagsBuilder } from "../providers/tagsBuilder";
+import { isVirtualWorkspace } from "../remote";
 
-export function registerCommands() {
+export function registerGenerateTags() {
     
     if (!workspace.isTrusted || isVirtualWorkspace) {
         return;
