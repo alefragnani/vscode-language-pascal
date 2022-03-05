@@ -184,8 +184,7 @@
                         "title": "Syntax Highlighting",
                         "description": "Enjoy full syntax highlighting for **Delphi** and **FreePascal** source files",
                         "media": {
-                            "image": "images/vscode-pascal-syntax.png",
-                            "altText": "Syntax Highlighting"
+                            "markdown": "walkthrough/syntaxHighlighting.md"
                         }
                     },
                     {
@@ -193,8 +192,7 @@
                         "title": "Snippets",
                         "description": "The extension provides almost 40 snippets, for a wide range of scenarios",
                         "media": {
-                            "image": "images/vscode-pascal-snippets.png",
-                            "altText": "Snippets"
+                            "markdown": "walkthrough/snippets.md"
                         }
                     },
                     {
@@ -202,8 +200,7 @@
                         "title": "Formatter",
                         "description": "The extension uses the [Pascal Formatter](command:_pascal.installPascalFormatter) extension, which is automatically installed",
                         "media": {
-                            "image": "walkthrough/vscode-pascal-format-code.gif",
-                            "altText": "Snippets"
+                            "markdown": "walkthrough/formatter.md"
                         }
                     },
                     {
@@ -218,7 +215,9 @@
                         "id": "delphiLike",
                         "title": "Delphi look and feel",
                         "description": "Make VS Code look and feel like Delphi. Use classic Delphi Themes and take advantage of your muscle memory with Delphi Keybindings\n[Install Delphi Themes](command:_pascal.installDelphiThemes)\n[Install Delphi Keymap](command:_pascal.installDelphiKeymap)",
-                        "media": { "image": "walkthrough/delphi-themes-classic.png", "altText": "Delphi Classic Theme" }
+                        "media": { 
+                            "markdown": "walkthrough/delphiLike.md"
+                        }
 
                     }
                 ]
