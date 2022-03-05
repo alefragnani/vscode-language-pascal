@@ -1,0 +1,1 @@
+![Syntax](../images/vscode-pascal-syntax.png)
