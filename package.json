@@ -201,7 +201,7 @@
                     {
                         "id": "formatter",
                         "title": "Formatter",
-                        "description": "The extension uses the [Pascal Formatter](command:_pascal.installPascalFormatter) extension, which is automatically installed",
+                        "description": "Standardise your Pascal code\n[Install Pascal Formatter](command:_pascal.installPascalFormatter)",
                         "media": {
                             "markdown": "walkthrough/formatter.md"
                         },
