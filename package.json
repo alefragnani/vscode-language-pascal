@@ -107,13 +107,11 @@
             },
             {
                 "command": "pascal.whatsNew",
-                "title": "Pascal: What's New",
-                "enablement": "!isWeb"
+                "title": "Pascal: What's New"
             },
             {
                 "command": "_pascal.whatsNewContextMenu",
-                "title": "What's New",
-                "enablement": "!isWeb"
+                "title": "What's New"
             },
             {
                 "command": "_pascal.installDelphiThemes",
