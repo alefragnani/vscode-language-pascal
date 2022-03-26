@@ -32,7 +32,7 @@
 <table align="center" width="85%" border="0">
   <tr>
     <td align="center">
-      <a title="Paypal" href="command:_pascal.installDelphiThemes">Install Themes</a>
+      <a title="Install Delphi Themes" href="command:_pascal.installDelphiThemes">Install Themes</a>
     </td>
   </tr>
 </table>

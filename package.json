@@ -47,7 +47,8 @@
             ]
         }
     },
-    "main": "./dist/extension",
+    "main": "./dist/extension-node.js",
+    "browser": "./dist/extension-web.js",
     "icon": "images/icon.png",
     "license": "SEE LICENSE IN LICENSE.md",
     "homepage": "https://github.com/alefragnani/vscode-language-pascal/blob/master/README.md",
@@ -97,12 +98,12 @@
             {
                 "command": "pascal.generateTags",
                 "title": "Pascal: Generate Tags",
-                "enablement": "isWorkspaceTrusted"
+                "enablement": "isWorkspaceTrusted && !isWeb"
             },
             {
                 "command": "pascal.updateTags",
                 "title": "Pascal: Update Tags",
-                "enablement": "isWorkspaceTrusted"
+                "enablement": "isWorkspaceTrusted && !isWeb"
             },
             {
                 "command": "pascal.whatsNew",
@@ -198,10 +199,11 @@
                     {
                         "id": "formatter",
                         "title": "Formatter",
-                        "description": "The extension uses the [Pascal Formatter](command:_pascal.installPascalFormatter) extension, which is automatically installed",
+                        "description": "Standardise your Pascal code\n[Install Pascal Formatter](command:_pascal.installPascalFormatter)",
                         "media": {
                             "markdown": "walkthrough/formatter.md"
-                        }
+                        },
+                        "when": "!isWeb"
                     },
                     {
                         "id": "codeNavigation",
@@ -209,7 +211,8 @@
                         "description": "The **Pascal** extension requires GNU GLobal to navigate to any language element (methods, attributes, classes, interfaces, and so on)",
                         "media": {
                             "markdown": "walkthrough/codeNavigation.md"
-                        }
+                        },
+                        "when": "!isWeb"
                     },
                     {
                         "id": "delphiLike",
@@ -238,9 +241,6 @@
         "compile": "tsc -watch -p ./",
         "lint": "eslint -c package.json --ext .ts src vscode-whats-new"
     },
-    "extensionDependencies": [
-        "alefragnani.pascal-formatter"
-    ],
     "devDependencies": {
         "@types/node": "^14.17.27",
         "@types/vscode": "^1.61.0",

@@ -12,7 +12,6 @@
 * Adds **Virtual Workspaces** support
 * Adds **Workspace Trust** support
 * Adds **Multi-root** support
-* The **Formatter** was extracted to its own extension ([Pascal Formatter](https://github.com/alefragnani/vscode-pascal-formatter))
 
 ## Support
 
@@ -40,7 +39,6 @@ Here are some of the features that **Pascal** provides:
 
 * **Syntax highlighting** for files, forms and projects
 * A huge set of **Snippets**
-* Support for different **Code Formatters** (via [Pascal Formatter](https://github.com/alefragnani/vscode-pascal-formatter))
 * Source code **navigation** 
 
 # Features
@@ -104,10 +102,6 @@ Navigate to any language element (methods, attributes, classes, interfaces, and 
 > **NOTE:** For now, it was tested only on Windows, but since these tools are multiplatform (in fact, it comes from Unix), it should work on Linux and Mac. 
 
 # Available commands
-
-## Code Formatter
-
-Check out [Pascal Formatter](https://github.com/alefragnani/vscode-pascal-formatter#available-commands) documentation.
 
 ## Code Navigation
 
