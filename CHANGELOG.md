@@ -1,3 +1,9 @@
+## [9.5.0] - 2022-03-28
+### Added
+* Web Support (issue [#89](https://github.com/alefragnani/vscode-language-pascal/issues/89))
+* Getting Started/Walkthrough (issue [#84](https://github.com/alefragnani/vscode-language-pascal/issues/84))
+* Update Keywords (issue [#102](https://github.com/alefragnani/vscode-language-pascal/issues/102))
+
 ## [9.4.0] - 2021-12-10
 ### Internal
 * Add CONTRIBUTING documentation (issue [#95](https://github.com/alefragnani/vscode-language-pascal/issues/95))
