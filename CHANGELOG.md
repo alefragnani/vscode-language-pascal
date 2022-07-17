@@ -1,3 +1,7 @@
+## [9.5.1] - 2022-07-17
+### Internal
+* Add GitHub Sponsors support (PR [#108](https://github.com/alefragnani/vscode-language-pascal/pull/108))
+
 ## [9.5.0] - 2022-03-28
 ### Added
 * Web Support (issue [#89](https://github.com/alefragnani/vscode-language-pascal/issues/89))

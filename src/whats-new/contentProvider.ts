@@ -17,6 +17,12 @@ export class PascalContentProvider implements ContentProvider {
     provideChangeLog(): ChangeLogItem[] {
         const changeLog: ChangeLogItem[] = [];
 
+        changeLog.push({ kind: ChangeLogKind.VERSION, detail: { releaseNumber: "9.5.1", releaseDate: "June 2022" } });
+        changeLog.push({
+            kind: ChangeLogKind.INTERNAL,
+            detail: "Add <b>GitHub Sponsors</b> support"
+        });
+
         changeLog.push({ kind: ChangeLogKind.VERSION, detail: { releaseNumber: "9.5.0", releaseDate: "March 2022" } });
         changeLog.push({
             kind: ChangeLogKind.NEW,
@@ -85,24 +91,6 @@ export class PascalContentProvider implements ContentProvider {
                 id: 78,
                 kind: IssueKind.PR,
                 kudos: "dependabot"
-            }
-        });
-
-        changeLog.push({ kind: ChangeLogKind.VERSION, detail: { releaseNumber: "9.2.0", releaseDate: "October 2020" } });
-        changeLog.push({
-            kind: ChangeLogKind.INTERNAL,
-            detail: {
-                message: "Reopen providers repo",
-                id: 67,
-                kind: IssueKind.Issue
-            }
-        });
-        changeLog.push({
-            kind: ChangeLogKind.FIXED,
-            detail: {
-                message: "<b>Find References</b> command not working",
-                id: 68,
-                kind: IssueKind.Issue
             }
         });
 
