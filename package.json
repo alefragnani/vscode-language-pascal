@@ -31,7 +31,7 @@
         "onCommand:_pascal.installDelphiThemes",
         "onCommand:_pascal.installDelphiKeymap",
         "onCommand:_pascal.installPascalFormatter",
-        "*"
+        "onStartupFinished"
     ],
     "capabilities": {
         "virtualWorkspaces": {
