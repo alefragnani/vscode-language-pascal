@@ -100,33 +100,33 @@
         "commands": [
             {
                 "command": "pascal.generateTags",
-                "title": "Pascal: Generate Tags",
+                "title": "%pascal.commands.generateTags.title%",
                 "enablement": "isWorkspaceTrusted && !isWeb"
             },
             {
                 "command": "pascal.updateTags",
-                "title": "Pascal: Update Tags",
+                "title": "%pascal.commands.updateTags.title%",
                 "enablement": "isWorkspaceTrusted && !isWeb"
             },
             {
                 "command": "pascal.whatsNew",
-                "title": "Pascal: What's New"
+                "title": "%pascal.commands.whatsNew.title%"
             },
             {
                 "command": "_pascal.whatsNewContextMenu",
-                "title": "What's New"
+                "title": "%pascal.commands.whatsNewContextMenu.title%"
             },
             {
                 "command": "_pascal.installDelphiThemes",
-                "title": "Pascal: Install Delphi Themes"
+                "title": "%pascal.commands.installDelphiThemes.title%"
             },
             {
                 "command": "_pascal.installDelphiKeymap",
-                "title": "Pascal: Install Delphi Keymap"
+                "title": "%pascal.commands.installDelphiKeymap.title%"
             },
             {
                 "command": "_pascal.installPascalFormatter",
-                "title": "Pascal: Install Pascal Formatter"
+                "title": "%pascal.commands.installPascalFormatter.title%"
             }
         ],
         "menus": {
@@ -158,18 +158,18 @@
         },
         "configuration": {
             "type": "object",
-            "title": "Pascal",
+            "title": "%pascal.configuration.title%",
             "properties": {
                 "pascal.tags.autoGenerate": {
                     "type": "boolean",
                     "default": true,
-                    "description": "Controls if the extension should automatically generate tags in projects opened for the first time"
+                    "description": "%pascal.configuration.tags.autoGenerate.description%"
                 },
                 "pascal.codeNavigation": {
                     "type": "string",
                     "default": "workspace",
                     "scope": "resource",
-                    "description": "Select how the code navigation should work",
+                    "description": "%pascal.configuration.codeNavigation.description%",
                     "enum": [
                         "workspace",
                         "file"

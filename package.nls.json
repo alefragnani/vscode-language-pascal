@@ -1,0 +1,12 @@
+{
+    "pascal.configuration.title": "Pascal",
+    "pascal.configuration.tags.autoGenerate.description": "Controls if the extension should automatically generate tags in projects opened for the first time",
+    "pascal.configuration.codeNavigation.description": "Select how the code navigation should work",
+    "pascal.commands.generateTags.title": "Pascal: Generate Tags",
+    "pascal.commands.updateTags.title": "Pascal: Update Tags",
+    "pascal.commands.whatsNew.title": "Pascal: What's New",
+    "pascal.commands.whatsNewContextMenu.title": "What's New",
+    "pascal.commands.installDelphiThemes.title": "Pascal: Install Delphi Themes",
+    "pascal.commands.installDelphiKeymap.title": "Pascal: Install Delphi Keymap",
+    "pascal.commands.installPascalFormatter.title": "Pascal: Install Pascal Formatter"
+}
