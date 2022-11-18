@@ -180,29 +180,29 @@
         "walkthroughs": [
             {
                 "id": "pascalWelcome",
-                "title": "Get Started with Pascal Development",
-                "description": "Your first steps to set up powerful Pascal tools in a lightweight, performant editor!",
+                "title": "%pascal.walkthroughs.title%",
+                "description": "%pascal.walkthroughs.description%",
                 "steps": [
                     {
                         "id": "syntaxHighlighting",
-                        "title": "Syntax Highlighting",
-                        "description": "Enjoy full syntax highlighting for **Delphi** and **FreePascal** source files",
+                        "title": "%pascal.walkthroughs.syntaxHighlighting.title%",
+                        "description": "%pascal.walkthroughs.syntaxHighlighting.description%",
                         "media": {
                             "markdown": "walkthrough/syntaxHighlighting.md"
                         }
                     },
                     {
                         "id": "snippets",
-                        "title": "Snippets",
-                        "description": "The extension provides almost 40 snippets, for a wide range of scenarios",
+                        "title": "%pascal.walkthroughs.snippets.title%",
+                        "description": "%pascal.walkthroughs.snippets.description%",
                         "media": {
                             "markdown": "walkthrough/snippets.md"
                         }
                     },
                     {
                         "id": "formatter",
-                        "title": "Formatter",
-                        "description": "Standardise your Pascal code\n[Install Pascal Formatter](command:_pascal.installPascalFormatter)",
+                        "title": "%pascal.walkthroughs.formatter.title%",
+                        "description": "%pascal.walkthroughs.formatter.description%",
                         "media": {
                             "markdown": "walkthrough/formatter.md"
                         },
@@ -210,8 +210,8 @@
                     },
                     {
                         "id": "codeNavigation",
-                        "title": "Code Navigation",
-                        "description": "The **Pascal** extension requires GNU GLobal to navigate to any language element (methods, attributes, classes, interfaces, and so on)",
+                        "title": "%pascal.walkthroughs.codeNavigation.title%",
+                        "description": "%pascal.walkthroughs.codeNavigation.description%",
                         "media": {
                             "markdown": "walkthrough/codeNavigation.md"
                         },
@@ -219,8 +219,8 @@
                     },
                     {
                         "id": "delphiLike",
-                        "title": "Delphi look and feel",
-                        "description": "Make VS Code look and feel like Delphi. Use classic Delphi Themes and take advantage of your muscle memory with Delphi Keybindings\n[Install Delphi Themes](command:_pascal.installDelphiThemes)\n[Install Delphi Keymap](command:_pascal.installDelphiKeymap)",
+                        "title": "%pascal.walkthroughs.delphiLike.title%",
+                        "description": "%pascal.walkthroughs.delphiLike.description%",
                         "media": { 
                             "markdown": "walkthrough/delphiLike.md"
                         }
