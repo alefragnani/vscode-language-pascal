@@ -66,7 +66,7 @@ export class PascalDocumentSymbolProvider extends AbstractProvider implements vs
 					cp.execFile('global', ['-f', filename], { cwd: AbstractProvider.basePathForFilename(filename) }, (err, stdout, stderr) => {
 						try {
 							if (err && (<any>err).code === 'ENOENT') {
-								console.log('The "global" command is not available. Make sure it is on PATH');
+								console.log(vscode.l10n.t('The "global" command is not available. Make sure it is on PATH'));
 							}
 							if (err) return resolve(null);
 							const result = stdout.toString();

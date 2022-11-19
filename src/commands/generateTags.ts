@@ -3,7 +3,7 @@
 *  Licensed under the MIT License. See License.md in the project root for license information.
 *--------------------------------------------------------------------------------------------*/
 
-import { commands, window, workspace } from "vscode";
+import { commands, l10n, window, workspace } from "vscode";
 import { TagsBuilder } from "../providers/tagsBuilder";
 import { isVirtualWorkspace } from "../remote";
 
@@ -16,7 +16,7 @@ export function registerGenerateTags() {
     function generateTags(update: boolean) {
 
         if (!window.activeTextEditor) {
-            window.showInformationMessage("Open a file first to generate tags");
+            window.showInformationMessage(l10n.t("Open a file first to generate tags"));
             return;
         } 
 
