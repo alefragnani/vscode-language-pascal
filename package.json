@@ -9,7 +9,7 @@
         "theme": "dark"
     },
     "engines": {
-        "vscode": "^1.61.0"
+        "vscode": "^1.73.0"
     },
     "categories": [
         "Programming Languages",
@@ -49,6 +49,7 @@
     },
     "main": "./dist/extension-node.js",
     "browser": "./dist/extension-web.js",
+    "l10n": "./l10n",
     "icon": "images/icon.png",
     "license": "SEE LICENSE IN LICENSE.md",
     "homepage": "https://github.com/alefragnani/vscode-language-pascal/blob/master/README.md",
@@ -252,7 +253,7 @@
         "@types/glob": "^7.1.4",
         "@types/mocha": "^9.0.0",
         "@types/node": "^14.17.27",
-        "@types/vscode": "^1.61.0",
+        "@types/vscode": "^1.73.0",
         "@typescript-eslint/eslint-plugin": "^5.1.0",
         "@typescript-eslint/parser": "^5.1.0",
         "@vscode/test-electron": "^1.6.2",
