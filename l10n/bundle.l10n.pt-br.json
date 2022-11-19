@@ -1,0 +1,9 @@
+{
+    "Open a file first to generate tags":"Abra um arquivo antes para gerar tags",
+    "The \"global\" command is not available. Make sure it is on PATH":"O comando \"global\" não está disponível. Tenha certeza que está no PATH",
+    "The {0} command is not available. Make sure it is on PATH":"O comando {0} não está disponível. Tenha certeza que está no PATH",
+    "Some error occured: {0}":"Algum erro ocorreu: {0}",
+    "The tags where updated":"As tags foram atualizadas",
+    "More Info":"Mais Informações",
+    "Don't show again":"Não exibir novamente"
+}

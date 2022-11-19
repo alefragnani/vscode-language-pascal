@@ -9,7 +9,7 @@
         "theme": "dark"
     },
     "engines": {
-        "vscode": "^1.61.0"
+        "vscode": "^1.73.0"
     },
     "categories": [
         "Programming Languages",
@@ -49,6 +49,7 @@
     },
     "main": "./dist/extension-node.js",
     "browser": "./dist/extension-web.js",
+    "l10n": "./l10n",
     "icon": "images/icon.png",
     "license": "SEE LICENSE IN LICENSE.md",
     "homepage": "https://github.com/alefragnani/vscode-language-pascal/blob/master/README.md",
@@ -100,33 +101,33 @@
         "commands": [
             {
                 "command": "pascal.generateTags",
-                "title": "Pascal: Generate Tags",
+                "title": "%pascal.commands.generateTags.title%",
                 "enablement": "isWorkspaceTrusted && !isWeb"
             },
             {
                 "command": "pascal.updateTags",
-                "title": "Pascal: Update Tags",
+                "title": "%pascal.commands.updateTags.title%",
                 "enablement": "isWorkspaceTrusted && !isWeb"
             },
             {
                 "command": "pascal.whatsNew",
-                "title": "Pascal: What's New"
+                "title": "%pascal.commands.whatsNew.title%"
             },
             {
                 "command": "_pascal.whatsNewContextMenu",
-                "title": "What's New"
+                "title": "%pascal.commands.whatsNewContextMenu.title%"
             },
             {
                 "command": "_pascal.installDelphiThemes",
-                "title": "Pascal: Install Delphi Themes"
+                "title": "%pascal.commands.installDelphiThemes.title%"
             },
             {
                 "command": "_pascal.installDelphiKeymap",
-                "title": "Pascal: Install Delphi Keymap"
+                "title": "%pascal.commands.installDelphiKeymap.title%"
             },
             {
                 "command": "_pascal.installPascalFormatter",
-                "title": "Pascal: Install Pascal Formatter"
+                "title": "%pascal.commands.installPascalFormatter.title%"
             }
         ],
         "menus": {
@@ -158,18 +159,18 @@
         },
         "configuration": {
             "type": "object",
-            "title": "Pascal",
+            "title": "%pascal.configuration.title%",
             "properties": {
                 "pascal.tags.autoGenerate": {
                     "type": "boolean",
                     "default": true,
-                    "description": "Controls if the extension should automatically generate tags in projects opened for the first time"
+                    "description": "%pascal.configuration.tags.autoGenerate.description%"
                 },
                 "pascal.codeNavigation": {
                     "type": "string",
                     "default": "workspace",
                     "scope": "resource",
-                    "description": "Select how the code navigation should work",
+                    "description": "%pascal.configuration.codeNavigation.description%",
                     "enum": [
                         "workspace",
                         "file"
@@ -180,29 +181,29 @@
         "walkthroughs": [
             {
                 "id": "pascalWelcome",
-                "title": "Get Started with Pascal Development",
-                "description": "Your first steps to set up powerful Pascal tools in a lightweight, performant editor!",
+                "title": "%pascal.walkthroughs.title%",
+                "description": "%pascal.walkthroughs.description%",
                 "steps": [
                     {
                         "id": "syntaxHighlighting",
-                        "title": "Syntax Highlighting",
-                        "description": "Enjoy full syntax highlighting for **Delphi** and **FreePascal** source files",
+                        "title": "%pascal.walkthroughs.syntaxHighlighting.title%",
+                        "description": "%pascal.walkthroughs.syntaxHighlighting.description%",
                         "media": {
                             "markdown": "walkthrough/syntaxHighlighting.md"
                         }
                     },
                     {
                         "id": "snippets",
-                        "title": "Snippets",
-                        "description": "The extension provides almost 40 snippets, for a wide range of scenarios",
+                        "title": "%pascal.walkthroughs.snippets.title%",
+                        "description": "%pascal.walkthroughs.snippets.description%",
                         "media": {
                             "markdown": "walkthrough/snippets.md"
                         }
                     },
                     {
                         "id": "formatter",
-                        "title": "Formatter",
-                        "description": "Standardise your Pascal code\n[Install Pascal Formatter](command:_pascal.installPascalFormatter)",
+                        "title": "%pascal.walkthroughs.formatter.title%",
+                        "description": "%pascal.walkthroughs.formatter.description%",
                         "media": {
                             "markdown": "walkthrough/formatter.md"
                         },
@@ -210,8 +211,8 @@
                     },
                     {
                         "id": "codeNavigation",
-                        "title": "Code Navigation",
-                        "description": "The **Pascal** extension requires GNU GLobal to navigate to any language element (methods, attributes, classes, interfaces, and so on)",
+                        "title": "%pascal.walkthroughs.codeNavigation.title%",
+                        "description": "%pascal.walkthroughs.codeNavigation.description%",
                         "media": {
                             "markdown": "walkthrough/codeNavigation.md"
                         },
@@ -219,8 +220,8 @@
                     },
                     {
                         "id": "delphiLike",
-                        "title": "Delphi look and feel",
-                        "description": "Make VS Code look and feel like Delphi. Use classic Delphi Themes and take advantage of your muscle memory with Delphi Keybindings\n[Install Delphi Themes](command:_pascal.installDelphiThemes)\n[Install Delphi Keymap](command:_pascal.installDelphiKeymap)",
+                        "title": "%pascal.walkthroughs.delphiLike.title%",
+                        "description": "%pascal.walkthroughs.delphiLike.description%",
                         "media": { 
                             "markdown": "walkthrough/delphiLike.md"
                         }
@@ -252,7 +253,7 @@
         "@types/glob": "^7.1.4",
         "@types/mocha": "^9.0.0",
         "@types/node": "^14.17.27",
-        "@types/vscode": "^1.61.0",
+        "@types/vscode": "^1.73.0",
         "@typescript-eslint/eslint-plugin": "^5.1.0",
         "@typescript-eslint/parser": "^5.1.0",
         "@vscode/test-electron": "^1.6.2",

@@ -31,29 +31,29 @@ export class TagsBuilder {
 					statusBar.dispose();
 
                     if (err && (<any>err).code === 'ENOENT') {
-                        vscode.window.showInformationMessage('The ' + command + ' command is not available. Make sure it is on PATH');
-                        resolve('The ' + command + ' command is not available. Make sure it is on PATH');
+                        vscode.window.showInformationMessage(vscode.l10n.t('The {0} command is not available. Make sure it is on PATH', command));
+                        resolve(vscode.l10n.t('The {0} command is not available. Make sure it is on PATH', command));
                         return;
                     }
                     if (err) {
-                        vscode.window.showInformationMessage('Some error occured: ' + err);
-                        resolve('Some error occured: ' + err);
+                        vscode.window.showInformationMessage(vscode.l10n.t('Some error occured: {0}', err));
+                        resolve(vscode.l10n.t('Some error occured: {0}', err));
                         return;
                     }
                     if (stderr) {
-                        vscode.window.showInformationMessage('Some error occured: ' + stderr);
-                        resolve('Some error occured: ' + stderr);
+                        vscode.window.showInformationMessage(vscode.l10n.t('Some error occured: {0}', stderr));
+                        resolve(vscode.l10n.t('Some error occured: {0}', stderr));
                         return;
                     }
 
 					if (showMessage) {
-						vscode.window.showInformationMessage('The tags where updated');
+						vscode.window.showInformationMessage(vscode.l10n.t('The tags where updated'));
 					}
                     resolve("");
                     return;
                 } catch (e) {
-                    vscode.window.showInformationMessage('Some error occured: ' + e);
-                    reject('Some error occured: ' + e);
+                    vscode.window.showInformationMessage(vscode.l10n.t('Some error occured: {0}', e));
+                    reject(vscode.l10n.t('Some error occured: {0}', e));
                     return;
                 }
             });
@@ -72,26 +72,26 @@ export class TagsBuilder {
 			cp.execFile('gtags', ["--accept-dotfiles", "-f", listTXT], { cwd: basePath }, (err, stdout, stderr) => {
                 try {
                     if (err && (<any>err).code === 'ENOENT') {
-                        vscode.window.showInformationMessage('The "global" command is not available. Make sure it is on PATH');
-                        resolve('The "global" command is not available. Make sure it is on PATH');
+                        vscode.window.showInformationMessage(vscode.l10n.t('The "global" command is not available. Make sure it is on PATH'));
+                        resolve(vscode.l10n.t('The "global" command is not available. Make sure it is on PATH'));
                         return;
                     }
                     if (err) {
-                        vscode.window.showInformationMessage('Some error occured: ' + err);
-                        resolve('Some error occured: ' + err);
+                        vscode.window.showInformationMessage(vscode.l10n.t('Some error occured: {0}', err));
+                        resolve(vscode.l10n.t('Some error occured: {0}', err));
                         return;
                     }
                     if (stderr) {
-                        vscode.window.showInformationMessage('Some error occured: ' + stderr);
-                        resolve('Some error occured: ' + stderr);
+                        vscode.window.showInformationMessage(vscode.l10n.t('Some error occured: {0}', stderr));
+                        resolve(vscode.l10n.t('Some error occured: {0}', stderr));
                         return;
                     }
 
                     resolve("");
                     return;
                 } catch (e) {
-                    vscode.window.showInformationMessage('Some error occured: ' + e);
-                    reject('Some error occured: ' + e);
+                    vscode.window.showInformationMessage(vscode.l10n.t('Some error occured: {0}', e));
+                    reject(vscode.l10n.t('Some error occured: {0}', e));
                     return;
                 }
             });
@@ -130,24 +130,24 @@ export class TagsBuilder {
 						}
 
 						const moreInfo = <vscode.MessageItem>{
-							title: "More Info"
+							title: vscode.l10n.t("More Info")
 						};
 						const dontShowAgain = <vscode.MessageItem>{
-							title: "Don't show again"
+							title: vscode.l10n.t("Don't show again")
 						};
 
-						vscode.window.showInformationMessage('The "global" command is not available. Make sure it is on PATH', moreInfo, dontShowAgain).then(option => {
+						vscode.window.showInformationMessage(vscode.l10n.t('The "global" command is not available. Make sure it is on PATH'), moreInfo, dontShowAgain).then(option => {
 
 							if (typeof option === "undefined") {
 								return resolve(false);
 							}
 
-							if (option.title === "More Info") {
+							if (option.title === vscode.l10n.t("More Info")) {
 								vscode.env.openExternal(vscode.Uri.parse("https://github.com/alefragnani/vscode-language-pascal#code-navigation"));
 								return resolve(false);
 							}
 
-							if (option.title === "Don't show again") {
+							if (option.title === vscode.l10n.t("Don't show again")) {
 								context.globalState.update("askforGlobalAvailable", false);
 								return resolve(false);
 							}
