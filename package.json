@@ -9,7 +9,7 @@
         "theme": "dark"
     },
     "engines": {
-        "vscode": "^1.73.0"
+        "vscode": "^1.74.0"
     },
     "categories": [
         "Programming Languages",
@@ -24,13 +24,6 @@
         "multi-root ready"
     ],
     "activationEvents": [
-        "onLanguage:pascal",
-        "onCommand:pascal.generateTags",
-        "onCommand:pascal.updateTags",
-        "onCommand:pascal.whatsNew",
-        "onCommand:_pascal.installDelphiThemes",
-        "onCommand:_pascal.installDelphiKeymap",
-        "onCommand:_pascal.installPascalFormatter",
         "onStartupFinished"
     ],
     "capabilities": {
