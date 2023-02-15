@@ -20,5 +20,5 @@
     "pascal.walkthroughs.snippets.description": "The extension provides almost 40 snippets, for a wide range of scenarios",
     "pascal.walkthroughs.formatter.description": "Standardise your Pascal code\n[Install Pascal Formatter](command:_pascal.installPascalFormatter)",
     "pascal.walkthroughs.codeNavigation.description": "The **Pascal** extension requires GNU GLobal to navigate to any language element (methods, attributes, classes, interfaces, and so on)",
-    "pascal.walkthroughs.delphiLike.description": "Make VS Code look and feel like Delphi. Use classic Delphi Themes and take advantage of your muscle memory with Delphi Keybindings\n[Install Delphi Themes](command:_pascal.installDelphiThemes)\n[Install Delphi Keymap](command:_pascal.installDelphiKeymap)",
+    "pascal.walkthroughs.delphiLike.description": "Make VS Code look and feel like Delphi. Use classic Delphi Themes and take advantage of your muscle memory with Delphi Keybindings\n[Install Delphi Themes](command:_pascal.installDelphiThemes)\n[Install Delphi Keymap](command:_pascal.installDelphiKeymap)"
 }

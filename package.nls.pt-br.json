@@ -20,5 +20,5 @@
     "pascal.walkthroughs.snippets.description": "A extensão disponibiliza quase 40 snippets, para uma grande variedade de cenários",
     "pascal.walkthroughs.formatter.description": "Padronize seu código fonte Pascal\n[Instalar Pascal Formatter](command:_pascal.installPascalFormatter)",
     "pascal.walkthroughs.codeNavigation.description": "A extensão **Pascal** requer GNU GLobal nara navegar a qualquer elemento da linguagem (métodos, atributos, classes, interfaces, entre outros)",
-    "pascal.walkthroughs.delphiLike.description": "Faça o VS Code ter a aparência do Delphi. Uso os temas clásicos do Delphi e tire vantagem da sua memória muscular com os atalhos de teclado do Delphi\n[Instalar Delphi Themes](command:_pascal.installDelphiThemes)\n[Instalar Delphi Keymap](command:_pascal.installDelphiKeymap)",
+    "pascal.walkthroughs.delphiLike.description": "Faça o VS Code ter a aparência do Delphi. Uso os temas clásicos do Delphi e tire vantagem da sua memória muscular com os atalhos de teclado do Delphi\n[Instalar Delphi Themes](command:_pascal.installDelphiThemes)\n[Instalar Delphi Keymap](command:_pascal.installDelphiKeymap)"
 }
