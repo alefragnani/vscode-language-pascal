@@ -1,6 +1,6 @@
-[![](https://vsmarketplacebadge.apphb.com/version-short/alefragnani.pascal.svg)](https://marketplace.visualstudio.com/items?itemName=alefragnani.pascal)
-[![](https://vsmarketplacebadge.apphb.com/downloads-short/alefragnani.pascal.svg)](https://marketplace.visualstudio.com/items?itemName=alefragnani.pascal)
-[![](https://vsmarketplacebadge.apphb.com/rating-short/alefragnani.pascal.svg)](https://marketplace.visualstudio.com/items?itemName=alefragnani.pascal)
+[![](https://vsmarketplacebadges.dev/version-short/alefragnani.pascal.svg)](https://marketplace.visualstudio.com/items?itemName=alefragnani.pascal)
+[![](https://vsmarketplacebadges.dev/downloads-short/alefragnani.pascal.svg)](https://marketplace.visualstudio.com/items?itemName=alefragnani.pascal)
+[![](https://vsmarketplacebadges.dev/rating-short/alefragnani.pascal.svg)](https://marketplace.visualstudio.com/items?itemName=alefragnani.pascal)
 
 <p align="center">
   <br />
