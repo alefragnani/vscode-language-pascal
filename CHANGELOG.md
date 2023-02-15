@@ -1,3 +1,13 @@
+## [9.6.0] - 2023-02-14
+### Internal
+* Support Implicit Activation Events (issue [#126](https://github.com/alefragnani/vscode-language-pascal/issues/126))
+* Support **Translation** and **Localization** APIs (issue [#122](https://github.com/alefragnani/vscode-language-pascal/issues/122))
+* Update badges in README (issue [#128](https://github.com/alefragnani/vscode-language-pascal/issues/128))
+* Improve Extension Startup (issue [#111](https://github.com/alefragnani/vscode-language-pascal/issues/111))
+* Package cleanup (issue [#110](https://github.com/alefragnani/vscode-language-pascal/issues/110))
+* Security Alert: minimatch (PR [#124](https://github.com/alefragnani/vscode-language-pascal/pull/124))
+* Security Alert: terser (PR [#112](https://github.com/alefragnani/vscode-language-pascal/pull/112))
+
 ## [9.5.1] - 2022-07-17
 ### Internal
 * Add GitHub Sponsors support (PR [#108](https://github.com/alefragnani/vscode-language-pascal/pull/108))
