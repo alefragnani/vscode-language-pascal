@@ -1,3 +1,14 @@
+## [9.7.0] - 2023-07-16
+### Added
+* Missing keywords from FreePascal and Oxygene (thanks to @TheWitheredStriker [PR #138](https://github.com/alefragnani/vscode-language-pascal/pull/138))
+
+### Fixed
+* Comment auto closing pairs (issue [#141](https://github.com/alefragnani/vscode-language-pascal/issues/141))
+
+### Internal
+* Security Alert: word-wrap (PR [#139](https://github.com/alefragnani/vscode-language-pascal/pull/139))
+* Security Alert: webpack (PR [#130](https://github.com/alefragnani/vscode-language-pascal/pull/130))
+
 ## [9.6.0] - 2023-02-14
 ### Internal
 * Support Implicit Activation Events (issue [#126](https://github.com/alefragnani/vscode-language-pascal/issues/126))

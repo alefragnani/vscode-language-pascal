@@ -7,12 +7,11 @@
   <a title="Learn more about Pascal" href="http://github.com/alefragnani/vscode-language-pascal"><img src="https://raw.githubusercontent.com/alefragnani/vscode-language-pascal/master/images/vscode-pascal-logo-readme.png" alt="Pascal Logo" width="70%" /></a>
 </p>
 
-# What's new in Pascal 9.6
+# What's new in Pascal 9.7
 
+* Improves **Syntax Highlighting** support for FreePascal and Oxygene
 * Adds **Web** support
 * Adds **Getting Started / Walkthrough**
-* Adds **Virtual Workspaces** support
-* Adds **Workspace Trust** support
 
 ## Support
 
@@ -243,6 +242,20 @@ Update two tags:
    ]
 }
 ```
+## Contributors
+
+Special thanks to the people that have contributed to the project:
+
+* Midas (Wither) (@TheWitheredStriker) - Missing keywords from FreePascal and Oxygene ([see PR](https://github.com/alefragnani/vscode-language-pascal/pull/138))
+* creativelaides (@creativelaides) - Task upgrade ([see PR](https://github.com/alefragnani/vscode-language-pascal/pull/54))
+* space (@SpaceEEC) - Fixed parentesis in snippet ([see PR](https://github.com/alefragnani/vscode-language-pascal/pull/51))
+* AnsonYeung (@AnsonYeung) - Fixed autocomplete in snippet ([see PR](https://github.com/alefragnani/vscode-language-pascal/pull/44))
+* AnsonYeung (@AnsonYeung) - Added .lpr file extension support ([see PR](https://github.com/alefragnani/vscode-language-pascal/pull/30))
+* Jonathan Carter (@lostintangent) - Support Live Share ([see PR](https://github.com/alefragnani/vscode-language-pascal/pull/28))
+* Jan T. Sott (@idleberg) - Fixed escape in snippet ([see PR](https://github.com/alefragnani/vscode-language-pascal/pull/22))
+* Wade Anderson (@waderyan) - Updated marketplace category ([see PR](https://github.com/alefragnani/vscode-language-pascal/pull/13))
+
+Also thanks to everyone who helped opening issues with ideas and bug reports.
 
 # License
 
