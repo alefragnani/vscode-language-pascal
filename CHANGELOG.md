@@ -1,4 +1,4 @@
-## [9.7.0] - 2023-07-16
+## [9.7.0] - 2024-02-03
 ### Added
 * Missing keywords from FreePascal and Oxygene (thanks to @TheWitheredStriker [PR #138](https://github.com/alefragnani/vscode-language-pascal/pull/138))
 
