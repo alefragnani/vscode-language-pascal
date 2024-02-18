@@ -76,6 +76,19 @@
                     ".lpr"
                 ],
                 "configuration": "./pascal.configuration.json"
+            },
+            {
+                "id": "xml",
+                "aliases": [
+                    "dproj",
+                    "groupproj",
+                    "cbproj"
+                ],
+                "extensions": [
+                    ".dproj",
+                    ".groupproj",
+                    ".cbproj"
+                ]
             }
         ],
         "grammars": [
