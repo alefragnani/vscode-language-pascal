@@ -17,6 +17,16 @@ export class PascalContentProvider implements ContentProvider {
     provideChangeLog(): ChangeLogItem[] {
         const changeLog: ChangeLogItem[] = [];
 
+        changeLog.push({ kind: ChangeLogKind.VERSION, detail: { releaseNumber: "9.8.0", releaseDate: "March 2024" } });
+        changeLog.push({
+            kind: ChangeLogKind.NEW,
+            detail: {
+                message: "Published to Open VSX",
+                id: 97,
+                kind: IssueKind.Issue
+            }
+        });
+
         changeLog.push({ kind: ChangeLogKind.VERSION, detail: { releaseNumber: "9.7.0", releaseDate: "January 2024" } });
         changeLog.push({
             kind: ChangeLogKind.NEW,

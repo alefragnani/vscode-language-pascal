@@ -1,3 +1,7 @@
+## [9.8.0] - 2024-04-03
+### Added
+* Published to Open VSX (issue [#97](https://github.com/alefragnani/vscode-language-pascal/issues/97))
+
 ## [9.7.0] - 2024-02-03
 ### Added
 * Missing keywords from FreePascal and Oxygene (thanks to @TheWitheredStriker [PR #138](https://github.com/alefragnani/vscode-language-pascal/pull/138))
