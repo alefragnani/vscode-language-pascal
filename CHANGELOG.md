@@ -1,3 +1,15 @@
+## [9.9.0] - 2025-02-02
+### Added
+* Missing keyword (issue [#151](https://github.com/alefragnani/vscode-language-pascal/issues/151))
+* Missing keywords from FreePascal (issue [#147](https://github.com/alefragnani/vscode-language-pascal/issues/147))
+
+### Fixed
+* MacOS Support (issue [#158](https://github.com/alefragnani/vscode-language-pascal/issues/158))
+
+### Internal
+* Security Alert: webpack (PR [#154](https://github.com/alefragnani/vscode-language-pascal/pull/154))
+* Security Alert: braces (PR [#152](https://github.com/alefragnani/vscode-language-pascal/pull/152))
+
 ## [9.8.0] - 2024-04-03
 ### Added
 * Published to Open VSX (issue [#97](https://github.com/alefragnani/vscode-language-pascal/issues/97))
