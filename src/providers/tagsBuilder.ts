@@ -18,15 +18,15 @@ export class TagsBuilder {
         return new Promise<string>((resolve, reject) => {
 
             let command: string = update ? "global" : "gtags";
-            let params: string = update ? "--update" : "";
+            let params = update ? ["--update"] : [];
 
             if (!TagsBuilder.tagsAvailable(path.join(basePath, 'GTAGS'))) {
                 command = "gtags";
-                params = "";
+                params = [];
             }
 
 			const statusBar: vscode.Disposable = vscode.window.setStatusBarMessage("Generating tags...");
-            cp.execFile(command, [params], { cwd: basePath }, (err, stdout, stderr) => {
+            cp.execFile(command, params, { cwd: basePath }, (err, stdout, stderr) => {
                 try {
 					statusBar.dispose();
 
