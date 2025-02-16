@@ -25,6 +25,7 @@ export async function activate(context: vscode.ExtensionContext) {
     commands.registerCommand("pascal.newFile", async () => newFile());
     commands.registerCommand("pascal.newClassFile", async () => newClassFile());
     commands.registerCommand("pascal.newInterfaceFile", async () => newInterfaceFile());
+    commands.registerCommand("pascal.newProgramFile", async () => newProgramFile());
 
     vscode.workspace.onDidGrantWorkspaceTrust(() => {
         registerProviders();
@@ -33,31 +34,14 @@ export async function activate(context: vscode.ExtensionContext) {
     
 }
 
-// async function regularNewFile() {
-//     const doc = await vscode.workspace.openTextDocument(
-//         { language: "pascal", content: "program HelloWorld;\nbegin\n  WriteLn('Hello, World!');\nend." });
-//     await vscode.window.showTextDocument(doc);
-// }
-
-// async function newFile() {
-//     const doc = await vscode.workspace.openTextDocument({ language: "pascal" });
-//     const editor = await vscode.window.showTextDocument(doc);
-
-//     const snippet = new SnippetString(
-//         "program ${1:ProgramName};\n" +
-//         "begin\n" +
-//         "  WriteLn('${2:Hello, World!}');\n" +
-//         "end."
-//     );
-
-//     editor.insertSnippet(snippet);
-// }
-
 async function newFile() {
     const snippet = new SnippetString(
-        "program ${1:ProgramName};\n" +
-        "begin\n" +
-        "  WriteLn('${2:Hello, World!}');\n" +
+        "unit ${1:UnitName};\n\n" +
+        "interface\n\n" +
+        "uses\n" +
+        "  Classes;\n\n" +
+        "$0\n" +
+        "implementation\n\n" +
         "end."
     );
     createNewFileFromSnippetString(snippet);
@@ -96,6 +80,18 @@ async function newInterfaceFile() {
         "    $0\n" +
         "  end;\n\n" +
         "implementation\n\n" +
+        "end."
+    );
+    createNewFileFromSnippetString(snippet);
+}
+
+async function newProgramFile() {
+    const snippet = new SnippetString(
+        "program ${1:ProgramName};\n\n" +
+        "uses\n" +
+        "  Classes;\n\n" +
+        "begin\n" +
+        "  $0\n" +
         "end."
     );
     createNewFileFromSnippetString(snippet);
