@@ -254,7 +254,7 @@
         "eslint": "^8.1.0",
         "eslint-config-vscode-ext": "^1.1.0",
         "glob": "^7.1.7",
-        "mocha": "^9.1.3",
+        "mocha": "^11.1.0",
         "terser-webpack-plugin": "^5.2.4",
         "ts-loader": "^9.2.5",
         "typescript": "^4.4.4",
