@@ -94,6 +94,10 @@
         ],
         "commands": [
             {
+                "command": "pascal.newFile",
+                "title": "%pascal.commands.newFile.title%"
+            },
+            {
                 "command": "pascal.generateTags",
                 "title": "%pascal.commands.generateTags.title%",
                 "enablement": "isWorkspaceTrusted && !isWeb"
@@ -148,6 +152,11 @@
                     "command": "_pascal.whatsNewContextMenu",
                     "group": "pascal",
                     "when": "extension == alefragnani.pascal && extensionStatus == installed"
+                }
+            ],
+            "file/newFile": [
+                {
+                    "command": "pascal.newFile"
                 }
             ]
         },
