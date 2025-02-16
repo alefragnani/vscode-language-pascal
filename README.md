@@ -76,12 +76,16 @@ Navigate to any language element (methods, attributes, classes, interfaces, and 
 
 ### Installing and Configuring GNU Global
 
-1. You have to install 4 tools:
+ You have to install 4 tools:
 
  * GNU Global 6.5 or higher (http://www.gnu.org/software/global/global.html) 
  * Exuberant Tags 5.5 or higher (http://ctags.sourceforge.net/)
  * Python 2.7 or higher (https://www.python.org/)
  * Python Pygments (via `pip install Pygments`)
+
+### Instructions (for Windows)
+
+1. Download the installers and install
 
 2. Update your `%PATH%` Environment Variable (_System_)
 
@@ -100,8 +104,26 @@ Navigate to any language element (methods, attributes, classes, interfaces, and 
  * `GTAGSLABEL`: `pygments`
 
 ![py-envvar](images/vscode-pascal-py-envvar.png)
- 
-> **NOTE:** For now, it was tested only on Windows, but since these tools are multiplatform (in fact, it comes from Unix), it should work on Linux and Mac. 
+
+### Instructions (for Linux)
+
+1. Install the tools using `apt`
+
+```sh
+    sudo apt update
+    sudo apt install global exuberant-ctags python3-pygments
+```
+
+2. Add `GTAGSCONF` AND `GTAGSLABEL` environment variables
+
+```sh
+    export GTAGSCONF=/etc/gtags.conf
+    export GTAGSLABEL=pygments
+```
+
+Since there is no default `gtags.conf` file o Linux, you must copy it from a Windows setup/installer and put at `/etc/gtags.conf`
+
+> Thanks to @trey-k for sharing the instructions in [this comment](https://github.com/alefragnani/vscode-language-pascal/issues/61#issuecomment-823677779)
 
 # Available commands
 
@@ -248,6 +270,7 @@ Update two tags:
 
 Special thanks to the people that have contributed to the project:
 
+* trey-k - Instructions for Linux install [see Comment](https://github.com/alefragnani/vscode-language-pascal/issues/61#issuecomment-823677779)
 * Robert Roland (@robdaemon) - Missing keywords from FreePascal ([see PR](https://github.com/alefragnani/vscode-language-pascal/pull/147))
 * Midas (Wither) (@TheWitheredStriker) - Missing keywords from FreePascal and Oxygene ([see PR](https://github.com/alefragnani/vscode-language-pascal/pull/138)) and ([see PR](https://github.com/alefragnani/vscode-language-pascal/pull/151))
 * creativelaides (@creativelaides) - Task upgrade ([see PR](https://github.com/alefragnani/vscode-language-pascal/pull/54))
