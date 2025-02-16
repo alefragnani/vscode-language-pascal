@@ -13,6 +13,7 @@
 		<string>dpk</string>
 		<string>lfm</string>
 		<string>lpr</string>
+		<string>ppr</string>
 	</array>
 	<key>keyEquivalent</key>
 	<string>^~P</string>
