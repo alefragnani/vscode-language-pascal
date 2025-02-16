@@ -73,7 +73,8 @@
                     ".dpk",
                     ".lfm",
                     ".dpr",
-                    ".lpr"
+                    ".lpr",
+                    ".ppr" 
                 ],
                 "configuration": "./pascal.configuration.json"
             }
