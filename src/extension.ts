@@ -21,7 +21,7 @@ export async function activate(context: vscode.ExtensionContext) {
     registerProviders();
     registerGenerateTags();
     registerWalkthrough();
-    registerNewFileCommands(context);
+    registerNewFileCommands();
 
     vscode.workspace.onDidGrantWorkspaceTrust(() => {
         registerProviders();
