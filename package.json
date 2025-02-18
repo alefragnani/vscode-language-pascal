@@ -94,6 +94,22 @@
         ],
         "commands": [
             {
+                "command": "pascal.newFile",
+                "title": "%pascal.commands.newFile.title%"
+            },
+            {
+                "command": "pascal.newClassFile",
+                "title": "%pascal.commands.newClassFile.title%"
+            },
+            {
+                "command": "pascal.newInterfaceFile",
+                "title": "%pascal.commands.newInterfaceFile.title%"
+            },
+            {
+                "command": "pascal.newProgramFile",
+                "title": "%pascal.commands.newProgramFile.title%"
+            },
+            {
                 "command": "pascal.generateTags",
                 "title": "%pascal.commands.generateTags.title%",
                 "enablement": "isWorkspaceTrusted && !isWeb"
@@ -148,6 +164,20 @@
                     "command": "_pascal.whatsNewContextMenu",
                     "group": "pascal",
                     "when": "extension == alefragnani.pascal && extensionStatus == installed"
+                }
+            ],
+            "file/newFile": [
+                {
+                    "command": "pascal.newFile"
+                },
+                {
+                    "command": "pascal.newClassFile"
+                },
+                {
+                    "command": "pascal.newInterfaceFile"
+                },
+                {
+                    "command": "pascal.newProgramFile"
                 }
             ]
         },

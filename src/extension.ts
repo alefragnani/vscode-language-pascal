@@ -10,17 +10,18 @@ import { registerWhatsNew } from './whats-new/commands';
 import { registerGenerateTags } from './commands/generateTags';
 import { registerProviders } from './providers';
 import { registerWalkthrough } from "./commands/walkthrough";
+import { registerNewFileCommands } from './commands/newFiles';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export async function activate(context: vscode.ExtensionContext) {
-
     Container.context = context;
     
     await registerWhatsNew();
     registerProviders();
     registerGenerateTags();
     registerWalkthrough();
+    registerNewFileCommands();
 
     vscode.workspace.onDidGrantWorkspaceTrust(() => {
         registerProviders();
