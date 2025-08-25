@@ -20,6 +20,9 @@ This is a VS Code extension that provides Pascal language support including synt
 - `npm run compile` -- compiles TypeScript source code. Takes ~2 seconds. Creates out/ folder.
 - `npm run lint` -- runs ESLint on source code. Takes ~1 second. Currently shows 26 warnings but no errors - this is expected.
 - `npm run watch` -- runs webpack in watch mode for development. Use this for iterative development.
+- `npm run vscode:prepublish` -- builds extension in production mode (minified)
+- `npm run webpack` -- alias for build command
+- `npm run webpack-dev` -- alias for watch command
 
 ### Testing
 **IMPORTANT**: Testing requires VS Code to be running and cannot be executed in headless environments.
@@ -38,6 +41,11 @@ In headless environments, you can validate your changes with:
 3. Make changes to TypeScript files in `src/` 
 4. Use "Reload Window" command in the Extension Development Host to test changes
 5. Always run `npm run lint` before committing changes
+
+### Recommended VS Code Extensions for Development
+When developing this extension, install these helpful extensions:
+- **ESLint** (dbaeumer.vscode-eslint) - for real-time linting feedback
+- **TypeScript + Webpack Problem Matchers** - included in default VS Code
 
 ## Validation Scenarios
 Since automated testing requires VS Code, always manually validate extension functionality:
