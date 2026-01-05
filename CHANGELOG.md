@@ -1,3 +1,13 @@
+## [10.0.0] - 2026-01-04
+### Added
+* CodeTyphon (ppr) support (issue [#47](https://github.com/alefragnani/vscode-language-pascal/issues/47))
+* Codespaces support via Linux install instructions (issue [#66](https://github.com/alefragnani/vscode-language-pascal/issues/66))
+* **New File** templates support (issue [#148](https://github.com/alefragnani/vscode-language-pascal/issues/148))
+
+### Internal
+* Security Alert: serialize-javascript (PR [#161](https://github.com/alefragnani/vscode-language-pascal/pull/161))
+* Security Alert: js-yaml (PR [#169](https://github.com/alefragnani/vscode-language-pascal/pull/169))
+
 ## [9.9.0] - 2025-02-02
 ### Added
 * Missing keyword (issue [#151](https://github.com/alefragnani/vscode-language-pascal/issues/151))
