@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pascal for Visual Studio Code adds language support for Delphi and FreePascal, with syntax highlighting, snippets, code navigation, and task build integration.">
+    <title>Pascal for VS Code</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <a class="brand" href="#top" aria-label="Pascal home">
+                <img src="images/icon.png" alt="Pascal icon" class="brand-mark">
+                <span class="brand-copy">
+                    <strong>Pascal</strong>
+                    <!-- <span>for VS Code</span> -->
+                </span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="top-nav" aria-label="Open menu" title="Open menu">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            <nav id="top-nav" class="top-nav" aria-label="Primary navigation">
+                <a href="#features">Features</a>
+                <a href="#faq">FAQ</a>
+                <a href="#donate"><i class="fa-solid fa-heart" aria-hidden="true"></i> Donate</a>
+            </nav>
+            <div class="header-actions">
+                <a href="https://github.com/alefragnani/vscode-language-pascal" aria-label="GitHub" title="GitHub">
+                    <i class="fa-brands fa-github" aria-hidden="true" style="font-size: 24px;"></i>
+                </a>
+            </div>
+        </header>
+
+        <main id="top">
+            <section class="hero">
+                <div class="hero-copy">
+                    <p class="eyebrow">Visual Studio Code Extension</p>
+                    <h1>Pascal code, first class in VS Code.</h1>
+                    <p class="hero-text">
+                        Pascal brings full language support for Delphi, FreePascal, and Oxygene dialects to
+                        Visual Studio Code, with rich syntax highlighting, a huge set of snippets, and source
+                        code navigation.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="https://marketplace.visualstudio.com/items?itemName=alefragnani.pascal">Get it on Marketplace</a>
+                        <a class="button button-muted" href="https://open-vsx.org/extension/alefragnani/pascal">Open VSX</a>
+                    </div>
+                    <ul class="hero-points" aria-label="Pascal highlights">
+                        <li>Syntax highlighting for Delphi and FreePascal source, forms, and projects</li>
+                        <li>Almost 40 code snippets for common Pascal constructs</li>
+                        <li>Go to Symbol, Go to Definition, Peek Definition, and Find All References</li>
+                    </ul>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-card hero-card-shot">
+                        <img src="images/vscode-pascal-syntax.png" alt="Pascal syntax highlighting">
+                    </div>
+                </div>
+            </section>
+
+            <section class="announcement">
+                <p class="eyebrow">What&apos;s new in Pascal 10.0</p>
+                <div class="announcement-grid">
+                    <article>
+                        <h2>Broader dialect and platform support</h2>
+                        <p>Pascal 10.0 improves syntax highlighting for FreePascal and Oxygene and extends where and how the extension can run.</p>
+                    </article>
+                    <ul>
+                        <li>New File templates support</li>
+                        <li>Codespaces support</li>
+                        <li>More FreePascal keywords</li>
+                        <li>Published to Open VSX</li>
+                        <li>Improved Syntax Highlighting for FreePascal and Oxygene</li>
+                        <li>Web support</li>
+                        <li>Getting Started / Walkthrough</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="feature-index" id="features">
+                <div class="section-heading">
+                    <p class="eyebrow">Features</p>
+                    <h2>Jump to the key capabilities.</h2>
+                </div>
+                <div class="feature-grid">
+                    <a class="feature-card" href="#syntax-highlighting">
+                        <span class="feature-number">01</span>
+                        <h3>Syntax Highlighting</h3>
+                        <p>Full syntax highlighting for Delphi and FreePascal files, forms, and projects.</p>
+                    </a>
+                    <a class="feature-card" href="#snippets">
+                        <span class="feature-number">02</span>
+                        <h3>Snippets</h3>
+                        <p>Almost 40 snippets covering classes, case statements, begin/end blocks, and more.</p>
+                    </a>
+                    <a class="feature-card" href="#code-navigation">
+                        <span class="feature-number">03</span>
+                        <h3>Code Navigation</h3>
+                        <p>Navigate methods, attributes, classes, and interfaces using native VS Code commands.</p>
+                    </a>
+                    <a class="feature-card" href="#task-build">
+                        <span class="feature-number">04</span>
+                        <h3>Task Build</h3>
+                        <p>Compile Delphi and FreePascal projects and jump straight to errors and warnings.</p>
+                    </a>
+                </div>
+            </section>
+
+            <section class="spotlight spotlight-reverse" id="syntax-highlighting">
+                <div class="spotlight-copy">
+                    <p class="eyebrow">Syntax highlighting</p>
+                    <h2>Coding with style, in every Pascal dialect.</h2>
+                    <p>
+                        Pascal supports full syntax highlighting for Delphi and FreePascal, including the
+                        keywords, forms, and project files used across both ecosystems.
+                    </p>
+                    <div class="detail-list">
+                        <div>
+                            <h3>Wide file coverage</h3>
+                            <p>Recognizes <code>.pas</code>, <code>.p</code>, <code>.dfm</code>, <code>.fmx</code>, <code>.dpr</code>, <code>.dpk</code>, <code>.lfm</code>, <code>.lpr</code>, and <code>.ppr</code> files.</p>
+                        </div>
+                        <div>
+                            <h3>Format Code</h3>
+                            <p>Pair Pascal with the <a class="text-link" href="https://github.com/alefragnani/vscode-pascal-formatter#features">Pascal Formatter</a> extension to format your source code.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="spotlight-visual stack">
+                    <figure class="media-card">
+                        <img src="images/vscode-pascal-syntax.png" alt="Pascal syntax highlighting screenshot">
+                    </figure>
+                </div>
+            </section>
+
+            <section class="spotlight" id="snippets">
+                <div class="spotlight-copy">
+                    <p class="eyebrow">Snippets</p>
+                    <h2>Almost 40 snippets to write Pascal faster.</h2>
+                    <p>
+                        Type common Pascal constructs and expand them instantly, from begin/end blocks and
+                        case statements to full classes with constructors and destructors.
+                    </p>
+                    <div class="command-list">
+                        <article>
+                            <h3>Popular snippets</h3>
+                            <ul>
+                                <li><code>begin</code> — begin/end block</li>
+                                <li><code>classc</code> — class with constructor/destructor</li>
+                                <li><code>case</code> — case statement</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+                <div class="spotlight-visual stack">
+                    <figure class="media-card">
+                        <img src="images/vscode-pascal-snippets.png" alt="Pascal snippets screenshot">
+                    </figure>
+                </div>
+            </section>
+
+            <section class="settings-section" id="code-navigation">
+                <div class="section-heading">
+                    <p class="eyebrow">Code navigation</p>
+                    <h2>Navigate through Pascal source with native VS Code experience.</h2>
+                </div>
+                <div class="settings-grid">
+                    <article>
+                        <h3>Native commands</h3>
+                        <ul>
+                            <li>Go to Symbol</li>
+                            <li>Go to Definition</li>
+                            <li>Peek Definition</li>
+                            <li>Find All References</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>Required tooling</h3>
+                        <ul>
+                            <li>GNU Global 6.5 or higher</li>
+                            <li>Exuberant Ctags 5.5 or higher</li>
+                            <li>Python 2.7 or higher</li>
+                            <li>Python Pygments (<code>pip install Pygments</code>)</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>Pascal: Generate Tags / Update Tags</h3>
+                        <p>Run <strong>Pascal: Generate Tags</strong> once per project to create the tags, then <strong>Pascal: Update Tags</strong> whenever source files change.</p>
+                    </article>
+                    <article>
+                        <h3>Tune for huge projects</h3>
+                        <pre class="json-example"><code><span class="json-punctuation">{</span>
+  <span class="json-key">"pascal.codeNavigation"</span><span class="json-punctuation">:</span> <span class="json-string">"file"</span><span class="json-punctuation">,</span>
+  <span class="json-key">"pascal.tags.autoGenerate"</span><span class="json-punctuation">:</span> <span class="json-punctuation">false</span>
+<span class="json-punctuation">}</span></code></pre>
+                    </article>
+                </div>
+            </section>
+
+            <section class="sidebar-section" id="task-build">
+                <div class="spotlight-copy">
+                    <p class="eyebrow">Task build</p>
+                    <h2>Compile Delphi and FreePascal projects without leaving VS Code.</h2>
+                    <p>
+                        Use the Task Build examples to compile your Delphi or FreePascal project and navigate
+                        straight to errors, warnings, and hints with the native View / Errors and Warnings command.
+                    </p>
+                </div>
+                <div class="sidebar-grid">
+                    <figure class="media-card">
+                        <img src="images/vscode-pascal-compile.png" alt="Pascal task build compile screenshot">
+                    </figure>
+                </div>
+            </section>
+
+            <section class="feature-index faq-section" id="faq">
+                <div class="section-heading">
+                    <p class="eyebrow">FAQ</p>
+                    <h2>Quick answers for common questions.</h2>
+                </div>
+                <div class="faq-list">
+                    <details>
+                        <summary>Which Pascal dialects does the extension support?</summary>
+                        <p>Pascal adds support for the Pascal language and its dialects, including Delphi, FreePascal, Lazarus, and Oxygene, with dedicated keyword sets for each.</p>
+                    </details>
+                    <details>
+                        <summary>Which file extensions are recognized?</summary>
+                        <p>Syntax highlighting covers <code>.pas</code>, <code>.p</code>, <code>.dfm</code>, <code>.fmx</code>, <code>.dpr</code>, <code>.dpk</code>, <code>.lfm</code>, <code>.lpr</code>, and <code>.ppr</code> files.</p>
+                    </details>
+                    <details>
+                        <summary>How do I enable code navigation?</summary>
+                        <p>Install GNU Global, Exuberant Ctags, Python, and Python Pygments, then run <strong>Pascal: Generate Tags</strong> once per project. Use <strong>Pascal: Update Tags</strong> afterwards to keep references current.</p>
+                    </details>
+                    <details>
+                        <summary>Can I compile my Delphi or FreePascal project from VS Code?</summary>
+                        <p>Yes. Use the Task Build examples from the documentation to compile with DCC32 or FPC and navigate errors, warnings, and hints directly in the editor.</p>
+                    </details>
+                    <details>
+                        <summary>Is Pascal available on Open VSX?</summary>
+                        <p>Yes, Pascal is published to both the Visual Studio Marketplace and Open VSX, so it works with VS Code and compatible editors.</p>
+                    </details>
+                    <details>
+                        <summary>Does it work on VS Code forks like Cursor, Windsurf, and Antigravity?</summary>
+                        <p>Yes! It works on all VS Code forks, ensuring compatibility and seamless integration with your favorite tools.</p>
+                    </details>
+                    <details>
+                        <summary>I have a feature request, bug report, or suggestion.</summary>
+                        <p>If you have a feature request, bug report, or suggestion, please submit it through our <a href="https://github.com/alefragnani/vscode-language-pascal/issues" class="text-link">GitHub Issues</a> page. We appreciate your feedback!</p>
+                    </details>
+                    <details>
+                        <summary>I have a question that's not listed here.</summary>
+                        <p>If you have a question that's not covered in the FAQ, feel free to reach out through our support channels at <a href="https://github.com/alefragnani/vscode-language-pascal/discussions" class="text-link">GitHub Discussions</a>. We're here to help!</p>
+                    </details>
+                </div>
+            </section>
+
+            <section class="support-section" id="donate">
+                <div class="section-heading">
+                    <p class="eyebrow">Donate</p>
+                    <h2>Support the extension if you find it useful.</h2>
+                </div>
+                <div class="support-grid">
+                    <article>
+                        <h3>Why support it</h3>
+                        <p>Pascal is open source, and your support helps keep maintenance, improvements, and ecosystem compatibility moving forward.</p>
+                        <div class="link-row">
+                            <a class="text-link" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=EP57F3B6FXKTU&amp;lc=US&amp;item_name=Alessandro%20Fragnani&amp;item_number=vscode%20extensions&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted">PayPal</a>
+                            <a class="text-link" href="https://github.com/sponsors/alefragnani">GitHub Sponsors</a>
+                            <a class="text-link" href="https://www.patreon.com/alefragnani">Patreon</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        
+    </div>
+    <footer class="site-footer">
+        <div class="footer-social">
+            <a href="https://twitter.com/alefragnani" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="https://github.com/alefragnani" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/alefragnani/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+          </div>
+          <div class="footer-copy">&copy; 2026 Alessandro Fragnani</div>
+    </footer>
+    <script>
+        (() => {
+            const header = document.querySelector(".site-header");
+            const navToggle = document.querySelector(".nav-toggle");
+            const topNav = document.querySelector("#top-nav");
+
+            if (!(header instanceof HTMLElement) || !(navToggle instanceof HTMLButtonElement) || !(topNav instanceof HTMLElement)) {
+                return;
+            }
+
+            const mobileQuery = window.matchMedia("(max-width: 900px)");
+
+            const setExpanded = (expanded) => {
+                navToggle.setAttribute("aria-expanded", String(expanded));
+                header.classList.toggle("nav-open", expanded);
+                navToggle.setAttribute("aria-label", expanded ? "Close menu" : "Open menu");
+                navToggle.setAttribute("title", expanded ? "Close menu" : "Open menu");
+            };
+
+            const closeMenu = () => setExpanded(false);
+
+            navToggle.addEventListener("click", () => {
+                const expanded = navToggle.getAttribute("aria-expanded") === "true";
+                setExpanded(!expanded);
+            });
+
+            topNav.addEventListener("click", (event) => {
+                const target = event.target;
+                if (target instanceof HTMLElement && target.closest("a")) {
+                    closeMenu();
+                }
+            });
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") {
+                    closeMenu();
+                }
+            });
+
+            document.addEventListener("click", (event) => {
+                if (!mobileQuery.matches || !(event.target instanceof Node)) {
+                    return;
+                }
+
+                if (!header.contains(event.target)) {
+                    closeMenu();
+                }
+            });
+
+            mobileQuery.addEventListener("change", () => {
+                if (!mobileQuery.matches) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
