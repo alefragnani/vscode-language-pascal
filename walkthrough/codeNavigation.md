@@ -23,4 +23,4 @@ GNU Global uses CTags + Python Pygments as plugin in order to recognizes Pascal 
 * `GTAGSCONF`: `C:\gnu\glo653wb\share\gtags\gtags.conf` 
 * `GTAGSLABEL`: `pygments`
 
-![py-envvar](../images/vscode-pascal-py-envvar.png)
+![py-envvar](../docs/images/vscode-pascal-py-envvar.png)

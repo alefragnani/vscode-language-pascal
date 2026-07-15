@@ -23,4 +23,4 @@ GNU Global usa CTags + Python Pygments como plugin, para conseguir reconhecer c√
 * `GTAGSCONF`: `C:\gnu\glo653wb\share\gtags\gtags.conf` 
 * `GTAGSLABEL`: `pygments`
 
-![py-envvar](../images/vscode-pascal-py-envvar.png)
+![py-envvar](../docs/images/vscode-pascal-py-envvar.png)

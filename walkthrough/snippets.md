@@ -1,1 +1,1 @@
-![Snippets](../images/vscode-pascal-snippets.png)
+![Snippets](../docs/images/vscode-pascal-snippets.png)
