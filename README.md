@@ -53,13 +53,13 @@ Here are some of the features that **Pascal** provides:
 
 **Pascal** supports full syntax highlighting for **Delphi** and **FreePascal**
 
-![syntax](images/vscode-pascal-syntax.png)
+![syntax](docs/images/vscode-pascal-syntax.png)
 
 ### Snippets
 
 Almost 40 snippets are available
 
-![snippets](images/vscode-pascal-snippets.png)
+![snippets](docs/images/vscode-pascal-snippets.png)
 
 ### Format Code
 
@@ -105,7 +105,7 @@ Navigate to any language element (methods, attributes, classes, interfaces, and 
  * `GTAGSCONF`: `C:\gnu\glo653wb\share\gtags\gtags.conf` 
  * `GTAGSLABEL`: `pygments`
 
-![py-envvar](images/vscode-pascal-py-envvar.png)
+![py-envvar](docs/images/vscode-pascal-py-envvar.png)
 
 ### Instructions (for Linux)
 
@@ -167,7 +167,7 @@ Use this **Task Examples**, so you can:
 * Compile **Delphi** and **FreePascal** projects:
 * Navigate to _Errors/Warnings/Hints_, using the native _View / Errors and Warnings_ command
 
-![compile](images/vscode-pascal-compile.png) 
+![compile](docs/images/vscode-pascal-compile.png) 
 
 ### Building Tasks
 

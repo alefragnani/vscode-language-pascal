@@ -43,7 +43,7 @@
     "main": "./dist/extension-node.js",
     "browser": "./dist/extension-web.js",
     "l10n": "./l10n",
-    "icon": "images/icon.png",
+    "icon": "docs/images/icon.png",
     "license": "SEE LICENSE IN LICENSE.md",
     "homepage": "https://github.com/alefragnani/vscode-language-pascal/blob/master/README.md",
     "repository": {
