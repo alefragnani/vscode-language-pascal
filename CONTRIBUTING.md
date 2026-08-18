@@ -17,7 +17,7 @@ git clone https://github.com/alefragnani/vscode-language-pascal.git
 Prerequisites
 
 - [Git](https://git-scm.com/), `>= 2.22.0`
-- [NodeJS](https://nodejs.org/), `>= 14.17.27`
+- [NodeJS](https://nodejs.org/), `>= 22.22.1` (see `.nvmrc`)
 
 ### Dependencies
 

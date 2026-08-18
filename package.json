@@ -275,7 +275,7 @@
     "devDependencies": {
         "@types/glob": "^7.1.4",
         "@types/mocha": "^9.0.0",
-        "@types/node": "^18.17.0",
+        "@types/node": "^22.18.10",
         "@types/vscode": "^1.73.0",
         "@typescript-eslint/eslint-plugin": "^6.21.0",
         "@typescript-eslint/parser": "^6.21.0",
