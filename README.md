@@ -94,7 +94,7 @@ Navigate to any language element (methods, attributes, classes, interfaces, and 
  Let's say you extract GNU Global and CTags in `C:\gnu` folder. The two new entries in `%PATH%` should be:
  
  * GNU Global: `C:\gnu\glo653wb\bin`
- * Excuberant Tags: `C:\gnu\ctags58\ctags58`
+ * Exuberant Tags: `C:\gnu\ctags58\ctags58`
 
  Also make sure Python is in `%PATH%`
 
