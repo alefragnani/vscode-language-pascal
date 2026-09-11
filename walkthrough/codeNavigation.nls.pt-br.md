@@ -12,7 +12,7 @@ Atualizar a variável de ambiente `%PATH%` (_Systema_)
 > Vamos dizer que você extraiu GNU Global e CTags na pasta `C:\gnu`. As duas novas entradas em `%PATH%` deveriam ser:
  
 * GNU Global: `C:\gnu\glo653wb\bin`
-* Excuberant Tags: `C:\gnu\ctags58\ctags58`
+* Exuberant Tags: `C:\gnu\ctags58\ctags58`
 
 > Também tenha certeza que o Python está no `%PATH%`
 
