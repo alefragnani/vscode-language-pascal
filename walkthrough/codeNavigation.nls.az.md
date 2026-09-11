@@ -12,7 +12,7 @@
 > Tutaq ki, GNU Global və CTags arxivlərini `C:\gnu` qovluğuna çıxarmısınız. `%PATH%` daxilindəki iki yeni qeyd belə olmalıdır:
  
 * GNU Global: `C:\gnu\glo653wb\bin`
-* Excuberant Tags: `C:\gnu\ctags58\ctags58`
+* Exuberant Tags: `C:\gnu\ctags58\ctags58`
 
 > Python alətinin də `%PATH%` daxilində olduğuna əmin olun
 
