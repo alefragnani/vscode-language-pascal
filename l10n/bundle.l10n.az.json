@@ -1,0 +1,9 @@
+{
+    "Open a file first to generate tags":"Etiketlər yaratmaq üçün əvvəlcə fayl açın",
+    "The \"global\" command is not available. Make sure it is on PATH":"\"global\" əmri əlçatan deyil. Onun PATH daxilində olduğuna əmin olun",
+    "The {0} command is not available. Make sure it is on PATH":"{0} əmri əlçatan deyil. Onun PATH daxilində olduğuna əmin olun",
+    "Some error occured: {0}":"Xəta baş verdi: {0}",
+    "The tags where updated":"Etiketlər yeniləndi",
+    "More Info":"Ətraflı məlumat",
+    "Don't show again":"Bir daha göstərmə"
+}
