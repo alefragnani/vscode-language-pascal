@@ -5,10 +5,12 @@
 
 'use strict';
 
-import fs = require("fs");
-import path = require("path");
-import * as vscode from 'vscode';
-import { TagsBuilder } from './tagsBuilder';
+import * as vscode from "vscode";
+
+import * as fs from "fs";
+import * as path from "path";
+
+import { TagsBuilder } from "./tagsBuilder";
 
 export class AbstractProvider {
 

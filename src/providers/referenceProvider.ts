@@ -5,10 +5,11 @@
 
 'use strict';
 
-import vscode = require('vscode');
-import cp = require('child_process');
-import path = require('path');
-import fs = require('fs');
+import * as vscode from "vscode";
+
+import * as cp from "child_process";
+import * as fs from "fs";
+import * as path from "path";
 import { AbstractProvider } from "./abstractProvider";
 
 export class PascalReferenceProvider extends AbstractProvider implements vscode.ReferenceProvider {
