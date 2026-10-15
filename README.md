@@ -7,7 +7,7 @@
   <a title="Learn more about Pascal" href="http://github.com/alefragnani/vscode-language-pascal"><img src="https://raw.githubusercontent.com/alefragnani/vscode-language-pascal/master/images/vscode-pascal-logo-readme.png" alt="Pascal Logo" width="70%" /></a>
 </p>
 
-# What's new in Pascal 10.0
+# What's new in Pascal 10.1
 
 * Adds **New File** templates support
 * Adds **Codespaces** support
@@ -272,6 +272,7 @@ Update two tags:
 
 Special thanks to the people that have contributed to the project:
 
+* jamalkamaladdin - **az** translations [see PR](https://github.com/alefragnani/vscode-language-pascal/pull/197))
 * trey-k - Instructions for Linux install [see Comment](https://github.com/alefragnani/vscode-language-pascal/issues/61#issuecomment-823677779)
 * Robert Roland (@robdaemon) - Missing keywords from FreePascal ([see PR](https://github.com/alefragnani/vscode-language-pascal/pull/147))
 * Midas (Wither) (@TheWitheredStriker) - Missing keywords from FreePascal and Oxygene ([see PR](https://github.com/alefragnani/vscode-language-pascal/pull/138)) and ([see PR](https://github.com/alefragnani/vscode-language-pascal/pull/151))
