@@ -1,3 +1,27 @@
+## [10.1.0] - 2026-10-15
+### Added
+* **az** translations (thanks to @jamalkamaladdin [PR #197](https://github.com/alefragnani/vscode-language-pascal/pull/197))
+
+### Fixed
+* Fix typo in Exuberant Tags ([PR #198](https://github.com/alefragnani/vscode-language-pascal/pull/198))
+
+### Internal
+* Security Alert: brace-expansion (thanks to @dependabot [PR #203](https://github.com/alefragnani/vscode-language-pascal/pull/203))
+* Security Alert: serialize-javascript (thanks to @dependabot [PR #202](https://github.com/alefragnani/vscode-language-pascal/pull/202))
+* Security Alert: minimatch, @typescript-eslint/eslint-plugin, and @typescript-eslint/parser (thanks to @dependabot [PR #201](https://github.com/alefragnani/vscode-language-pascal/pull/201))
+* Security Alert: serialize-javascript, mocha, and terser-webpack-plugin (thanks to @dependabot [PR #200](https://github.com/alefragnani/vscode-language-pascal/pull/200))
+* Security Alert: js-yaml (thanks to @dependabot [PR #199](https://github.com/alefragnani/vscode-language-pascal/pull/199))
+* Security Alert: browserslist (thanks to @dependabot [PR #196](https://github.com/alefragnani/vscode-language-pascal/pull/196))
+* Security Alert: brace-expansion (thanks to @dependabot [PR #195](https://github.com/alefragnani/vscode-language-pascal/pull/195))
+* Security Alert: fast-uri (thanks to @dependabot [PR #194](https://github.com/alefragnani/vscode-language-pascal/pull/194))
+* Security Alert: js-yaml (thanks to @dependabot [PR #185](https://github.com/alefragnani/vscode-language-pascal/pull/185))
+* Security Alert: fast-uri (thanks to @dependabot [PR #184](https://github.com/alefragnani/vscode-language-pascal/pull/184))
+* Security Alert: picomatch (thanks to @dependabot [PR #177](https://github.com/alefragnani/vscode-language-pascal/pull/177))
+* Security Alert: flatted (thanks to @dependabot [PR #176](https://github.com/alefragnani/vscode-language-pascal/pull/176))
+* Security Alert: minimatch, @typescript-eslint/eslint-plugin, and @typescript-eslint/parser (thanks to @dependabot [PR #173](https://github.com/alefragnani/vscode-language-pascal/pull/173))
+* Security Alert: webpack (thanks to @dependabot [PR #172](https://github.com/alefragnani/vscode-language-pascal/pull/172))
+* Bump `vscode-whats-new` to March 2026 release (Issue [#178](https://github.com/alefragnani/vscode-language-pascal/issues/178))
+
 ## [10.0.0] - 2026-01-04
 ### Added
 * CodeTyphon (ppr) support (issue [#47](https://github.com/alefragnani/vscode-language-pascal/issues/47))
